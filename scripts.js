@@ -809,3 +809,28 @@ function initStatus(){
   document.getElementById('status-deploys').textContent=(14+Math.floor(Math.random()*6))+'';
 }
 document.addEventListener('DOMContentLoaded',initStatus);
+
+/* ═══════════════════════════════════════════════════════════════
+   FLUXO FINANCEIRO — detalhe interativo
+   ═══════════════════════════════════════════════════════════════ */
+const ffDetails=[
+  {title:'📥 Lançamento Financeiro',steps:['Criação manual ou automática via contrato','Categorização por plano de contas','Anexo de comprovantes e NFs','Agendamento de pagamento/recebimento']},
+  {title:'🏦 Conciliação Bancária',steps:['Importação de extrato OFX/CSV','Match automático (97% de acurácia)','Alertas para divergências','Conciliação em lote']},
+  {title:'✅ Fluxo de Aprovação',steps:['Regras por valor e departamento','Aprovador substituto automático','Notificação por email e chat','Histórico completo de decisões']},
+  {title:'💸 Execução de Pagamento',steps:['Geração de Pix ou boleto','Agendamento em lote','Comprovante automático anexado','Baixa no financeiro em tempo real']},
+  {title:'📊 Mapa Contábil',steps:['Regra configura débito/crédito','Lançamento contábil gerado automaticamente','Sem digitação dupla','Rastreabilidade total: financeiro ↔ contábil']},
+  {title:'📋 Mapa de Rateio',steps:['Critérios: fração ideal, área, fixo','Distribuição automática por centro de custo','Demonstrativo para prestação de contas','Histórico comparativo mensal']},
+  {title:'🧾 Gestão Fiscal',steps:['Emissão de NF-e via NFe.io','Cancelamento e carta de correção','Planejamento tributário básico','Relatórios fiscais por período']},
+  {title:'📈 DRE e Balancete',steps:['Geração automática mensal','Comparativo com período anterior','Exportação PDF e Excel','Análise de tendências por IA']},
+  {title:'🧠 BI com Inteligência Artificial',steps:['Detecção de anomalias em receita/despesa','Previsão de fluxo de caixa (30/60/90 dias)','Insights de inadimplência','Alertas proativos para gestores']},
+  {title:'📱 Cobrança Automatizada',steps:['Régua via WhatsApp: lembrete → cobrança → segunda via','Escalonamento por dias de atraso','Personalização por perfil de cliente','Relatório de recuperação de crédito']}
+];
+window.showFFDetail=function(i){
+  const el=document.getElementById('ff-detail');
+  if(!el)return;
+  const d=ffDetails[i];
+  el.innerHTML='<h4>'+d.title+'</h4><div class="ff-steps">'+d.steps.map((s,j)=>'<div class="ff-st" style="animation:sandFadeIn .3s ease '+(j*.08)+'s backwards"><span style="font-weight:700;color:var(--teal)">'+(j+1)+'.</span> '+s+'</div>').join('')+'</div>';
+  el.classList.add('show');
+  document.querySelectorAll('.ff-node').forEach((n,j)=>n.classList.toggle('active',j===i));
+  el.scrollIntoView({behavior:'smooth',block:'nearest'});
+};

@@ -138,6 +138,126 @@
 </div>
 </section>
 
+
+<!-- FLUXO FINANCEIRO COMPLETO -->
+<section class="finflow" id="fluxo-financeiro" aria-label="Fluxo financeiro">
+<div class="w">
+  <h2>Fluxo Financeiro Completo — Do Lançamento ao DRE</h2>
+  <p class="ff-sub">Clique em qualquer etapa para ver o detalhamento. Tudo integrado, sem digitação dupla.</p>
+  <div class="ff-diagram">
+    <div class="ff-col">
+      <div class="ff-node" onclick="showFFDetail(0)"><div class="ff-badge" style="background:#3B82F6">Entrada</div><div class="ff-icon">📥</div><h5>Lançamento</h5><p>Contas a pagar/receber, contratos, NFs</p></div>
+      <div class="ff-arrow">↓</div>
+      <div class="ff-node" onclick="showFFDetail(1)"><div class="ff-icon">🏦</div><h5>Conciliação</h5><p>Match automático com extrato bancário</p></div>
+    </div>
+    <div class="ff-col">
+      <div class="ff-node" onclick="showFFDetail(2)"><div class="ff-badge" style="background:#8B5CF6">Workflow</div><div class="ff-icon">✅</div><h5>Aprovação</h5><p>Hierarquia multinível com delegação</p></div>
+      <div class="ff-arrow">↓</div>
+      <div class="ff-node" onclick="showFFDetail(3)"><div class="ff-icon">💸</div><h5>Pagamento</h5><p>Pix, boleto, transferência</p></div>
+    </div>
+    <div class="ff-col">
+      <div class="ff-node" onclick="showFFDetail(4)"><div class="ff-badge" style="background:var(--teal)">Automático</div><div class="ff-icon">📊</div><h5>Mapa Contábil</h5><p>Débito/crédito automático por regra</p></div>
+      <div class="ff-arrow">↓</div>
+      <div class="ff-node" onclick="showFFDetail(5)"><div class="ff-icon">📋</div><h5>Rateio</h5><p>Distribuição por centro de custo</p></div>
+    </div>
+    <div class="ff-col">
+      <div class="ff-node" onclick="showFFDetail(6)"><div class="ff-icon">🧾</div><h5>Fiscal</h5><p>NF-e, impostos, planejamento</p></div>
+      <div class="ff-arrow">↓</div>
+      <div class="ff-node" onclick="showFFDetail(7)"><div class="ff-icon">📈</div><h5>DRE / Balancete</h5><p>Relatórios gerados por IA</p></div>
+    </div>
+    <div class="ff-col">
+      <div class="ff-node" onclick="showFFDetail(8)"><div class="ff-badge" style="background:#EC4899">IA</div><div class="ff-icon">🧠</div><h5>BI com IA</h5><p>Anomalias, previsões, alertas</p></div>
+      <div class="ff-arrow">↓</div>
+      <div class="ff-node" onclick="showFFDetail(9)"><div class="ff-icon">📱</div><h5>Cobrança</h5><p>Régua WhatsApp automática</p></div>
+    </div>
+  </div>
+  <div class="ff-detail" id="ff-detail"></div>
+</div>
+</section>
+
+
+<!-- ORGANOGRAMA POR CARGO -->
+<section class="orgchart" id="organograma" aria-label="Organograma por cargo">
+<div class="w">
+  <h2>Quem Usa o Quê — Módulos por Cargo</h2>
+  <p class="org-sub">Cada colaborador acessa apenas o que precisa. 257 permissões granulares garantem controle total.</p>
+  <div class="org-tree">
+
+    <div class="org-level">
+      <div class="org-level-label">Nível Estratégico</div>
+      <div class="org-roles">
+        <div class="org-role" style="border-top:3px solid var(--teal)">
+          <h5>👔 CEO / Diretor Geral</h5>
+          <div class="org-desc">Visão 360° de toda a operação</div>
+          <div class="org-modules"><span>BI com IA</span><span>Relatórios</span><span>Financeiro</span><span>CRM</span><span>Aprovações</span></div>
+          <div class="org-perm-count">Acesso: 22 módulos · ~180 permissões</div>
+        </div>
+        <div class="org-role" style="border-top:3px solid #3B82F6">
+          <h5>💼 CFO / Dir. Financeiro</h5>
+          <div class="org-desc">Controle financeiro e contábil completo</div>
+          <div class="org-modules"><span>Financeiro</span><span>Contabilidade</span><span>Fiscal</span><span>Aprovações</span><span>Contas Bancárias</span><span>BI com IA</span></div>
+          <div class="org-perm-count">Acesso: 8 módulos · ~95 permissões</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="org-level">
+      <div class="org-level-label">Nível Tático</div>
+      <div class="org-roles">
+        <div class="org-role" style="border-top:3px solid #8B5CF6">
+          <h5>📊 Gerente Financeiro</h5>
+          <div class="org-desc">Lançamentos, conciliação, cobranças</div>
+          <div class="org-modules"><span>Financeiro</span><span>Contas Bancárias</span><span>Contabilidade</span><span>Relatórios</span></div>
+          <div class="org-perm-count">Acesso: 5 módulos · ~65 permissões</div>
+        </div>
+        <div class="org-role" style="border-top:3px solid #EC4899">
+          <h5>🎯 Gerente Comercial</h5>
+          <div class="org-desc">Pipeline, metas e clientes</div>
+          <div class="org-modules"><span>CRM</span><span>Clientes</span><span>Vendas</span><span>Contratos</span><span>Chat</span></div>
+          <div class="org-perm-count">Acesso: 5 módulos · ~85 permissões</div>
+        </div>
+        <div class="org-role" style="border-top:3px solid #D4A017">
+          <h5>⚙️ Gerente de Operações</h5>
+          <div class="org-desc">Equipes, serviços e projetos</div>
+          <div class="org-modules"><span>Funcionários</span><span>Checklists</span><span>Tickets</span><span>Projetos</span><span>Gestão de Serviços</span></div>
+          <div class="org-perm-count">Acesso: 7 módulos · ~41 permissões</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="org-level">
+      <div class="org-level-label">Nível Operacional</div>
+      <div class="org-roles">
+        <div class="org-role" style="border-top:3px solid var(--teal)">
+          <h5>💰 Analista Financeiro</h5>
+          <div class="org-desc">Lançamentos diários e conciliação</div>
+          <div class="org-modules"><span>Financeiro</span><span>Contas Bancárias</span></div>
+          <div class="org-perm-count">Acesso: 2 módulos · ~32 permissões</div>
+        </div>
+        <div class="org-role" style="border-top:3px solid #3B82F6">
+          <h5>📞 Vendedor / SDR</h5>
+          <div class="org-desc">Leads, follow-up e pipeline</div>
+          <div class="org-modules"><span>CRM</span><span>Clientes</span><span>Chat</span></div>
+          <div class="org-perm-count">Acesso: 3 módulos · ~45 permissões</div>
+        </div>
+        <div class="org-role" style="border-top:3px solid #8B5CF6">
+          <h5>🛠 Técnico / Operador</h5>
+          <div class="org-desc">Checklists, tickets e execução</div>
+          <div class="org-modules"><span>Checklists</span><span>Tickets</span><span>Chat</span></div>
+          <div class="org-perm-count">Acesso: 3 módulos · ~15 permissões</div>
+        </div>
+        <div class="org-role" style="border-top:3px solid #D4A017">
+          <h5>📋 Contador</h5>
+          <div class="org-desc">Escrituração, fiscal e relatórios</div>
+          <div class="org-modules"><span>Contabilidade</span><span>Fiscal</span><span>Relatórios</span></div>
+          <div class="org-perm-count">Acesso: 3 módulos · ~48 permissões</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- ROADMAP — 22 módulos reais -->
 <section class="roadmap" id="roadmap" aria-label="Ecossistema de módulos">
 <div class="w">
