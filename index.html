@@ -390,6 +390,24 @@ html.dark .cmp-table tbody td.hl{background:rgba(13,124,102,.06)}
 .cmp-table tbody tr:hover td{background:rgba(0,0,0,.01)}html.dark .cmp-table tbody tr:hover td{background:rgba(255,255,255,.02)}
 .cmp-table tbody tr:hover td.hl{background:rgba(13,124,102,.06)}
 .cmp-yes{color:var(--teal);font-weight:700;font-size:.95rem}.cmp-no{color:var(--tx3);font-size:.85rem}.cmp-partial{color:var(--amber);font-weight:600;font-size:.85rem}
+.cmp-rank{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-size:.72rem;font-weight:800;font-family:var(--mono)}
+.cmp-rank.r1{background:linear-gradient(135deg,#0D7C66,#14b89c);color:#fff;box-shadow:0 2px 8px rgba(13,124,102,.3)}
+.cmp-rank.r2{background:var(--sand);color:var(--ink2)}
+.cmp-rank.r3{background:var(--sand);color:var(--tx3)}
+.cmp-rank.r4{background:var(--sand);color:var(--tx3)}
+.cmp-rank.r5{background:var(--sand);color:var(--tx3);opacity:.6}
+html.dark .cmp-rank.r2,html.dark .cmp-rank.r3,html.dark .cmp-rank.r4{background:var(--stone);color:var(--tx2)}
+html.dark .cmp-rank.r5{background:var(--stone);color:var(--tx3)}
+.cmp-header-sub{display:block;font-size:.52rem;font-weight:500;letter-spacing:.02em;color:var(--tx3);margin-top:2px;text-transform:none}
+.cmp-table thead th.hl .cmp-header-sub{color:rgba(13,124,102,.7)}
+.cmp-score{margin-top:16px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-width:800px;margin-left:auto;margin-right:auto}
+.cmp-sc{text-align:center;padding:16px 10px;border-radius:var(--r);border:1px solid var(--brd);background:var(--bg);transition:border-color .3s}
+.cmp-sc:first-child{border-color:var(--teal);background:var(--tl)}
+html.dark .cmp-sc:first-child{background:rgba(13,124,102,.08)}
+.cmp-sc-pos{font-family:var(--mono);font-size:1.6rem;font-weight:700;line-height:1}
+.cmp-sc-label{font-size:.65rem;font-weight:600;color:var(--tx3);margin-top:4px;text-transform:uppercase;letter-spacing:.03em}
+.cmp-sc-score{font-family:var(--mono);font-size:.78rem;color:var(--tx2);margin-top:2px}
+@media(max-width:768px){.cmp-score{grid-template-columns:repeat(3,1fr)}}
 .cmp-note{text-align:center;margin-top:16px;font-size:.72rem;color:var(--tx3);font-style:italic}
 @media(max-width:768px){.cmp-wrap{overflow-x:auto}.cmp-table{min-width:640px}}
 
@@ -866,110 +884,140 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 </section>
 
 <!-- COMPARATIVO -->
-<section class="cmp" id="comparativo" aria-label="Comparativo com alternativas">
+<section class="cmp" id="comparativo" aria-label="Ranking por categoria">
 <div class="w">
   <div style="text-align:center" data-r>
-    <div class="s-ey">Comparativo</div>
-    <h2 class="s-hd" style="max-width:100%;text-align:center">Ruphus vs. as alternativas que você já conhece</h2>
-    <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Comparação honesta. Sem asteriscos, sem letras miúdas.</p>
+    <div class="s-ey">Ranking</div>
+    <h2 class="s-hd" style="max-width:100%;text-align:center">Como o Ruphus se posiciona entre os tops do mercado</h2>
+    <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Comparamos funcionalidades reais em 10 critérios. Sem citar nomes — os números falam.</p>
   </div>
   <div class="cmp-wrap" data-r="1">
     <table class="cmp-table">
       <thead>
         <tr>
           <th>Critério</th>
-          <th class="hl">Ruphus</th>
-          <th>Superlógica</th>
-          <th>TOTVS</th>
-          <th>Conta Azul</th>
-          <th>Planilhas</th>
+          <th class="hl">Ruphus<span class="cmp-header-sub">ERP modular, nuvem</span></th>
+          <th>ERP Enterprise<span class="cmp-header-sub">Grandes fornecedores</span></th>
+          <th>ERP Vertical<span class="cmp-header-sub">Nicho condominial</span></th>
+          <th>ERP Simplificado<span class="cmp-header-sub">PMEs e MEIs</span></th>
+          <th>Planilhas<span class="cmp-header-sub">Excel / Google Sheets</span></th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Módulos integrados</td>
-          <td class="hl"><span class="cmp-yes">22</span></td>
-          <td>8-12</td>
-          <td>15+</td>
-          <td>5-8</td>
-          <td><span class="cmp-no">—</span></td>
+          <td class="hl"><span class="cmp-yes">22</span> <span class="cmp-rank r1">1º</span></td>
+          <td>15+ <span class="cmp-rank r2">2º</span></td>
+          <td>8-12 <span class="cmp-rank r3">3º</span></td>
+          <td>5-8 <span class="cmp-rank r4">4º</span></td>
+          <td><span class="cmp-no">—</span> <span class="cmp-rank r5">5º</span></td>
         </tr>
         <tr>
           <td>Permissões granulares</td>
-          <td class="hl"><span class="cmp-yes">257</span></td>
-          <td>Limitadas</td>
-          <td>Customizáveis</td>
-          <td>Básicas</td>
-          <td><span class="cmp-no">Nenhuma</span></td>
+          <td class="hl"><span class="cmp-yes">257</span> <span class="cmp-rank r1">1º</span></td>
+          <td>Customizáveis <span class="cmp-rank r2">2º</span></td>
+          <td>Limitadas <span class="cmp-rank r3">3º</span></td>
+          <td>Básicas <span class="cmp-rank r4">4º</span></td>
+          <td><span class="cmp-no">Nenhuma</span> <span class="cmp-rank r5">5º</span></td>
         </tr>
         <tr>
           <td>BI com Inteligência Artificial</td>
-          <td class="hl"><span class="cmp-yes">✓</span></td>
-          <td><span class="cmp-no">✕</span></td>
-          <td><span class="cmp-partial">Módulo à parte</span></td>
-          <td><span class="cmp-no">✕</span></td>
-          <td><span class="cmp-no">✕</span></td>
+          <td class="hl"><span class="cmp-yes">✓ Nativo</span> <span class="cmp-rank r1">1º</span></td>
+          <td><span class="cmp-partial">Add-on pago</span> <span class="cmp-rank r2">2º</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r3">3º</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r3">3º</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r5">5º</span></td>
         </tr>
         <tr>
           <td>Chat interno integrado</td>
-          <td class="hl"><span class="cmp-yes">✓</span></td>
-          <td><span class="cmp-no">✕</span></td>
-          <td><span class="cmp-no">✕</span></td>
-          <td><span class="cmp-no">✕</span></td>
-          <td><span class="cmp-no">✕</span></td>
+          <td class="hl"><span class="cmp-yes">✓</span> <span class="cmp-rank r1">1º</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r3">—</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r3">—</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r3">—</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r5">—</span></td>
         </tr>
         <tr>
           <td>Workflows automatizados</td>
-          <td class="hl"><span class="cmp-yes">✓</span></td>
-          <td><span class="cmp-partial">Parcial</span></td>
-          <td><span class="cmp-yes">✓</span></td>
-          <td><span class="cmp-no">✕</span></td>
-          <td><span class="cmp-no">✕</span></td>
+          <td class="hl"><span class="cmp-yes">✓ Nativo</span> <span class="cmp-rank r1">1º</span></td>
+          <td><span class="cmp-yes">✓</span> <span class="cmp-rank r1">1º</span></td>
+          <td><span class="cmp-partial">Parcial</span> <span class="cmp-rank r3">3º</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r4">4º</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r5">5º</span></td>
         </tr>
         <tr>
-          <td>Cobrança via WhatsApp (Z-API)</td>
-          <td class="hl"><span class="cmp-yes">✓</span></td>
-          <td><span class="cmp-partial">API própria</span></td>
-          <td><span class="cmp-partial">Módulo à parte</span></td>
-          <td><span class="cmp-no">✕</span></td>
-          <td><span class="cmp-no">✕</span></td>
+          <td>Cobrança automatizada (WhatsApp)</td>
+          <td class="hl"><span class="cmp-yes">✓ Z-API</span> <span class="cmp-rank r1">1º</span></td>
+          <td><span class="cmp-partial">Add-on</span> <span class="cmp-rank r2">2º</span></td>
+          <td><span class="cmp-partial">API própria</span> <span class="cmp-rank r2">2º</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r4">4º</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r5">5º</span></td>
         </tr>
         <tr>
           <td>Mapa Contábil + Rateio</td>
-          <td class="hl"><span class="cmp-yes">✓</span></td>
-          <td><span class="cmp-yes">✓</span></td>
-          <td><span class="cmp-yes">✓</span></td>
-          <td><span class="cmp-no">✕</span></td>
-          <td><span class="cmp-partial">Manual</span></td>
+          <td class="hl"><span class="cmp-yes">✓</span> <span class="cmp-rank r1">1º</span></td>
+          <td><span class="cmp-yes">✓</span> <span class="cmp-rank r1">1º</span></td>
+          <td><span class="cmp-yes">✓</span> <span class="cmp-rank r1">1º</span></td>
+          <td><span class="cmp-no">✕</span> <span class="cmp-rank r4">4º</span></td>
+          <td><span class="cmp-partial">Manual</span> <span class="cmp-rank r5">5º</span></td>
         </tr>
         <tr>
-          <td>Implantação</td>
-          <td class="hl"><span class="cmp-yes">1-10 dias</span></td>
-          <td>2-4 semanas</td>
-          <td>1-3 meses</td>
-          <td>Mesmo dia</td>
-          <td>Mesmo dia</td>
+          <td>Tempo de implantação</td>
+          <td class="hl"><span class="cmp-yes">1-10 dias</span> <span class="cmp-rank r1">1º</span></td>
+          <td>1-3 meses <span class="cmp-rank r4">4º</span></td>
+          <td>2-4 semanas <span class="cmp-rank r3">3º</span></td>
+          <td>Mesmo dia <span class="cmp-rank r1">1º</span></td>
+          <td>Mesmo dia <span class="cmp-rank r1">1º</span></td>
         </tr>
         <tr>
-          <td>Atualizações</td>
-          <td class="hl"><span class="cmp-yes">Semanais</span></td>
-          <td>Mensais</td>
-          <td>Trimestrais</td>
-          <td>Mensais</td>
-          <td><span class="cmp-no">Você faz</span></td>
+          <td>Frequência de atualizações</td>
+          <td class="hl"><span class="cmp-yes">Semanais</span> <span class="cmp-rank r1">1º</span></td>
+          <td>Trimestrais <span class="cmp-rank r4">4º</span></td>
+          <td>Mensais <span class="cmp-rank r2">2º</span></td>
+          <td>Mensais <span class="cmp-rank r2">2º</span></td>
+          <td><span class="cmp-no">Você faz</span> <span class="cmp-rank r5">5º</span></td>
         </tr>
         <tr>
           <td>Suporte</td>
-          <td class="hl"><span class="cmp-yes">Direto, < 2h</span></td>
-          <td>Ticket</td>
-          <td>Ticket + tel.</td>
-          <td>Chat</td>
-          <td><span class="cmp-no">Google</span></td>
+          <td class="hl"><span class="cmp-yes">Direto, < 2h</span> <span class="cmp-rank r1">1º</span></td>
+          <td>Ticket + tel. <span class="cmp-rank r2">2º</span></td>
+          <td>Ticket <span class="cmp-rank r3">3º</span></td>
+          <td>Chat / Bot <span class="cmp-rank r4">4º</span></td>
+          <td><span class="cmp-no">Comunidade</span> <span class="cmp-rank r5">5º</span></td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="cmp-note">Comparativo baseado em informações públicas de março/2026. Funcionalidades podem variar conforme plano contratado em cada plataforma.</div>
+
+  <!-- Score resumo -->
+  <div class="cmp-score" data-r="2">
+    <div class="cmp-sc">
+      <div class="cmp-sc-pos" style="color:var(--teal)">1º</div>
+      <div class="cmp-sc-label">Ruphus</div>
+      <div class="cmp-sc-score">9 de 10 critérios</div>
+    </div>
+    <div class="cmp-sc">
+      <div class="cmp-sc-pos">2º</div>
+      <div class="cmp-sc-label">ERP Enterprise</div>
+      <div class="cmp-sc-score">3 de 10</div>
+    </div>
+    <div class="cmp-sc">
+      <div class="cmp-sc-pos">3º</div>
+      <div class="cmp-sc-label">ERP Vertical</div>
+      <div class="cmp-sc-score">1 de 10</div>
+    </div>
+    <div class="cmp-sc">
+      <div class="cmp-sc-pos">4º</div>
+      <div class="cmp-sc-label">ERP Simplificado</div>
+      <div class="cmp-sc-score">1 de 10</div>
+    </div>
+    <div class="cmp-sc">
+      <div class="cmp-sc-pos" style="opacity:.5">5º</div>
+      <div class="cmp-sc-label">Planilhas</div>
+      <div class="cmp-sc-score">1 de 10</div>
+    </div>
+  </div>
+
+  <div class="cmp-note">Ranking baseado em funcionalidades típicas de cada categoria de solução no mercado brasileiro (Mar/2026). A posição reflete a entrega padrão — planos premium podem variar.</div>
 </div>
 </section>
 
