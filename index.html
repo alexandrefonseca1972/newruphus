@@ -350,14 +350,33 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 /* ── MODAL ── */
 .modal-bg{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;padding:20px}
 .modal-bg.open{opacity:1;pointer-events:auto}
-.modal{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--rl);padding:36px;max-width:420px;width:100%;position:relative}
+.modal{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--rl);padding:36px;max-width:420px;width:100%;position:relative;max-height:90vh;overflow-y:auto}
 .modal h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;margin-bottom:4px}
 .modal .sub{font-size:.82rem;color:var(--tx2);margin-bottom:20px}
 .modal label{font-size:.76rem;font-weight:600;color:var(--tx2);display:block;margin-bottom:4px}
-.modal input,.modal select{width:100%;padding:10px 14px;border:1.5px solid var(--brd);border-radius:var(--r);font-family:var(--sans);font-size:.85rem;color:var(--tx);background:var(--bg);outline:none;margin-bottom:12px;transition:border-color .2s}
-.modal input:focus,.modal select:focus{border-color:var(--teal)}
+.modal input,.modal select{width:100%;padding:10px 14px;border:1.5px solid var(--brd);border-radius:var(--r);font-family:var(--sans);font-size:.85rem;color:var(--tx);background:var(--bg);outline:none;margin-bottom:4px;transition:border-color .25s,box-shadow .25s}
+.modal input:focus,.modal select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,124,102,.08)}
 .modal-x{position:absolute;top:14px;right:14px;background:none;border:none;font-size:1.2rem;color:var(--tx2)}
-.modal .err{font-size:.72rem;color:var(--coral);margin-top:-8px;margin-bottom:8px;display:none}
+.modal .err{font-size:.72rem;color:var(--coral);margin-top:0;margin-bottom:8px;display:none}
+/* validation states */
+.fg{position:relative;margin-bottom:0}
+.fg .vicon{position:absolute;right:12px;top:34px;font-size:.85rem;opacity:0;transition:opacity .25s;pointer-events:none}
+.fg.valid input{border-color:var(--teal)}
+.fg.valid .vicon{opacity:1;color:var(--teal)}
+.fg.invalid input{border-color:var(--coral)}
+.fg.invalid .vicon{opacity:1;color:var(--coral)}
+.fg .hint{font-size:.68rem;color:var(--tx3);margin:0 0 8px;min-height:16px;transition:color .2s}
+.fg.invalid .hint{color:var(--coral)}
+.fg.valid .hint{color:var(--teal)}
+/* demo inline form validation */
+.demo-form .fg{margin-bottom:0}
+.demo-form .fg .vicon{top:30px}
+.demo-form input,.demo-form select{transition:border-color .25s,box-shadow .25s}
+.demo-form input:focus,.demo-form select:focus{box-shadow:0 0 0 3px rgba(13,124,102,.08)}
+.demo-form .fg.valid input{border-color:var(--teal)}
+.demo-form .fg.invalid input{border-color:var(--coral)}
+/* disabled submit */
+.btn-submit[disabled]{opacity:.5;cursor:not-allowed;pointer-events:none}
 
 /* TOAST */
 .toast{position:fixed;bottom:24px;right:24px;background:var(--teal);color:#fff;padding:14px 24px;border-radius:var(--r);font-size:.85rem;font-weight:600;display:flex;align-items:center;gap:8px;transform:translateY(80px);opacity:0;transition:all .35s;z-index:300;box-shadow:0 8px 24px rgba(13,124,102,.3)}
@@ -1050,13 +1069,28 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
     <h2>Veja o Ruphus em ação — sem compromisso</h2>
     <p>Agende uma demonstração personalizada. Mostramos o sistema funcionando com dados do seu cenário e preparamos um orçamento sob medida.</p>
     <div class="demo-form" id="demo-inline">
-      <div><label>Nome</label><input type="text" placeholder="Seu nome" id="di-nome"/></div>
-      <div><label>Email</label><input type="email" placeholder="nome@empresa.com.br" id="di-email"/></div>
-      <div><label>WhatsApp</label><input type="tel" placeholder="(00) 00000-0000" id="di-fone"/></div>
+      <div class="fg" id="fg-di-nome">
+        <label>Nome *</label>
+        <input type="text" placeholder="Seu nome completo" id="di-nome" autocomplete="name" oninput="vNome(this)" onblur="vNome(this)"/>
+        <span class="vicon"></span>
+        <div class="hint">Mínimo 3 caracteres</div>
+      </div>
+      <div class="fg" id="fg-di-email">
+        <label>Email *</label>
+        <input type="email" placeholder="nome@empresa.com.br" id="di-email" autocomplete="email" oninput="vEmail(this)" onblur="vEmail(this)"/>
+        <span class="vicon"></span>
+        <div class="hint">Use seu email profissional</div>
+      </div>
+      <div class="fg" id="fg-di-fone">
+        <label>WhatsApp</label>
+        <input type="tel" placeholder="(00) 00000-0000" id="di-fone" autocomplete="tel" maxlength="15" oninput="maskFone(this);vFone(this)" onblur="vFone(this)"/>
+        <span class="vicon"></span>
+        <div class="hint">Formato: (00) 00000-0000</div>
+      </div>
       <div><label>Porte da operação</label>
         <select id="di-porte"><option>1-10 colaboradores</option><option>11-50 colaboradores</option><option>51-200 colaboradores</option><option>200+</option></select>
       </div>
-      <button class="btn btn-t" style="width:100%;padding:13px" onclick="submitInline()">Agendar demonstração gratuita →</button>
+      <button class="btn btn-t btn-submit" id="btn-inline" style="width:100%;padding:13px" disabled onclick="submitInline()">Agendar demonstração gratuita →</button>
       <div class="note">Respondemos em até 2h · Sem cartão · Sem compromisso</div>
     </div>
   </div>
@@ -1097,16 +1131,29 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
     <button class="modal-x" onclick="closeModal()">✕</button>
     <h3>Agendar demonstração</h3>
     <div class="sub">Preencha e nossa equipe entra em contato em até 2h.</div>
-    <label>Nome *</label><input type="text" placeholder="Seu nome" id="m-nome"/>
-    <div class="err" id="err-nome">Informe seu nome</div>
-    <label>Email corporativo *</label><input type="email" placeholder="nome@empresa.com.br" id="m-email"/>
-    <div class="err" id="err-email">Informe um email válido</div>
-    <label>WhatsApp</label><input type="tel" placeholder="(00) 00000-0000" id="m-fone"/>
+    <div class="fg" id="fg-m-nome">
+      <label>Nome *</label>
+      <input type="text" placeholder="Seu nome completo" id="m-nome" autocomplete="name" oninput="vNome(this)" onblur="vNome(this)"/>
+      <span class="vicon"></span>
+      <div class="hint">Mínimo 3 caracteres</div>
+    </div>
+    <div class="fg" id="fg-m-email">
+      <label>Email corporativo *</label>
+      <input type="email" placeholder="nome@empresa.com.br" id="m-email" autocomplete="email" oninput="vEmail(this)" onblur="vEmail(this)"/>
+      <span class="vicon"></span>
+      <div class="hint">Use seu email profissional</div>
+    </div>
+    <div class="fg" id="fg-m-fone">
+      <label>WhatsApp</label>
+      <input type="tel" placeholder="(00) 00000-0000" id="m-fone" autocomplete="tel" maxlength="15" oninput="maskFone(this);vFone(this)" onblur="vFone(this)"/>
+      <span class="vicon"></span>
+      <div class="hint">Formato: (00) 00000-0000</div>
+    </div>
     <label>Porte da operação</label>
     <select id="m-porte"><option>1-10 colaboradores</option><option>11-50 colaboradores</option><option>51-200 colaboradores</option><option>200+</option></select>
     <label>O que mais interessa?</label>
     <select id="m-interesse"><option>CRM + Financeiro</option><option>Módulo Contábil</option><option>BI & Analytics</option><option>Todos os módulos</option></select>
-    <button class="btn btn-t" style="width:100%;padding:13px;margin-top:4px" onclick="submitModal()">Agendar agora →</button>
+    <button class="btn btn-t btn-submit" id="btn-modal" style="width:100%;padding:13px;margin-top:4px" disabled onclick="submitModal()">Agendar agora →</button>
   </div>
 </div>
 
@@ -1187,26 +1234,98 @@ calcROI();
 const cObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const el=e.target;const t=parseInt(el.dataset.count);if(!t)return;let c=0;const s=Math.max(1,Math.floor(t/35));const iv=setInterval(()=>{c+=s;if(c>=t){c=t;clearInterval(iv)}el.textContent=c},30);cObs.unobserve(el)}})},{threshold:.5});
 document.querySelectorAll('[data-count]').forEach(el=>cObs.observe(el));
 
-// ── MODAL (with validation) ──
-function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden'}
-function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';document.querySelectorAll('.modal .err').forEach(e=>e.style.display='none')}
+// ── MASKS & VALIDATION ──
+// Phone mask: (00) 00000-0000
+function maskFone(el){
+  let v=el.value.replace(/\D/g,'');
+  if(v.length>11)v=v.slice(0,11);
+  if(v.length>6)v=v.replace(/^(\d{2})(\d{5})(\d)/,'($1) $2-$3');
+  else if(v.length>2)v=v.replace(/^(\d{2})(\d)/,'($1) $2');
+  else if(v.length>0)v=v.replace(/^(\d)/,'($1');
+  el.value=v;
+}
+
+// Validators — set fg state and return bool
+function setFg(el,state,msg){
+  const fg=el.closest('.fg');if(!fg)return;
+  const icon=fg.querySelector('.vicon');
+  const hint=fg.querySelector('.hint');
+  fg.classList.remove('valid','invalid');
+  if(state==='valid'){fg.classList.add('valid');if(icon)icon.textContent='✓';if(hint)hint.textContent=msg||''}
+  else if(state==='invalid'){fg.classList.add('invalid');if(icon)icon.textContent='✕';if(hint)hint.textContent=msg||''}
+  else{if(icon)icon.textContent='';if(hint)hint.textContent=msg||''}
+  checkSubmitState();
+}
+
+function vNome(el){
+  const v=el.value.trim();
+  if(v.length===0){setFg(el,'','Mínimo 3 caracteres');return false}
+  if(v.length<3){setFg(el,'invalid','Mínimo 3 caracteres');return false}
+  if(!/^[A-Za-zÀ-ÿ\s'.-]+$/.test(v)){setFg(el,'invalid','Use apenas letras');return false}
+  setFg(el,'valid','');return true;
+}
+
+function vEmail(el){
+  const v=el.value.trim();
+  if(v.length===0){setFg(el,'','Use seu email profissional');return false}
+  const re=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  if(!re.test(v)){setFg(el,'invalid','Email inválido');return false}
+  setFg(el,'valid','');return true;
+}
+
+function vFone(el){
+  const raw=el.value.replace(/\D/g,'');
+  if(raw.length===0){setFg(el,'','Formato: (00) 00000-0000');return true}// optional
+  if(raw.length<10||raw.length>11){setFg(el,'invalid','Número incompleto');return false}
+  setFg(el,'valid','');return true;
+}
+
+// Submit gating — enable/disable buttons
+function checkSubmitState(){
+  // Modal
+  const mn=document.getElementById('m-nome');
+  const me=document.getElementById('m-email');
+  const mb=document.getElementById('btn-modal');
+  if(mn&&me&&mb){
+    const nOk=mn.value.trim().length>=3&&/^[A-Za-zÀ-ÿ\s'.-]+$/.test(mn.value.trim());
+    const eOk=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(me.value.trim());
+    mb.disabled=!(nOk&&eOk);
+  }
+  // Inline
+  const dn=document.getElementById('di-nome');
+  const de=document.getElementById('di-email');
+  const db=document.getElementById('btn-inline');
+  if(dn&&de&&db){
+    const nOk=dn.value.trim().length>=3&&/^[A-Za-zÀ-ÿ\s'.-]+$/.test(dn.value.trim());
+    const eOk=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(de.value.trim());
+    db.disabled=!(nOk&&eOk);
+  }
+}
+
+// ── MODAL ──
+function openModal(){
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+  // Reset states
+  document.querySelectorAll('#modal .fg').forEach(fg=>{fg.classList.remove('valid','invalid');const h=fg.querySelector('.hint');const ic=fg.querySelector('.vicon');if(h)h.textContent='';if(ic)ic.textContent=''});
+  document.getElementById('btn-modal').disabled=true;
+}
+function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow=''}
 
 function submitModal(){
-  const nome=document.getElementById('m-nome').value.trim();
-  const email=document.getElementById('m-email').value.trim();
-  let valid=true;
-  document.querySelectorAll('.modal .err').forEach(e=>e.style.display='none');
-  if(!nome){document.getElementById('err-nome').style.display='block';valid=false}
-  if(!email||!email.includes('@')){document.getElementById('err-email').style.display='block';valid=false}
-  if(!valid)return;
+  const nOk=vNome(document.getElementById('m-nome'));
+  const eOk=vEmail(document.getElementById('m-email'));
+  const fOk=vFone(document.getElementById('m-fone'));
+  if(!nOk||!eOk||!fOk)return;
   closeModal();
   toast('Demonstração solicitada! Retornamos em até 2h.');
 }
 
 function submitInline(){
-  const nome=document.getElementById('di-nome').value.trim();
-  const email=document.getElementById('di-email').value.trim();
-  if(!nome||!email||!email.includes('@')){toast('Preencha nome e email para agendar.');return}
+  const nOk=vNome(document.getElementById('di-nome'));
+  const eOk=vEmail(document.getElementById('di-email'));
+  const fOk=vFone(document.getElementById('di-fone'));
+  if(!nOk||!eOk||!fOk)return;
   toast('Demonstração solicitada! Retornamos em até 2h.');
 }
 
