@@ -358,21 +358,35 @@ html.dark .ba-card2 .bc-foot{border-color:rgba(255,255,255,.04)}
 @media(max-width:1024px){.blog-dash{grid-template-columns:repeat(3,1fr)}.blog-feat{grid-template-columns:1fr}}
 @media(max-width:768px){.blog-dash{grid-template-columns:1fr 1fr}.blog-grid{grid-template-columns:1fr}.blog-feat{grid-column:span 1}}
 
-/* ── SEGMENTS ── */
+/* ── SEGMENTS — carousel + tabs ── */
 .seg{padding:80px 0;background:var(--bg2);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)}
-.seg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-top:36px}
-.seg-card{padding:28px 24px;border-radius:var(--rl);border:1px solid var(--brd);background:var(--bg);position:relative;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
-.seg-card:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 10px 32px rgba(13,124,102,.08)}
-html.dark .seg-card:hover{box-shadow:0 10px 32px rgba(13,124,102,.12)}
-.seg-icon{font-size:2.2rem;margin-bottom:14px;display:block}
-.seg-card h3{font-family:var(--serif);font-size:1.05rem;font-weight:700;margin-bottom:6px;line-height:1.25}
-.seg-card>p{font-size:.82rem;color:var(--tx2);line-height:1.55;margin-bottom:14px}
-.seg-mods{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
-.seg-mod{font-size:.62rem;font-weight:600;padding:3px 9px;border-radius:99px;border:1px solid var(--brd);color:var(--tx2);background:var(--bg2)}
-.seg-card .seg-cta{font-size:.78rem;font-weight:600;color:var(--teal);display:flex;align-items:center;gap:4px;margin-top:auto;transition:gap .2s}
-.seg-card:hover .seg-cta{gap:8px}
-@media(max-width:1024px){.seg-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.seg-grid{grid-template-columns:1fr}}
+.seg-tabs{display:flex;gap:6px;margin:28px 0 24px;flex-wrap:wrap;justify-content:center}
+.sg-tab{padding:8px 16px;border-radius:99px;font-size:.78rem;font-weight:500;border:1.5px solid var(--brd);color:var(--tx2);background:transparent;transition:all .25s;cursor:pointer;white-space:nowrap}
+.sg-tab.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+html.dark .sg-tab.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.sg-tab:hover:not(.on){border-color:var(--tx3)}
+.seg-scroll{display:flex;gap:var(--gap);overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 0 16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--brd) transparent}
+.seg-scroll::-webkit-scrollbar{height:4px}.seg-scroll::-webkit-scrollbar-thumb{background:var(--brd);border-radius:4px}
+.seg-scroll::-webkit-scrollbar-track{background:transparent}
+.sc{min-width:300px;max-width:320px;flex-shrink:0;scroll-snap-align:start;border-radius:var(--rl);border:1px solid var(--brd);background:var(--bg);overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s;display:flex;flex-direction:column}
+.sc:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 10px 32px rgba(13,124,102,.08)}
+html.dark .sc:hover{box-shadow:0 10px 32px rgba(13,124,102,.12)}
+.sc-header{padding:20px 22px 16px;position:relative;overflow:hidden;min-height:100px;display:flex;flex-direction:column;justify-content:flex-end}
+.sc-header .sc-bg{position:absolute;inset:0;opacity:.12}
+.sc-header .sc-icon{font-size:2rem;margin-bottom:6px;position:relative;z-index:1;filter:drop-shadow(0 2px 4px rgba(0,0,0,.1))}
+.sc-header h3{font-family:var(--serif);font-size:1.05rem;font-weight:700;position:relative;z-index:1;line-height:1.25;color:var(--tx)}
+.sc-header .sc-porte{font-size:.6rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:99px;position:absolute;top:12px;right:12px;z-index:1}
+.sc-body{padding:16px 22px 20px;flex:1;display:flex;flex-direction:column}
+.sc-body>p{font-size:.8rem;color:var(--tx2);line-height:1.55;margin-bottom:12px;flex:1}
+.sc-mods{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px}
+.sc-mod{font-size:.6rem;font-weight:600;padding:3px 8px;border-radius:99px;border:1px solid var(--brd);color:var(--tx2);background:var(--bg2);transition:background .2s}
+.sc:hover .sc-mod{background:var(--tl);border-color:rgba(13,124,102,.15);color:var(--teal)}
+.sc-use{font-size:.7rem;color:var(--tx3);margin-bottom:10px;display:flex;align-items:center;gap:5px}
+.sc-use strong{color:var(--tx2)}
+.sc-cta{font-size:.78rem;font-weight:600;color:var(--teal);display:flex;align-items:center;gap:4px;transition:gap .2s;cursor:pointer;margin-top:auto}
+.sc:hover .sc-cta{gap:8px}
+.seg-hint{text-align:center;margin-top:8px;font-size:.7rem;color:var(--tx3);display:flex;align-items:center;justify-content:center;gap:6px}
+@media(max-width:768px){.sc{min-width:260px;max-width:280px}}
 
 /* ── COMPARE ── */
 .cmp{padding:80px 0}
@@ -724,76 +738,171 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 </div>
 </section>
 
-<!-- SEGMENTOS — Para quem é o Ruphus -->
+<!-- SEGMENTOS — 8 nichos em carousel -->
 <section class="seg" id="segmentos" aria-label="Segmentos atendidos">
 <div class="w">
   <div style="text-align:center" data-r>
     <div class="s-ey">Para Quem</div>
-    <h2 class="s-hd" style="max-width:100%;text-align:center">Cada operação é diferente. O Ruphus se adapta à sua.</h2>
-    <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Ative apenas os módulos que fazem sentido para o seu segmento — e expanda conforme crescer.</p>
+    <h2 class="s-hd" style="max-width:100%;text-align:center">Um ERP, oito realidades. Qual é a sua?</h2>
+    <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Arraste para explorar. Cada segmento usa uma combinação diferente dos 22 módulos.</p>
   </div>
-  <div class="seg-grid" data-r="1">
 
-    <div class="seg-card">
-      <span class="seg-icon">🏢</span>
-      <h3>Administradoras de Condomínios</h3>
-      <p>Gerencie múltiplos condomínios com contabilidade separada, rateio por fração ideal e cobrança automatizada via WhatsApp. Integre com Superlógica.</p>
-      <div class="seg-mods">
-        <span class="seg-mod">Financeiro</span>
-        <span class="seg-mod">Contabilidade</span>
-        <span class="seg-mod">Aprovações</span>
-        <span class="seg-mod">Integrações</span>
-        <span class="seg-mod">Relatórios</span>
-        <span class="seg-mod">Chat</span>
+  <div class="seg-tabs" data-r="1">
+    <button type="button" class="sg-tab on" onclick="fSeg(this,'all')">Todos</button>
+    <button type="button" class="sg-tab" onclick="fSeg(this,'pme')">PMEs</button>
+    <button type="button" class="sg-tab" onclick="fSeg(this,'gest')">Gestão Predial</button>
+    <button type="button" class="sg-tab" onclick="fSeg(this,'serv')">Serviços</button>
+    <button type="button" class="sg-tab" onclick="fSeg(this,'fin')">Financeiro</button>
+  </div>
+
+  <div class="seg-scroll" data-r="2">
+
+    <!-- 1. Administradoras de Condomínios -->
+    <div class="sc" data-scat="gest">
+      <div class="sc-header" style="background:linear-gradient(135deg,#064e3b,#0D7C66)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">Gestão Predial</span>
+        <span class="sc-icon">🏢</span>
+        <h3 style="color:#fff">Administradoras de Condomínios</h3>
       </div>
-      <div class="seg-cta" onclick="openModal()">Quero ver para meu cenário →</div>
+      <div class="sc-body">
+        <p>Múltiplos condomínios com contabilidade separada, rateio por fração ideal, cobrança WhatsApp e integração com sistemas de mercado.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 15-200 condomínios, equipe de 5-30</div>
+        <div class="sc-mods">
+          <span class="sc-mod">Financeiro</span><span class="sc-mod">Contabilidade</span><span class="sc-mod">Aprovações</span><span class="sc-mod">Integrações</span><span class="sc-mod">Relatórios</span><span class="sc-mod">Chat</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Quero ver para meu cenário →</div>
+      </div>
     </div>
 
-    <div class="seg-card">
-      <span class="seg-icon">📑</span>
-      <h3>Escritórios Contábeis</h3>
-      <p>Centralize a gestão de múltiplos clientes com plano de contas configurável, mapas contábeis automatizados e exportação de balancetes por empresa.</p>
-      <div class="seg-mods">
-        <span class="seg-mod">Contabilidade</span>
-        <span class="seg-mod">Fiscal</span>
-        <span class="seg-mod">Clientes</span>
-        <span class="seg-mod">Relatórios</span>
-        <span class="seg-mod">BI com IA</span>
+    <!-- 2. Escritórios Contábeis -->
+    <div class="sc" data-scat="fin">
+      <div class="sc-header" style="background:linear-gradient(135deg,#3b1f6e,#6C5CE7)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">Financeiro</span>
+        <span class="sc-icon">📑</span>
+        <h3 style="color:#fff">Escritórios Contábeis</h3>
       </div>
-      <div class="seg-cta" onclick="openModal()">Explorar para contabilidade →</div>
+      <div class="sc-body">
+        <p>Gestão multi-cliente com plano de contas configurável, mapa contábil automatizado e exportação de balancetes por empresa.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 20-500 clientes, equipe de 3-15</div>
+        <div class="sc-mods">
+          <span class="sc-mod">Contabilidade</span><span class="sc-mod">Fiscal</span><span class="sc-mod">Clientes</span><span class="sc-mod">Relatórios</span><span class="sc-mod">BI com IA</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Explorar para contabilidade →</div>
+      </div>
     </div>
 
-    <div class="seg-card">
-      <span class="seg-icon">🔧</span>
-      <h3>Prestadores de Serviços</h3>
-      <p>Controle contratos, equipes em campo, checklists de execução e agendamentos. Tickets e projetos conectados ao financeiro.</p>
-      <div class="seg-mods">
-        <span class="seg-mod">Gestão de Serviços</span>
-        <span class="seg-mod">Contratos</span>
-        <span class="seg-mod">Tickets</span>
-        <span class="seg-mod">Checklists</span>
-        <span class="seg-mod">Projetos</span>
-        <span class="seg-mod">Funcionários</span>
+    <!-- 3. Prestadores de Serviços -->
+    <div class="sc" data-scat="serv">
+      <div class="sc-header" style="background:linear-gradient(135deg,#78350f,#D4A017)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">Serviços</span>
+        <span class="sc-icon">🔧</span>
+        <h3 style="color:#fff">Prestadores de Serviços</h3>
       </div>
-      <div class="seg-cta" onclick="openModal()">Ver módulos de operação →</div>
+      <div class="sc-body">
+        <p>Contratos, equipes em campo, checklists de execução e agendamentos. Tickets e projetos conectados ao financeiro.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 10-100 contratos ativos, equipes externas</div>
+        <div class="sc-mods">
+          <span class="sc-mod">Gestão de Serviços</span><span class="sc-mod">Contratos</span><span class="sc-mod">Tickets</span><span class="sc-mod">Checklists</span><span class="sc-mod">Projetos</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Ver módulos de operação →</div>
+      </div>
     </div>
 
-    <div class="seg-card">
-      <span class="seg-icon">🚀</span>
-      <h3>PMEs em Crescimento</h3>
-      <p>Comece com CRM e Financeiro, expanda para Estoque, Workflows e BI à medida que a operação escalar. 257 permissões para times que crescem.</p>
-      <div class="seg-mods">
-        <span class="seg-mod">CRM</span>
-        <span class="seg-mod">Vendas</span>
-        <span class="seg-mod">Financeiro</span>
-        <span class="seg-mod">Estoque</span>
-        <span class="seg-mod">Workflows</span>
-        <span class="seg-mod">BI com IA</span>
+    <!-- 4. PMEs em Crescimento -->
+    <div class="sc" data-scat="pme">
+      <div class="sc-header" style="background:linear-gradient(135deg,#0a3d2e,#14b89c)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">PMEs</span>
+        <span class="sc-icon">🚀</span>
+        <h3 style="color:#fff">PMEs em Crescimento</h3>
       </div>
-      <div class="seg-cta" onclick="openModal()">Montar meu plano de módulos →</div>
+      <div class="sc-body">
+        <p>Comece com CRM e Financeiro, expanda para Estoque, Workflows e BI conforme escalar. 257 permissões para times que crescem.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 5-50 colaboradores, faturamento até R$ 10M</div>
+        <div class="sc-mods">
+          <span class="sc-mod">CRM</span><span class="sc-mod">Vendas</span><span class="sc-mod">Financeiro</span><span class="sc-mod">Estoque</span><span class="sc-mod">Workflows</span><span class="sc-mod">BI com IA</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Montar meu plano de módulos →</div>
+      </div>
+    </div>
+
+    <!-- 5. Construtoras e Incorporadoras -->
+    <div class="sc" data-scat="gest">
+      <div class="sc-header" style="background:linear-gradient(135deg,#1e293b,#475569)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">Gestão Predial</span>
+        <span class="sc-icon">🏗</span>
+        <h3 style="color:#fff">Construtoras e Incorporadoras</h3>
+      </div>
+      <div class="sc-body">
+        <p>Projetos por empreendimento, centros de custo por obra, controle de contratos com fornecedores e aprovações em múltiplos níveis.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 3-20 obras simultâneas, R$ 5M+ faturamento</div>
+        <div class="sc-mods">
+          <span class="sc-mod">Projetos</span><span class="sc-mod">Contratos</span><span class="sc-mod">Financeiro</span><span class="sc-mod">Aprovações</span><span class="sc-mod">Funcionários</span><span class="sc-mod">Relatórios</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Ver para construção civil →</div>
+      </div>
+    </div>
+
+    <!-- 6. Consultorias e Agências -->
+    <div class="sc" data-scat="serv">
+      <div class="sc-header" style="background:linear-gradient(135deg,#4c1d95,#7c3aed)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">Serviços</span>
+        <span class="sc-icon">💡</span>
+        <h3 style="color:#fff">Consultorias e Agências</h3>
+      </div>
+      <div class="sc-body">
+        <p>Pipeline de projetos, timesheet por cliente, controle de rentabilidade e comunicação interna centralizada — sem depender de 5 ferramentas.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 10-80 projetos/mês, equipes multidisciplinares</div>
+        <div class="sc-mods">
+          <span class="sc-mod">CRM</span><span class="sc-mod">Projetos</span><span class="sc-mod">Tickets</span><span class="sc-mod">Chat</span><span class="sc-mod">Financeiro</span><span class="sc-mod">BI com IA</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Centralizar minha operação →</div>
+      </div>
+    </div>
+
+    <!-- 7. Comércio e Distribuição -->
+    <div class="sc" data-scat="pme">
+      <div class="sc-header" style="background:linear-gradient(135deg,#7f1d1d,#E8634A)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">PMEs</span>
+        <span class="sc-icon">📦</span>
+        <h3 style="color:#fff">Comércio e Distribuição</h3>
+      </div>
+      <div class="sc-body">
+        <p>Estoque, vendas, emissão fiscal, contas a receber e CRM de clientes integrados. Do pedido ao faturamento em um fluxo só.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 100-5.000 SKUs, vendas B2B e B2C</div>
+        <div class="sc-mods">
+          <span class="sc-mod">Estoque</span><span class="sc-mod">Vendas</span><span class="sc-mod">Fiscal</span><span class="sc-mod">CRM</span><span class="sc-mod">Financeiro</span><span class="sc-mod">Fornecedores</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Ver para comércio →</div>
+      </div>
+    </div>
+
+    <!-- 8. Facilities e Limpeza -->
+    <div class="sc" data-scat="serv">
+      <div class="sc-header" style="background:linear-gradient(135deg,#065f46,#059669)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">Serviços</span>
+        <span class="sc-icon">🧹</span>
+        <h3 style="color:#fff">Facilities e Limpeza</h3>
+      </div>
+      <div class="sc-body">
+        <p>Escale de funcionários por contrato, checklists de inspeção, gestão de serviços recorrentes e cobrança automatizada por período.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 20-200 funcionários alocados, múltiplos contratos</div>
+        <div class="sc-mods">
+          <span class="sc-mod">Funcionários</span><span class="sc-mod">Checklists</span><span class="sc-mod">Contratos</span><span class="sc-mod">Gestão de Serviços</span><span class="sc-mod">Departamentos</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Ver para facilities →</div>
+      </div>
     </div>
 
   </div>
+  <div class="seg-hint">← Arraste para explorar todos os segmentos →</div>
 </div>
 </section>
 
@@ -1808,6 +1917,9 @@ function fFaq(btn,cat){document.querySelectorAll('.fq-cat').forEach(x=>x.classLi
 
 // ── BLOG FILTER ──
 function fBlog(btn,cat){document.querySelectorAll('.bc-cat').forEach(x=>x.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.blog-feat,.ba-card2').forEach(x=>{if(cat==='all'||x.dataset.bcat===cat){x.style.display='';x.style.animation='fadeUp .4s ease'}else{x.style.display='none'}})}
+
+// ── SEGMENT FILTER ──
+function fSeg(btn,cat){document.querySelectorAll('.sg-tab').forEach(x=>x.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.sc').forEach(x=>{if(cat==='all'||x.dataset.scat===cat){x.style.display='';x.style.animation='fadeUp .35s ease'}else{x.style.display='none'}})}
 
 // ── ROI CALCULATOR (fixed) ──
 function calcROI(){
