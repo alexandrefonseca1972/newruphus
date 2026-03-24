@@ -163,18 +163,49 @@ html.dark .tbl td{border-bottom-color:rgba(255,255,255,.04)}
 .bg-g{background:#DCFCE7;color:#166534}.bg-a{background:#FEF3C7;color:#92400E}.bg-r{background:#FEE2E2;color:#991B1B}.bg-v{background:var(--vl);color:var(--violet)}
 html.dark .bg-g{background:rgba(22,101,52,.2);color:#4ade80}html.dark .bg-a{background:rgba(146,64,14,.2);color:#fbbf24}html.dark .bg-r{background:rgba(153,27,27,.2);color:#f87171}
 
-/* ── BEFORE/AFTER ── */
+/* ── TRANSFORMATION — rich ── */
 .ba{padding:80px 0;background:var(--bg2);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)}
-.ba-g{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
-.ba-card{border-radius:var(--rl);padding:32px;border:1px solid var(--brd);background:var(--bg);position:relative;overflow:hidden;transition:transform .3s}
-.ba-card:hover{transform:translateY(-2px)}
-.ba-card.after{border-color:var(--teal);border-width:2px;background:var(--tl);box-shadow:0 8px 32px rgba(13,124,102,.08)}
-html.dark .ba-card.after{background:rgba(13,124,102,.06)}
-.ba-tag{position:absolute;top:0;right:0;padding:4px 14px;border-radius:0 0 0 var(--r);font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
-.ba-items{display:flex;flex-direction:column;gap:16px;margin-top:12px}
-.ba-it{display:flex;gap:12px;align-items:flex-start}
-.ba-ic{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.75rem;font-weight:700;margin-top:2px}
-.ba-it h4{font-size:.95rem;font-weight:600;margin-bottom:2px}.ba-it p{font-size:.82rem;color:var(--tx2);line-height:1.5}
+.ba-toggle{display:flex;justify-content:center;margin:28px 0 32px;position:relative}
+.ba-pill{display:flex;border-radius:99px;border:2px solid var(--brd);overflow:hidden;background:var(--bg);position:relative}
+.ba-pill::before{content:'';position:absolute;top:2px;left:2px;width:calc(50% - 4px);height:calc(100% - 4px);border-radius:99px;transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:0}
+.ba-pill.state-before::before{background:var(--coral);transform:translateX(0)}
+.ba-pill.state-after::before{background:var(--teal);transform:translateX(100%)}
+.ba-pb{padding:12px 32px;font-size:.85rem;font-weight:600;border:none;background:transparent;color:var(--tx2);position:relative;z-index:1;cursor:pointer;transition:color .3s}
+.ba-pill.state-before .ba-pb:first-child,.ba-pill.state-after .ba-pb:last-child{color:#fff}
+.ba-content{position:relative;min-height:420px}
+.ba-panel{display:none;animation:fadeUp .45s ease}.ba-panel.show{display:block}
+/* metrics row */
+.ba-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.ba-metric{padding:20px;border-radius:var(--rl);text-align:center;border:1px solid var(--brd);background:var(--bg);position:relative;overflow:hidden}
+.ba-metric .bm-icon{font-size:1.6rem;margin-bottom:6px;display:block}
+.ba-metric .bm-val{font-family:var(--mono);font-size:1.6rem;font-weight:700;line-height:1.1}
+.ba-metric .bm-label{font-size:.7rem;color:var(--tx2);margin-top:2px}
+.ba-metric .bm-bar{position:absolute;bottom:0;left:0;right:0;height:4px;border-radius:0 0 var(--rl) var(--rl)}
+/* pain/gain cards */
+.ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap)}
+.ba-item{display:flex;gap:14px;padding:20px;border-radius:var(--rl);border:1px solid var(--brd);background:var(--bg);transition:transform .3s,border-color .3s}
+.ba-item:hover{transform:translateY(-2px)}
+.ba-item .ba-num{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;flex-shrink:0;font-family:var(--mono)}
+.ba-item h4{font-size:.92rem;font-weight:700;margin-bottom:3px;line-height:1.25}
+.ba-item p{font-size:.78rem;color:var(--tx2);line-height:1.5}
+/* before state */
+.ba-panel.before .ba-metric{border-color:rgba(232,99,74,.15)}
+.ba-panel.before .ba-metric .bm-val{color:var(--coral)}
+.ba-panel.before .ba-metric .bm-bar{background:var(--coral)}
+.ba-panel.before .ba-item:hover{border-color:var(--coral)}
+.ba-panel.before .ba-num{background:var(--cl);color:var(--coral)}
+/* after state */
+.ba-panel.after .ba-metric{border-color:rgba(13,124,102,.15)}
+.ba-panel.after .ba-metric .bm-val{color:var(--teal)}
+.ba-panel.after .ba-metric .bm-bar{background:var(--teal)}
+.ba-panel.after .ba-item:hover{border-color:var(--teal)}
+.ba-panel.after .ba-num{background:var(--tl);color:var(--teal)}
+/* impact bar */
+.ba-impact{margin-top:28px;padding:24px 32px;border-radius:var(--rl);border:2px solid var(--teal);background:var(--tl);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+html.dark .ba-impact{background:rgba(13,124,102,.08)}
+.ba-impact-text{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--tx)}
+.ba-impact-text em{color:var(--teal);font-style:italic}
+@media(max-width:768px){.ba-metrics{grid-template-columns:1fr 1fr}.ba-grid{grid-template-columns:1fr}.ba-pb{padding:10px 20px;font-size:.78rem}}
 
 /* ── MODULES + ROADMAP ── */
 .mods{padding:80px 0}
@@ -541,7 +572,7 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 @media(max-width:1024px){
   .hero-sub{grid-template-columns:1fr;gap:24px}
   .c-h{grid-column:span 12}.c-s{grid-column:span 6}.c-w{grid-column:span 6}
-  .ba-g{grid-template-columns:1fr}
+  .ba-grid{grid-template-columns:1fr}
   .mc.show{grid-template-columns:1fr}
   .calc-grid{grid-template-columns:1fr}.calc-left{border-right:none;border-bottom:1px solid var(--brd)}
   .edu-g{grid-template-columns:1fr 1fr}.edu-featured{grid-template-columns:1fr}
@@ -710,30 +741,67 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 </div></div>
 </section>
 
-<!-- BEFORE/AFTER -->
-<section class="ba" aria-label="Comparativo antes e depois">
+<!-- TRANSFORMATION -->
+<section class="ba" aria-label="Transformação da operação">
 <div class="w">
-  <div style="text-align:center;margin-bottom:36px" data-r>
+  <div style="text-align:center" data-r>
     <div class="s-ey">Transformação</div>
-    <h2 class="s-hd" style="max-width:100%;text-align:center">O cenário atual <span style="color:var(--tx3)">vs.</span> a realidade Ruphus</h2>
+    <h2 class="s-hd" style="max-width:100%;text-align:center">O abismo entre improvisar e operar de verdade</h2>
+    <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Alterne entre os cenários e veja o impacto nos números.</p>
   </div>
-  <div class="ba-g" data-r="1">
-    <div class="ba-card">
-      <div class="ba-tag" style="background:var(--cl);color:var(--coral)">Cenário Atual</div>
-      <div class="ba-items">
-        <div class="ba-it"><div class="ba-ic" style="background:var(--cl);color:var(--coral)">✕</div><div><h4>Sistemas desconectados</h4><p>Dados dispersos entre planilhas, sistemas legados e ferramentas que não conversam.</p></div></div>
-        <div class="ba-it"><div class="ba-ic" style="background:var(--cl);color:var(--coral)">✕</div><div><h4>Fechamento demorado</h4><p>Consolidação manual, reconciliação lenta e retrabalho constante todo mês.</p></div></div>
-        <div class="ba-it"><div class="ba-ic" style="background:var(--cl);color:var(--coral)">✕</div><div><h4>Decisões sem visibilidade</h4><p>Relatórios desatualizados, informações fragmentadas e sem previsibilidade.</p></div></div>
+
+  <!-- Toggle -->
+  <div class="ba-toggle" data-r="1">
+    <div class="ba-pill state-before" id="ba-pill">
+      <button type="button" class="ba-pb" onclick="switchBA('before')">😩 Sem ERP</button>
+      <button type="button" class="ba-pb" onclick="switchBA('after')">🚀 Com Ruphus</button>
+    </div>
+  </div>
+
+  <div class="ba-content">
+
+    <!-- BEFORE PANEL -->
+    <div class="ba-panel before show" id="ba-before">
+      <div class="ba-metrics">
+        <div class="ba-metric"><span class="bm-icon">⏱</span><div class="bm-val">12-15 dias</div><div class="bm-label">Fechamento mensal</div><div class="bm-bar"></div></div>
+        <div class="ba-metric"><span class="bm-icon">🔀</span><div class="bm-val">4-7</div><div class="bm-label">Sistemas diferentes</div><div class="bm-bar"></div></div>
+        <div class="ba-metric"><span class="bm-icon">📉</span><div class="bm-val">8-15%</div><div class="bm-label">Inadimplência média</div><div class="bm-bar"></div></div>
+        <div class="ba-metric"><span class="bm-icon">🕳</span><div class="bm-val">40h+</div><div class="bm-label">Horas/mês em retrabalho</div><div class="bm-bar"></div></div>
+      </div>
+      <div class="ba-grid">
+        <div class="ba-item"><div class="ba-num">1</div><div><h4>Dados em planilhas que ninguém confia</h4><p>Informações desatualizadas, versões conflitantes e zero rastreabilidade. Cada departamento tem "sua verdade".</p></div></div>
+        <div class="ba-item"><div class="ba-num">2</div><div><h4>Cobranças manuais que escapam</h4><p>Inadimplência sobe porque ninguém lembra de cobrar no prazo. WhatsApp pessoal misturado com profissional.</p></div></div>
+        <div class="ba-item"><div class="ba-num">3</div><div><h4>Fechamento que vira maratona</h4><p>Final de mês é caos: consolidar dados de 5 fontes, conciliar banco manualmente, gerar balancete no desespero.</p></div></div>
+        <div class="ba-item"><div class="ba-num">4</div><div><h4>Decisões no escuro</h4><p>Sem dashboards, sem KPIs em tempo real, sem alertas. O gestor descobre o problema quando já virou crise.</p></div></div>
+        <div class="ba-item"><div class="ba-num">5</div><div><h4>Equipe apagando incêndio o dia inteiro</h4><p>Retrabalho constante: redigitar dados, conferir manualmente, enviar relatórios por email. Zero automação.</p></div></div>
+        <div class="ba-item"><div class="ba-num">6</div><div><h4>Crescer significa contratar mais gente</h4><p>Sem processos automatizados, escalar a operação exige contratar proporcionalmente — custo sobe linear.</p></div></div>
       </div>
     </div>
-    <div class="ba-card after">
-      <div class="ba-tag" style="background:var(--tl);color:var(--teal)">Com Ruphus</div>
-      <div class="ba-items">
-        <div class="ba-it"><div class="ba-ic" style="background:var(--tl);color:var(--teal)">✓</div><div><h4>22 módulos integrados</h4><p>De Vendas e CRM a Contabilidade, Fiscal, Projetos, BI com IA, Chat e Workflows — tudo conectado nativamente.</p></div></div>
-        <div class="ba-it"><div class="ba-ic" style="background:var(--tl);color:var(--teal)">✓</div><div><h4>Fechamento em minutos</h4><p>Conciliação automática, rateio calculado e balancete gerado sem intervenção manual.</p></div></div>
-        <div class="ba-it"><div class="ba-ic" style="background:var(--tl);color:var(--teal)">✓</div><div><h4>Dashboards em tempo real</h4><p>KPIs atualizados, alertas de anomalia e relatórios sob demanda com dados reais.</p></div></div>
+
+    <!-- AFTER PANEL -->
+    <div class="ba-panel after" id="ba-after">
+      <div class="ba-metrics">
+        <div class="ba-metric"><span class="bm-icon">⚡</span><div class="bm-val">1-2 dias</div><div class="bm-label">Fechamento mensal</div><div class="bm-bar"></div></div>
+        <div class="ba-metric"><span class="bm-icon">🎯</span><div class="bm-val">1</div><div class="bm-label">Plataforma unificada</div><div class="bm-bar"></div></div>
+        <div class="ba-metric"><span class="bm-icon">📈</span><div class="bm-val">2-4%</div><div class="bm-label">Inadimplência controlada</div><div class="bm-bar"></div></div>
+        <div class="ba-metric"><span class="bm-icon">🔄</span><div class="bm-val">-80%</div><div class="bm-label">Redução de retrabalho</div><div class="bm-bar"></div></div>
+      </div>
+      <div class="ba-grid">
+        <div class="ba-item"><div class="ba-num">1</div><div><h4>Uma fonte de verdade para toda a operação</h4><p>22 módulos conectados nativamente. O dado entra uma vez e flui — do CRM ao financeiro, do contábil ao BI.</p></div></div>
+        <div class="ba-item"><div class="ba-num">2</div><div><h4>Cobrança automatizada que recupera receita</h4><p>Régua via WhatsApp com Z-API: lembrete, cobrança, segunda via — tudo automático, com rastreio de abertura.</p></div></div>
+        <div class="ba-item"><div class="ba-num">3</div><div><h4>Fechamento é um clique, não uma semana</h4><p>Mapa Contábil gera escrituração automática. Rateio calcula sozinho. Balancete sai pronto. Conciliação em minutos.</p></div></div>
+        <div class="ba-item"><div class="ba-num">4</div><div><h4>BI com IA que antecipa problemas</h4><p>Dashboards em tempo real, alertas de anomalia, relatórios sob demanda. O gestor age antes, não depois.</p></div></div>
+        <div class="ba-item"><div class="ba-num">5</div><div><h4>Workflows que eliminam o trabalho repetitivo</h4><p>Aprovações em cadeia, checklists automáticos, notificações por evento. A equipe foca no que importa.</p></div></div>
+        <div class="ba-item"><div class="ba-num">6</div><div><h4>Crescer sem multiplicar a equipe</h4><p>Automação permite escalar a operação com o mesmo time. 257 permissões garantem controle mesmo com mais gente.</p></div></div>
       </div>
     </div>
+
+  </div>
+
+  <!-- Impact bar -->
+  <div class="ba-impact" data-r="2">
+    <div class="ba-impact-text">Empresas que migram de planilhas para ERP integrado reduzem até <em>80% do retrabalho</em> e recuperam <em>40+ horas/mês</em> por equipe.</div>
+    <button type="button" class="btn btn-t" onclick="openModal()">Quero essa transformação →</button>
   </div>
 </div>
 </section>
@@ -2024,6 +2092,9 @@ const feat=document.querySelector('.edu-featured');if(feat){const visibleFeat=fe
 // ── FAQ ──
 function togFaq(b){const card=b.parentElement;const a=b.nextElementSibling;const isOpen=a.classList.contains('show');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('show'));document.querySelectorAll('.faq-q').forEach(x=>{x.classList.remove('open');x.setAttribute('aria-expanded','false')});document.querySelectorAll('.faq-it').forEach(x=>x.classList.remove('open-card'));if(!isOpen){a.classList.add('show');b.classList.add('open');b.setAttribute('aria-expanded','true');card.classList.add('open-card')}}
 function fFaq(btn,cat){document.querySelectorAll('.fq-cat').forEach(x=>x.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('show'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-it').forEach(x=>{x.classList.remove('open-card');if(cat==='all'||x.dataset.fcat===cat){x.style.display='';x.style.animation='fadeUp .3s ease'}else{x.style.display='none'}})}
+
+// ── TRANSFORMATION TOGGLE ──
+function switchBA(state){const pill=document.getElementById('ba-pill');const before=document.getElementById('ba-before');const after=document.getElementById('ba-after');pill.className='ba-pill state-'+state;before.classList.toggle('show',state==='before');after.classList.toggle('show',state==='after')}
 
 // ── BLOG FILTER ──
 function fBlog(btn,cat){document.querySelectorAll('.bc-cat').forEach(x=>x.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.blog-feat,.ba-card2').forEach(x=>{if(cat==='all'||x.dataset.bcat===cat){x.style.display='';x.style.animation='fadeUp .4s ease'}else{x.style.display='none'}})}
