@@ -358,6 +358,58 @@ html.dark .ba-card2 .bc-foot{border-color:rgba(255,255,255,.04)}
 @media(max-width:1024px){.blog-dash{grid-template-columns:repeat(3,1fr)}.blog-feat{grid-template-columns:1fr}}
 @media(max-width:768px){.blog-dash{grid-template-columns:1fr 1fr}.blog-grid{grid-template-columns:1fr}.blog-feat{grid-column:span 1}}
 
+/* ── SEGMENTS ── */
+.seg{padding:80px 0;background:var(--bg2);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)}
+.seg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-top:36px}
+.seg-card{padding:28px 24px;border-radius:var(--rl);border:1px solid var(--brd);background:var(--bg);position:relative;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.seg-card:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 10px 32px rgba(13,124,102,.08)}
+html.dark .seg-card:hover{box-shadow:0 10px 32px rgba(13,124,102,.12)}
+.seg-icon{font-size:2.2rem;margin-bottom:14px;display:block}
+.seg-card h3{font-family:var(--serif);font-size:1.05rem;font-weight:700;margin-bottom:6px;line-height:1.25}
+.seg-card>p{font-size:.82rem;color:var(--tx2);line-height:1.55;margin-bottom:14px}
+.seg-mods{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px}
+.seg-mod{font-size:.62rem;font-weight:600;padding:3px 9px;border-radius:99px;border:1px solid var(--brd);color:var(--tx2);background:var(--bg2)}
+.seg-card .seg-cta{font-size:.78rem;font-weight:600;color:var(--teal);display:flex;align-items:center;gap:4px;margin-top:auto;transition:gap .2s}
+.seg-card:hover .seg-cta{gap:8px}
+@media(max-width:1024px){.seg-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.seg-grid{grid-template-columns:1fr}}
+
+/* ── COMPARE ── */
+.cmp{padding:80px 0}
+.cmp-wrap{margin-top:36px;border-radius:var(--rl);border:1px solid var(--brd);overflow:hidden;background:var(--bg2)}
+.cmp-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.cmp-table thead th{padding:14px 16px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--tx3);text-align:center;border-bottom:2px solid var(--brd);background:var(--bg)}
+.cmp-table thead th:first-child{text-align:left;width:180px}
+.cmp-table thead th.hl{background:var(--tl);color:var(--teal);border-bottom-color:var(--teal);position:relative}
+.cmp-table thead th.hl::before{content:'RECOMENDADO';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--teal);color:#fff;font-size:.5rem;font-weight:700;letter-spacing:.06em;padding:2px 10px;border-radius:0 0 6px 6px}
+.cmp-table tbody td{padding:12px 16px;text-align:center;border-bottom:1px solid var(--brd);color:var(--tx2);vertical-align:middle}
+.cmp-table tbody td:first-child{text-align:left;font-weight:600;color:var(--tx);font-size:.84rem}
+.cmp-table tbody td.hl{background:rgba(13,124,102,.03)}
+html.dark .cmp-table tbody td.hl{background:rgba(13,124,102,.06)}
+.cmp-table tbody tr:last-child td{border-bottom:none}
+.cmp-table tbody tr:hover td{background:rgba(0,0,0,.01)}html.dark .cmp-table tbody tr:hover td{background:rgba(255,255,255,.02)}
+.cmp-table tbody tr:hover td.hl{background:rgba(13,124,102,.06)}
+.cmp-yes{color:var(--teal);font-weight:700;font-size:.95rem}.cmp-no{color:var(--tx3);font-size:.85rem}.cmp-partial{color:var(--amber);font-weight:600;font-size:.85rem}
+.cmp-note{text-align:center;margin-top:16px;font-size:.72rem;color:var(--tx3);font-style:italic}
+@media(max-width:768px){.cmp-wrap{overflow-x:auto}.cmp-table{min-width:640px}}
+
+/* ── CHANGELOG ── */
+.clog{padding:80px 0;background:var(--bg2);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)}
+.clog-line{position:relative;max-width:700px;margin:36px auto 0;padding-left:32px}
+.clog-line::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--teal),var(--brd));border-radius:2px}
+.clog-item{position:relative;padding:0 0 32px;animation:fadeUp .5s ease}
+.clog-item:last-child{padding-bottom:0}
+.clog-dot{position:absolute;left:-28px;top:4px;width:14px;height:14px;border-radius:50%;border:3px solid var(--bg2);z-index:1}
+.clog-dot.live{background:var(--teal)}
+.clog-dot.dev{background:var(--amber)}
+.clog-dot.plan{background:var(--violet)}
+.clog-date{font-size:.65rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--tx3);margin-bottom:3px}
+.clog-item h4{font-family:var(--serif);font-size:1rem;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.clog-item h4 .clog-badge{font-size:.55rem;font-weight:700;padding:2px 8px;border-radius:99px;letter-spacing:.03em}
+.clog-item p{font-size:.82rem;color:var(--tx2);line-height:1.55}
+.clog-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.clog-tag{font-size:.6rem;font-weight:500;padding:2px 8px;border-radius:99px;border:1px solid var(--brd);color:var(--tx3)}
+
 /* ── FAQ — rich ── */
 .faq{padding:80px 0}
 .faq-head{text-align:center;margin-bottom:12px}
@@ -498,6 +550,7 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
     Ruphus
   </a>
   <div class="nlinks">
+    <a href="#segmentos">Segmentos</a>
     <a href="#modulos">Módulos</a>
     <a href="#roadmap">Ecossistema</a>
     <a href="#calculadora">ROI</a>
@@ -515,6 +568,7 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 </nav>
 <div class="mob" id="mob">
   <button type="button" class="mob-x" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="#segmentos" onclick="this.parentElement.classList.remove('open')">Segmentos</a>
   <a href="#modulos" onclick="this.parentElement.classList.remove('open')">Módulos</a>
   <a href="#roadmap" onclick="this.parentElement.classList.remove('open')">Ecossistema</a>
   <a href="#calculadora" onclick="this.parentElement.classList.remove('open')">ROI</a>
@@ -652,6 +706,79 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 </div>
 </section>
 
+<!-- SEGMENTOS — Para quem é o Ruphus -->
+<section class="seg" id="segmentos" aria-label="Segmentos atendidos">
+<div class="w">
+  <div style="text-align:center" data-r>
+    <div class="s-ey">Para Quem</div>
+    <h2 class="s-hd" style="max-width:100%;text-align:center">Cada operação é diferente. O Ruphus se adapta à sua.</h2>
+    <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Ative apenas os módulos que fazem sentido para o seu segmento — e expanda conforme crescer.</p>
+  </div>
+  <div class="seg-grid" data-r="1">
+
+    <div class="seg-card">
+      <span class="seg-icon">🏢</span>
+      <h3>Administradoras de Condomínios</h3>
+      <p>Gerencie múltiplos condomínios com contabilidade separada, rateio por fração ideal e cobrança automatizada via WhatsApp. Integre com Superlógica.</p>
+      <div class="seg-mods">
+        <span class="seg-mod">Financeiro</span>
+        <span class="seg-mod">Contabilidade</span>
+        <span class="seg-mod">Aprovações</span>
+        <span class="seg-mod">Integrações</span>
+        <span class="seg-mod">Relatórios</span>
+        <span class="seg-mod">Chat</span>
+      </div>
+      <div class="seg-cta" onclick="openModal()">Quero ver para meu cenário →</div>
+    </div>
+
+    <div class="seg-card">
+      <span class="seg-icon">📑</span>
+      <h3>Escritórios Contábeis</h3>
+      <p>Centralize a gestão de múltiplos clientes com plano de contas configurável, mapas contábeis automatizados e exportação de balancetes por empresa.</p>
+      <div class="seg-mods">
+        <span class="seg-mod">Contabilidade</span>
+        <span class="seg-mod">Fiscal</span>
+        <span class="seg-mod">Clientes</span>
+        <span class="seg-mod">Relatórios</span>
+        <span class="seg-mod">BI com IA</span>
+      </div>
+      <div class="seg-cta" onclick="openModal()">Explorar para contabilidade →</div>
+    </div>
+
+    <div class="seg-card">
+      <span class="seg-icon">🔧</span>
+      <h3>Prestadores de Serviços</h3>
+      <p>Controle contratos, equipes em campo, checklists de execução e agendamentos. Tickets e projetos conectados ao financeiro.</p>
+      <div class="seg-mods">
+        <span class="seg-mod">Gestão de Serviços</span>
+        <span class="seg-mod">Contratos</span>
+        <span class="seg-mod">Tickets</span>
+        <span class="seg-mod">Checklists</span>
+        <span class="seg-mod">Projetos</span>
+        <span class="seg-mod">Funcionários</span>
+      </div>
+      <div class="seg-cta" onclick="openModal()">Ver módulos de operação →</div>
+    </div>
+
+    <div class="seg-card">
+      <span class="seg-icon">🚀</span>
+      <h3>PMEs em Crescimento</h3>
+      <p>Comece com CRM e Financeiro, expanda para Estoque, Workflows e BI à medida que a operação escalar. 257 permissões para times que crescem.</p>
+      <div class="seg-mods">
+        <span class="seg-mod">CRM</span>
+        <span class="seg-mod">Vendas</span>
+        <span class="seg-mod">Financeiro</span>
+        <span class="seg-mod">Estoque</span>
+        <span class="seg-mod">Workflows</span>
+        <span class="seg-mod">BI com IA</span>
+      </div>
+      <div class="seg-cta" onclick="openModal()">Montar meu plano de módulos →</div>
+    </div>
+
+  </div>
+</div>
+</section>
+
 <!-- MODULES — 22 módulos em 4 categorias -->
 <section class="mods" id="modulos" aria-label="22 módulos do Ruphus">
 <div class="w">
@@ -738,6 +865,114 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 </div>
 </section>
 
+<!-- COMPARATIVO -->
+<section class="cmp" id="comparativo" aria-label="Comparativo com alternativas">
+<div class="w">
+  <div style="text-align:center" data-r>
+    <div class="s-ey">Comparativo</div>
+    <h2 class="s-hd" style="max-width:100%;text-align:center">Ruphus vs. as alternativas que você já conhece</h2>
+    <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Comparação honesta. Sem asteriscos, sem letras miúdas.</p>
+  </div>
+  <div class="cmp-wrap" data-r="1">
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th>Critério</th>
+          <th class="hl">Ruphus</th>
+          <th>Superlógica</th>
+          <th>TOTVS</th>
+          <th>Conta Azul</th>
+          <th>Planilhas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Módulos integrados</td>
+          <td class="hl"><span class="cmp-yes">22</span></td>
+          <td>8-12</td>
+          <td>15+</td>
+          <td>5-8</td>
+          <td><span class="cmp-no">—</span></td>
+        </tr>
+        <tr>
+          <td>Permissões granulares</td>
+          <td class="hl"><span class="cmp-yes">257</span></td>
+          <td>Limitadas</td>
+          <td>Customizáveis</td>
+          <td>Básicas</td>
+          <td><span class="cmp-no">Nenhuma</span></td>
+        </tr>
+        <tr>
+          <td>BI com Inteligência Artificial</td>
+          <td class="hl"><span class="cmp-yes">✓</span></td>
+          <td><span class="cmp-no">✕</span></td>
+          <td><span class="cmp-partial">Módulo à parte</span></td>
+          <td><span class="cmp-no">✕</span></td>
+          <td><span class="cmp-no">✕</span></td>
+        </tr>
+        <tr>
+          <td>Chat interno integrado</td>
+          <td class="hl"><span class="cmp-yes">✓</span></td>
+          <td><span class="cmp-no">✕</span></td>
+          <td><span class="cmp-no">✕</span></td>
+          <td><span class="cmp-no">✕</span></td>
+          <td><span class="cmp-no">✕</span></td>
+        </tr>
+        <tr>
+          <td>Workflows automatizados</td>
+          <td class="hl"><span class="cmp-yes">✓</span></td>
+          <td><span class="cmp-partial">Parcial</span></td>
+          <td><span class="cmp-yes">✓</span></td>
+          <td><span class="cmp-no">✕</span></td>
+          <td><span class="cmp-no">✕</span></td>
+        </tr>
+        <tr>
+          <td>Cobrança via WhatsApp (Z-API)</td>
+          <td class="hl"><span class="cmp-yes">✓</span></td>
+          <td><span class="cmp-partial">API própria</span></td>
+          <td><span class="cmp-partial">Módulo à parte</span></td>
+          <td><span class="cmp-no">✕</span></td>
+          <td><span class="cmp-no">✕</span></td>
+        </tr>
+        <tr>
+          <td>Mapa Contábil + Rateio</td>
+          <td class="hl"><span class="cmp-yes">✓</span></td>
+          <td><span class="cmp-yes">✓</span></td>
+          <td><span class="cmp-yes">✓</span></td>
+          <td><span class="cmp-no">✕</span></td>
+          <td><span class="cmp-partial">Manual</span></td>
+        </tr>
+        <tr>
+          <td>Implantação</td>
+          <td class="hl"><span class="cmp-yes">1-10 dias</span></td>
+          <td>2-4 semanas</td>
+          <td>1-3 meses</td>
+          <td>Mesmo dia</td>
+          <td>Mesmo dia</td>
+        </tr>
+        <tr>
+          <td>Atualizações</td>
+          <td class="hl"><span class="cmp-yes">Semanais</span></td>
+          <td>Mensais</td>
+          <td>Trimestrais</td>
+          <td>Mensais</td>
+          <td><span class="cmp-no">Você faz</span></td>
+        </tr>
+        <tr>
+          <td>Suporte</td>
+          <td class="hl"><span class="cmp-yes">Direto, < 2h</span></td>
+          <td>Ticket</td>
+          <td>Ticket + tel.</td>
+          <td>Chat</td>
+          <td><span class="cmp-no">Google</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cmp-note">Comparativo baseado em informações públicas de março/2026. Funcionalidades podem variar conforme plano contratado em cada plataforma.</div>
+</div>
+</section>
+
 <!-- ROI CALCULATOR -->
 <section class="calc" id="calculadora" aria-label="Calculadora de ROI">
 <div class="w">
@@ -768,6 +1003,76 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
         <button class="btn btn-t" style="width:100%;padding:13px 20px" onclick="openModal()">Quero resolver isso — agendar agora →</button>
       </div>
     </div>
+  </div>
+</div>
+</section>
+
+<!-- CHANGELOG -->
+<section class="clog" id="changelog" aria-label="Evolução da plataforma">
+<div class="w">
+  <div style="text-align:center" data-r>
+    <div class="s-ey">Changelog</div>
+    <h2 class="s-hd" style="max-width:100%;text-align:center">Evolução real, não promessas de roadmap</h2>
+    <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Cada marco abaixo é algo que já foi entregue ou está em construção agora.</p>
+  </div>
+  <div class="clog-line" data-r="1">
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Março 2026</div>
+      <h4>Blog com indicadores econômicos em tempo real <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Painel de indicadores (Selic, IPCA, Dólar, PIB) integrado à landing page. Conteúdo editorial com dados reais do Boletim Focus.</p>
+      <div class="clog-tags"><span class="clog-tag">Plataforma</span><span class="clog-tag">Conteúdo</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Março 2026</div>
+      <h4>Integração Superlógica ativa <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Sincronização bidirecional de dados entre Ruphus e Superlógica para administradoras que operam nos dois sistemas.</p>
+      <div class="clog-tags"><span class="clog-tag">Integrações</span><span class="clog-tag">Condomínios</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Fevereiro 2026</div>
+      <h4>Business Intelligence com IA <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Dashboards customizáveis com análises assistidas por inteligência artificial. Detecção automática de anomalias e insights proativos.</p>
+      <div class="clog-tags"><span class="clog-tag">BI</span><span class="clog-tag">IA</span><span class="clog-tag">Relatórios</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Janeiro 2026</div>
+      <h4>22 módulos operacionais <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Marco de maturidade: todos os 22 módulos em produção com 257 permissões granulares. Vendas, CRM, Financeiro, Contabilidade, Fiscal, Aprovações, Pessoas, Operações e Plataforma.</p>
+      <div class="clog-tags"><span class="clog-tag">Plataforma</span><span class="clog-tag">Marco</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Dezembro 2025</div>
+      <h4>Chat interno e Cobrança WhatsApp <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Módulo de chat entre membros da empresa com contexto por departamento. Régua de cobrança automatizada via Z-API integrada ao módulo Financeiro.</p>
+      <div class="clog-tags"><span class="clog-tag">Chat</span><span class="clog-tag">WhatsApp</span><span class="clog-tag">Financeiro</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot dev"></div>
+      <div class="clog-date">Abril 2026 · Em construção</div>
+      <h4>App mobile PWA <span class="clog-badge" style="background:var(--al);color:#92400E">Em dev</span></h4>
+      <p>Versão mobile otimizada para aprovações rápidas, consultas em campo e notificações push. Progressive Web App — funciona offline.</p>
+      <div class="clog-tags"><span class="clog-tag">Mobile</span><span class="clog-tag">PWA</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot plan"></div>
+      <div class="clog-date">Q2 2026 · Planejado</div>
+      <h4>API pública REST <span class="clog-badge" style="background:var(--vl);color:var(--violet)">Planejado</span></h4>
+      <p>Endpoints REST documentados para integrações externas, automações e conexão com ferramentas de terceiros.</p>
+      <div class="clog-tags"><span class="clog-tag">API</span><span class="clog-tag">Integrações</span></div>
+    </div>
+
   </div>
 </div>
 </section>
@@ -1357,7 +1662,8 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 <div class="w">
   <div class="ft-top">
     <div class="ft-brand"><a href="/" class="logo" style="font-size:1.1rem"><svg viewBox="0 0 40 40" fill="none" width="26" height="26" role="img" aria-label="Logo Ruphus"><defs><linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="50%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs><path d="M20 2L36.66 11V29L20 38L3.34 29V11L20 2Z" stroke="url(#lg2)" stroke-width="2" fill="none"/><path d="M14 12H22C24.5 12 26.5 14 26.5 16.5C26.5 19 24.5 21 22 21H18L26 28" stroke="url(#lg2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M14 12V28" stroke="url(#lg2)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>Ruphus</a><p>ERP completo com 22 módulos integrados — Vendas, CRM, Financeiro, Contábil, Fiscal, BI com IA, Chat, Workflows e mais. Em evolução contínua.</p></div>
-    <div class="ft-col"><h5>Produto</h5><a href="#modulos">Módulos</a><a href="#roadmap">Ecossistema</a><a href="#calculadora">Calculadora ROI</a><a href="#contato">Demonstração</a></div>
+    <div class="ft-col"><h5>Produto</h5><a href="#segmentos">Segmentos</a>
+    <a href="#modulos">Módulos</a><a href="#roadmap">Ecossistema</a><a href="#calculadora">Calculadora ROI</a><a href="#contato">Demonstração</a></div>
     <div class="ft-col"><h5>Recursos</h5><a href="#blog">Blog &amp; Indicadores</a><a href="#educacao">Deep Dives</a><a href="#educacao">Playbooks</a><a href="#educacao">Lab</a><a href="#educacao">Newsletter</a></div>
     <div class="ft-col"><h5>Legal</h5><a href="#">Termos</a><a href="#">Privacidade</a><a href="#">LGPD</a><a href="#">Segurança</a></div>
   </div>
