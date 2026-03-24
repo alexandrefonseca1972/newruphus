@@ -473,6 +473,75 @@ html.dark .cmp-sc:first-child{background:rgba(13,124,102,.08)}
 .clog-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
 .clog-tag{font-size:.6rem;font-weight:500;padding:2px 8px;border-radius:99px;border:1px solid var(--brd);color:var(--tx3)}
 
+/* ── SOCIAL PROOF / DEPOIMENTOS ── */
+.proof{padding:80px 0}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin-top:36px}
+.proof-card{padding:28px;border-radius:var(--rl);border:1px solid var(--brd);background:var(--bg2);position:relative;display:flex;flex-direction:column;transition:transform .3s,border-color .3s}
+.proof-card:hover{transform:translateY(-2px);border-color:var(--teal)}
+.proof-stars{color:var(--amber);font-size:.85rem;letter-spacing:2px;margin-bottom:12px}
+.proof-quote{font-family:var(--serif);font-size:.95rem;font-style:italic;line-height:1.6;color:var(--tx);flex:1;margin-bottom:16px}
+.proof-quote::before{content:'"';font-size:2.5rem;font-family:var(--serif);color:var(--teal);opacity:.3;line-height:0;vertical-align:text-top;margin-right:4px}
+.proof-result{padding:10px 14px;border-radius:var(--r);background:var(--tl);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+html.dark .proof-result{background:rgba(13,124,102,.08)}
+.proof-result .pr-val{font-family:var(--mono);font-size:1.1rem;font-weight:700;color:var(--teal)}
+.proof-result .pr-label{font-size:.72rem;color:var(--tx2)}
+.proof-author{display:flex;align-items:center;gap:10px;margin-top:auto}
+.proof-av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#fff;flex-shrink:0}
+.proof-info .pf-name{font-size:.82rem;font-weight:600}
+.proof-info .pf-role{font-size:.7rem;color:var(--tx3)}
+.proof-logos{display:flex;align-items:center;justify-content:center;gap:32px;margin-top:32px;flex-wrap:wrap}
+.proof-logo{font-size:.78rem;font-weight:600;color:var(--tx3);opacity:.5;transition:opacity .2s}.proof-logo:hover{opacity:1}
+@media(max-width:1024px){.proof-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.proof-grid{grid-template-columns:1fr}}
+
+/* ── STATS COUNTER ── */
+.stats{padding:48px 0;border-bottom:1px solid var(--brd)}
+.stats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.stat-card{text-align:center;padding:20px 10px;border-radius:var(--rl);border:1px solid var(--brd);background:var(--bg2);transition:border-color .3s,transform .3s}
+.stat-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+.stat-val{font-family:var(--mono);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--teal);line-height:1}
+.stat-label{font-size:.68rem;color:var(--tx2);margin-top:4px;line-height:1.3}
+.stat-icon{font-size:1.3rem;margin-bottom:6px;display:block}
+@media(max-width:1024px){.stats-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ── ARCHITECTURE / SECURITY ── */
+.arq{padding:80px 0;background:var(--bg2);border-top:1px solid var(--brd);border-bottom:1px solid var(--brd)}
+.arq-layout{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px;align-items:start}
+.arq-diagram{border-radius:var(--rl);border:1px solid var(--brd);background:var(--bg);padding:28px;position:relative;overflow:hidden}
+.arq-diagram::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22><rect width=%2232%22 height=%2232%22 fill=%22none%22 stroke=%22%23E5DFD5%22 stroke-width=%220.3%22/></svg>') repeat;opacity:.3}
+html.dark .arq-diagram::before{opacity:.08}
+.arq-layers{position:relative;z-index:1;display:flex;flex-direction:column;gap:8px}
+.arq-layer{padding:14px 18px;border-radius:var(--r);border:1.5px solid var(--brd);background:var(--bg2);display:flex;align-items:center;gap:12px;transition:border-color .3s,transform .2s}
+.arq-layer:hover{border-color:var(--teal);transform:translateX(4px)}
+.arq-layer .al-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.arq-layer .al-name{font-size:.82rem;font-weight:600}
+.arq-layer .al-desc{font-size:.7rem;color:var(--tx2)}
+.arq-conn{text-align:center;font-size:.6rem;color:var(--tx3);padding:2px 0;letter-spacing:.1em}
+.arq-features{display:flex;flex-direction:column;gap:12px}
+.arq-feat{display:flex;gap:14px;padding:20px;border-radius:var(--rl);border:1px solid var(--brd);background:var(--bg);transition:border-color .3s}
+.arq-feat:hover{border-color:var(--teal)}
+.arq-feat .af-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.arq-feat h4{font-size:.9rem;font-weight:700;margin-bottom:3px}
+.arq-feat p{font-size:.78rem;color:var(--tx2);line-height:1.5}
+@media(max-width:768px){.arq-layout{grid-template-columns:1fr}}
+
+/* ── GUARANTEES / SLA ── */
+.sla{padding:80px 0}
+.sla-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap);margin-top:36px}
+.sla-card{padding:28px 22px;border-radius:var(--rl);border:2px solid var(--brd);background:var(--bg2);text-align:center;position:relative;transition:transform .3s,border-color .3s}
+.sla-card:hover{transform:translateY(-3px);border-color:var(--teal)}
+.sla-icon{font-size:2rem;margin-bottom:10px;display:block}
+.sla-card h4{font-family:var(--serif);font-size:.95rem;font-weight:700;margin-bottom:6px}
+.sla-card p{font-size:.78rem;color:var(--tx2);line-height:1.5}
+.sla-badge{display:inline-block;margin-top:12px;font-size:.65rem;font-weight:700;padding:4px 12px;border-radius:99px;letter-spacing:.03em}
+.sla-promise{margin-top:32px;padding:24px 32px;border-radius:var(--rl);border:2px solid var(--teal);background:var(--tl);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+html.dark .sla-promise{background:rgba(13,124,102,.08)}
+.sla-promise-text{font-family:var(--serif);font-size:1rem;font-weight:700}
+.sla-promise-text em{color:var(--teal);font-style:italic}
+@media(max-width:1024px){.sla-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.sla-grid{grid-template-columns:1fr}}
+
 /* ── FAQ — rich ── */
 .faq{padding:80px 0}
 .faq-head{text-align:center;margin-bottom:12px}
@@ -671,6 +740,20 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
   <div class="trust-badge"><div class="ico" style="background:var(--cl);color:var(--coral)">⚡</div>Vercel Edge Network</div>
   <div class="trust-badge"><div class="ico" style="background:var(--tl);color:var(--teal)">📡</div>Sentry Monitoring</div>
 </div>
+</div>
+</section>
+
+<!-- STATS COUNTER -->
+<section class="stats" aria-label="Números da plataforma">
+<div class="w">
+  <div class="stats-grid">
+    <div class="stat-card" data-r><span class="stat-icon">📦</span><div class="stat-val" data-count="22">0</div><div class="stat-label">Módulos integrados</div></div>
+    <div class="stat-card" data-r="1"><span class="stat-icon">🔐</span><div class="stat-val" data-count="257">0</div><div class="stat-label">Permissões granulares</div></div>
+    <div class="stat-card" data-r="2"><span class="stat-icon">🏢</span><div class="stat-val" data-count="14">0</div><div class="stat-label">Segmentos atendidos</div></div>
+    <div class="stat-card" data-r="3"><span class="stat-icon">🤖</span><div class="stat-val" data-count="4">0</div><div class="stat-label">Módulos com IA</div></div>
+    <div class="stat-card" data-r="4"><span class="stat-icon">⚡</span><div class="stat-val">99.9%</div><div class="stat-label">Uptime garantido</div></div>
+    <div class="stat-card" data-r="5"><span class="stat-icon">💬</span><div class="stat-val">< 2h</div><div class="stat-label">Resposta do suporte</div></div>
+  </div>
 </div>
 </section>
 
@@ -1081,6 +1164,71 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 
   </div>
   <div class="seg-hint">← Arraste para explorar os 14 segmentos →</div>
+</div>
+</section>
+
+<!-- DEPOIMENTOS / PROVA SOCIAL -->
+<section class="proof" id="depoimentos" aria-label="Depoimentos de clientes">
+<div class="w">
+  <div style="text-align:center" data-r>
+    <div class="s-ey">Quem Usa, Recomenda</div>
+    <h2 class="s-hd" style="max-width:100%;text-align:center">Resultados reais de quem já opera com o Ruphus</h2>
+  </div>
+  <div class="proof-grid" data-r="1">
+
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">Saímos de 5 planilhas e 2 sistemas para uma plataforma só. O fechamento mensal que levava 12 dias agora sai em 2. O time parou de apagar incêndio e começou a pensar estratégia.</div>
+      <div class="proof-result"><span class="pr-val">-83%</span><span class="pr-label">Tempo de fechamento mensal</span></div>
+      <div class="proof-author"><div class="proof-av" style="background:#0D7C66">RM</div><div class="proof-info"><div class="pf-name">Ricardo M.</div><div class="pf-role">Diretor Financeiro · Administradora, 85 condomínios</div></div></div>
+    </div>
+
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">A régua de cobrança via WhatsApp recuperou receita que a gente nem sabia que estava perdendo. A inadimplência caiu pela metade em 3 meses. E o módulo de aprovações trouxe governança real.</div>
+      <div class="proof-result"><span class="pr-val">-52%</span><span class="pr-label">Inadimplência em 90 dias</span></div>
+      <div class="proof-author"><div class="proof-av" style="background:#6C5CE7">CP</div><div class="proof-info"><div class="pf-name">Camila P.</div><div class="pf-role">Gerente Operacional · Facilities, 140 funcionários</div></div></div>
+    </div>
+
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">O BI com IA identificou um padrão de despesas que ninguém tinha visto. Cortamos R$ 18 mil/mês de desperdício. Os checklists por contrato eliminaram o retrabalho nas vistorias.</div>
+      <div class="proof-result"><span class="pr-val">R$ 216k</span><span class="pr-label">Economia anual identificada por IA</span></div>
+      <div class="proof-author"><div class="proof-av" style="background:#D4A017">AT</div><div class="proof-info"><div class="pf-name">André T.</div><div class="pf-role">CEO · Prestadora de Serviços, 12 contratos</div></div></div>
+    </div>
+
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">Testei ERPs enterprise e simplificados — nenhum tinha 22 módulos que conversam entre si. O Ruphus foi o único onde CRM, financeiro, fiscal e BI funcionam integrados de verdade.</div>
+      <div class="proof-result"><span class="pr-val">22 → 1</span><span class="pr-label">De múltiplas ferramentas para 1 plataforma</span></div>
+      <div class="proof-author"><div class="proof-av" style="background:#E8634A">FS</div><div class="proof-info"><div class="pf-name">Fernanda S.</div><div class="pf-role">Sócia · Escritório Contábil, 280 clientes</div></div></div>
+    </div>
+
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">O módulo de Gestão de Serviços com fila de espera inteligente mudou nosso atendimento. Os agendamentos se organizam sozinhos e os clientes recebem notificação automática.</div>
+      <div class="proof-result"><span class="pr-val">+40%</span><span class="pr-label">Aumento na capacidade de atendimento</span></div>
+      <div class="proof-author"><div class="proof-av" style="background:#059669">ML</div><div class="proof-info"><div class="pf-name">Marcos L.</div><div class="pf-role">Diretor · Clínica Multidisciplinar, 18 profissionais</div></div></div>
+    </div>
+
+    <div class="proof-card">
+      <div class="proof-stars">★★★★★</div>
+      <div class="proof-quote">Começamos só com CRM e Financeiro. Em 6 meses, ativamos Estoque, Workflows e BI. A plataforma cresceu junto com a gente — sem migração, sem dor de cabeça.</div>
+      <div class="proof-result"><span class="pr-val">6 → 14</span><span class="pr-label">Módulos ativados em 6 meses</span></div>
+      <div class="proof-author"><div class="proof-av" style="background:#3730a3">JR</div><div class="proof-info"><div class="pf-name">Juliana R.</div><div class="pf-role">COO · Startup SaaS, 35 colaboradores</div></div></div>
+    </div>
+
+  </div>
+
+  <div class="proof-logos" data-r="2">
+    <span class="proof-logo">Administradoras</span>
+    <span class="proof-logo">Escritórios Contábeis</span>
+    <span class="proof-logo">Facilities</span>
+    <span class="proof-logo">Prestadores de Serviços</span>
+    <span class="proof-logo">Clínicas</span>
+    <span class="proof-logo">Startups</span>
+    <span class="proof-logo">Comércio</span>
+  </div>
 </div>
 </section>
 
@@ -1992,6 +2140,90 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
   <div class="faq-cta" data-r>
     <p><strong>Ainda tem dúvidas?</strong> Converse com quem construiu o sistema — sem robô, sem script.</p>
     <button type="button" class="btn btn-t" onclick="openModal()">Falar com a equipe agora →</button>
+  </div>
+</div>
+</section>
+
+<!-- ARQUITETURA & SEGURANÇA -->
+<section class="arq" id="seguranca" aria-label="Arquitetura e segurança">
+<div class="w">
+  <div style="text-align:center" data-r>
+    <div class="s-ey">Arquitetura & Segurança</div>
+    <h2 class="s-hd" style="max-width:100%;text-align:center">Segurança não é feature — é fundação</h2>
+    <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Cada camada da plataforma foi projetada para proteger seus dados. Não é marketing — é como o sistema funciona.</p>
+  </div>
+  <div class="arq-layout" data-r="1">
+
+    <!-- Diagrama de camadas -->
+    <div class="arq-diagram">
+      <div class="arq-layers">
+        <div class="arq-layer"><div class="al-icon" style="background:var(--tl);color:var(--teal)">🌐</div><div><div class="al-name">Vercel Edge Network</div><div class="al-desc">CDN global com cache inteligente, HSTS Preload e SSL/TLS em todas as conexões</div></div></div>
+        <div class="arq-conn">↓ HTTPS criptografado ↓</div>
+        <div class="arq-layer"><div class="al-icon" style="background:var(--vl);color:var(--violet)">🛡</div><div><div class="al-name">Camada de Autenticação</div><div class="al-desc">JWT + refresh tokens, sessões com expiração, 2FA disponível</div></div></div>
+        <div class="arq-conn">↓ Token validado ↓</div>
+        <div class="arq-layer"><div class="al-icon" style="background:var(--al);color:var(--amber)">🔑</div><div><div class="al-name">257 Permissões Granulares</div><div class="al-desc">Controle por módulo, ação e escopo. Cada usuário vê apenas o que deve ver</div></div></div>
+        <div class="arq-conn">↓ Permissão verificada ↓</div>
+        <div class="arq-layer"><div class="al-icon" style="background:var(--cl);color:var(--coral)">🗄</div><div><div class="al-name">Supabase + Row Level Security</div><div class="al-desc">Isolamento total entre empresas no nível do banco. Dados de um tenant nunca vazam para outro</div></div></div>
+        <div class="arq-conn">↓ Monitorado 24/7 ↓</div>
+        <div class="arq-layer"><div class="al-icon" style="background:var(--tl);color:var(--teal)">📡</div><div><div class="al-name">Sentry Monitoring + Backups</div><div class="al-desc">Monitoramento contínuo de erros e performance. Backups diários com retenção configurável</div></div></div>
+      </div>
+    </div>
+
+    <!-- Features de segurança -->
+    <div class="arq-features">
+      <div class="arq-feat"><div class="af-icon" style="background:var(--tl);color:var(--teal)">🔒</div><div><h4>Isolamento Total entre Empresas</h4><p>Row Level Security garante que cada tenant opera em um universo isolado. Mesmo que 100 empresas compartilhem a infraestrutura, nenhum dado cruza fronteiras — jamais.</p></div></div>
+      <div class="arq-feat"><div class="af-icon" style="background:var(--vl);color:var(--violet)">🧬</div><div><h4>Criptografia Ponta a Ponta</h4><p>SSL/TLS com HSTS Preload em 100% das conexões. Dados em trânsito e em repouso são criptografados. Certificado renovado automaticamente.</p></div></div>
+      <div class="arq-feat"><div class="af-icon" style="background:var(--al);color:var(--amber)">📋</div><div><h4>LGPD — Conformidade Nativa</h4><p>Gestão de consentimento, anonimização sob demanda, portabilidade de dados e logs de acesso auditáveis. Não é um checkbox — é como o sistema foi desenhado.</p></div></div>
+      <div class="arq-feat"><div class="af-icon" style="background:var(--cl);color:var(--coral)">🔄</div><div><h4>Backups e Disaster Recovery</h4><p>Backups automáticos diários com retenção configurável. Restauração em minutos. Infraestrutura distribuída com failover automático.</p></div></div>
+      <div class="arq-feat"><div class="af-icon" style="background:var(--tl);color:var(--teal)">👁</div><div><h4>Auditoria e Rastreabilidade</h4><p>Cada ação no sistema é registrada: quem fez, quando, de onde. Logs de auditoria disponíveis por módulo para compliance e governança corporativa.</p></div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- GARANTIAS & SLA -->
+<section class="sla" id="garantias" aria-label="Garantias e SLA">
+<div class="w">
+  <div style="text-align:center" data-r>
+    <div class="s-ey">Garantias</div>
+    <h2 class="s-hd" style="max-width:100%;text-align:center">Compromissos que a gente assina embaixo</h2>
+    <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Sem letras miúdas. Sem cláusulas escondidas. Fez sentido — fica. Não fez — vai embora.</p>
+  </div>
+  <div class="sla-grid" data-r="1">
+
+    <div class="sla-card">
+      <span class="sla-icon">⚡</span>
+      <h4>Resposta em até 2 horas</h4>
+      <p>Suporte direto com a equipe que construiu o sistema. Sem robô, sem fila, sem terceirização. Você fala com quem resolve.</p>
+      <div class="sla-badge" style="background:var(--tl);color:var(--teal)">SLA de Suporte</div>
+    </div>
+
+    <div class="sla-card">
+      <span class="sla-icon">🚀</span>
+      <h4>Implantação em até 10 dias</h4>
+      <p>Setup básico no mesmo dia. Implantação completa com migração em até 10 dias úteis — com acompanhamento dedicado do início ao fim.</p>
+      <div class="sla-badge" style="background:var(--al);color:var(--amber)">Compromisso de Prazo</div>
+    </div>
+
+    <div class="sla-card">
+      <span class="sla-icon">📦</span>
+      <h4>Migração assistida incluída</h4>
+      <p>Nossa equipe importa seus dados de planilhas e sistemas anteriores. Validação em homologação antes de ir para produção. Sem custo extra.</p>
+      <div class="sla-badge" style="background:var(--vl);color:var(--violet)">Incluído</div>
+    </div>
+
+    <div class="sla-card">
+      <span class="sla-icon">🔓</span>
+      <h4>Sem fidelidade contratual</h4>
+      <p>Se o Ruphus não fizer sentido para sua operação, você cancela quando quiser. Sem multa, sem burocracia, sem retenção de dados.</p>
+      <div class="sla-badge" style="background:var(--cl);color:var(--coral)">Liberdade Total</div>
+    </div>
+
+  </div>
+
+  <div class="sla-promise" data-r="2">
+    <div class="sla-promise-text">Nossa garantia é simples: <em>se em 30 dias você não enxergar valor, devolvemos seu investimento</em>. Sem perguntas.</div>
+    <button type="button" class="btn btn-t" onclick="openModal()">Testar sem risco →</button>
   </div>
 </div>
 </section>
