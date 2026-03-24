@@ -998,3 +998,59 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 .cy-phase .cy-mods{display:flex;flex-wrap:wrap;gap:3px;justify-content:center;margin-top:8px}
 .cy-phase .cy-mod{padding:2px 6px;border-radius:4px;font-size:.62rem;font-weight:600;background:rgba(13,124,102,.06);color:var(--teal)}
 @media(max-width:768px){.cy-phases{grid-template-columns:1fr}.cy-phase::after{display:none}}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO: MERCADO EM NÚMEROS (dados reais)
+   ═══════════════════════════════════════════════════════════════ */
+.mkt{padding:80px 0;background:linear-gradient(180deg,#0d1117,#161b22);color:#fff}
+.mkt h2{text-align:center;font-family:'Fraunces',serif;font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:6px;color:#fff}
+.mkt .mkt-sub{text-align:center;color:rgba(255,255,255,.55);max-width:640px;margin:0 auto 48px;font-size:.92rem}
+.mkt-grid{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mkt-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;position:relative;overflow:hidden;transition:all .3s}
+.mkt-card:hover{background:rgba(255,255,255,.07);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.mkt-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.mkt-card .mkt-val{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:900;margin-bottom:4px;line-height:1.1}
+.mkt-card .mkt-lbl{font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:10px;line-height:1.4}
+.mkt-card .mkt-src{font-size:.65rem;color:rgba(255,255,255,.3);font-family:'JetBrains Mono',monospace;display:flex;align-items:center;gap:4px}
+.mkt-card .mkt-trend{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:100px;font-size:.7rem;font-weight:700;margin-left:8px}
+.mkt-card .mkt-trend.up{background:rgba(13,124,102,.2);color:#34d399}
+.mkt-card .mkt-trend.down{background:rgba(232,99,74,.2);color:#fca5a5}
+.mkt-card .mkt-trend.neutral{background:rgba(245,166,35,.15);color:#fbbf24}
+.mkt-featured{grid-column:span 3;background:linear-gradient(135deg,rgba(13,124,102,.12),rgba(59,130,246,.08));border-color:rgba(13,124,102,.2);padding:32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:center}
+.mkt-featured .mkt-feat-text{grid-column:span 2}
+.mkt-featured .mkt-feat-text h3{font-family:'Fraunces',serif;font-size:1.3rem;color:#fff;margin:0 0 8px}
+.mkt-featured .mkt-feat-text p{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.6;margin:0}
+.mkt-featured .mkt-feat-cta{text-align:center}
+@media(max-width:768px){.mkt-grid{grid-template-columns:1fr}.mkt-featured{grid-column:span 1;grid-template-columns:1fr}.mkt-featured .mkt-feat-text{grid-column:span 1}}
+
+/* ═══════════════════════════════════════════════════════════════
+   SEÇÃO: CENÁRIOS REAIS POR SEGMENTO
+   ═══════════════════════════════════════════════════════════════ */
+.cases{padding:80px 0;background:var(--bg)}
+.cases h2{text-align:center;font-family:'Fraunces',serif;font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:8px}
+.cases .cases-sub{text-align:center;color:var(--muted);max-width:600px;margin:0 auto 48px;font-size:.92rem}
+.case-tabs{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.case-tabs button{padding:8px 18px;border-radius:100px;border:1px solid var(--border);background:var(--card);color:var(--muted);font-size:.8rem;cursor:pointer;transition:all .25s;font-family:'Outfit',sans-serif}
+.case-tabs button.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.case-panels{max-width:900px;margin:0 auto}
+.case-panel{display:none;animation:sandFadeIn .4s ease}
+.case-panel.show{display:block}
+.case-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.case-header .case-ico{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+.case-header h3{font-family:'Fraunces',serif;font-size:1.3rem;margin:0 0 4px}
+.case-header p{font-size:.82rem;color:var(--muted);margin:0}
+.case-split{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.case-before,.case-after{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+.case-before{border-top:3px solid #E8634A}
+.case-after{border-top:3px solid var(--teal)}
+.case-before h4,.case-after h4{font-size:.85rem;margin:0 0 12px;display:flex;align-items:center;gap:6px}
+.case-metric{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:.82rem}
+.case-metric:last-child{border-bottom:none}
+.case-metric .cm-val{font-family:'JetBrains Mono',monospace;font-weight:700;min-width:80px}
+.case-metric .cm-val.bad{color:#E8634A}
+.case-metric .cm-val.good{color:#0D7C66}
+.case-impact{background:linear-gradient(135deg,rgba(13,124,102,.05),rgba(59,130,246,.05));border:1px solid rgba(13,124,102,.15);border-radius:14px;padding:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
+.case-impact-item .ci-val{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:var(--teal)}
+.case-impact-item .ci-lbl{font-size:.72rem;color:var(--muted);margin-top:2px}
+.case-source{font-size:.7rem;color:var(--muted);margin-top:16px;font-style:italic;text-align:right}
+@media(max-width:768px){.case-split{grid-template-columns:1fr}.case-impact{grid-template-columns:repeat(2,1fr)}}

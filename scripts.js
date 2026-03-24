@@ -834,3 +834,14 @@ window.showFFDetail=function(i){
   document.querySelectorAll('.ff-node').forEach((n,j)=>n.classList.toggle('active',j===i));
   el.scrollIntoView({behavior:'smooth',block:'nearest'});
 };
+
+/* ═══════════════════════════════════════════════════════════════
+   CENÁRIOS REAIS — tab switching
+   ═══════════════════════════════════════════════════════════════ */
+window.showCase=function(i,btn){
+  document.querySelectorAll('.case-panel').forEach(p=>p.classList.remove('show'));
+  document.querySelectorAll('.case-tabs button').forEach(b=>b.classList.remove('active'));
+  const panel=document.getElementById('case-'+i);
+  if(panel)panel.classList.add('show');
+  if(btn)btn.classList.add('active');
+};
