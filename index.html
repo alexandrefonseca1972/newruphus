@@ -33,6 +33,19 @@
 <noscript><div style="background:#E8634A;color:#fff;text-align:center;padding:12px;font-size:.85rem">Este site funciona melhor com JavaScript ativado.</div></noscript>
 
 
+
+<!-- WASTE TICKER -->
+<div class="waste-bar" id="waste-bar">
+  <div class="w waste-inner">
+    <span class="waste-icon">🔥</span>
+    <span>Enquanto você lê esta página, empresas sem ERP integrado perderam</span>
+    <span class="waste-amount" id="waste-amount">R$ 0,00</span>
+    <span>em retrabalho</span>
+    <a href="/contato" class="waste-cta">Parar de perder →</a>
+    <button class="waste-close" onclick="closeWaste()" aria-label="Fechar">✕</button>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav class="nav" id="nav" role="navigation" aria-label="Navegação principal">
 <div class="w nav-in">
@@ -177,6 +190,30 @@
   <div class="bc c-w" data-r="4"><div class="c-lbl">Mapa de Rateio</div><div class="c-ttl">Distribua custos com precisão</div><div class="c-txt">Rateie despesas por centro de custo, fração ideal ou critério customizado. Demonstrativos prontos para prestação de contas.</div></div>
 </div></div>
 </section>
+
+<!-- SIMULADOR DE OPERAÇÃO AO VIVO -->
+<section class="sandbox" id="simulador" aria-label="Simulador interativo">
+<div class="w">
+  <h2>Test Drive — Sem Cadastro, Sem Compromisso</h2>
+  <p class="sand-sub">Explore o sistema real. Clique nas telas, veja dados simulados e entenda como cada módulo funciona na prática.</p>
+  <div class="sand-picker">
+    <button class="active" data-flow="financeiro" onclick="sandboxFlow('financeiro')">💰 Financeiro</button>
+    <button data-flow="crm" onclick="sandboxFlow('crm')">🎯 CRM & Vendas</button>
+    <button data-flow="bi" onclick="sandboxFlow('bi')">🧠 BI com IA</button>
+  </div>
+  <div class="sand-screen">
+    <div class="sand-titlebar">
+      <div class="sand-dots"><span></span><span></span><span></span></div>
+      <div class="sand-url">app.ruphus.app/financeiro</div>
+    </div>
+    <div class="sand-body" id="sandbox-body">
+      <div class="sand-sidebar" id="sand-nav"></div>
+      <div class="sand-content" id="sand-main"></div>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- TRANSFORMATION -->
 <section class="ba" aria-label="Transformação da operação">
 <div class="w">
@@ -241,6 +278,23 @@
   </div>
 </div>
 </section>
+
+<!-- SIMULADOR SEMANA COM vs SEM ERP -->
+<section class="week-sim" id="semana" aria-label="Simulador semanal">
+<div class="w">
+  <h2>Sua Semana: Com e Sem ERP Integrado</h2>
+  <p class="week-sub">Compare visualmente como cada dia muda quando você troca planilhas e sistemas desconectados por uma plataforma integrada.</p>
+  <div class="week-toggle">
+    <div class="week-toggle-pill">
+      <button class="active" data-mode="sem" onclick="weekMode('sem')">😩 Sem ERP</button>
+      <button data-mode="com" onclick="weekMode('com')">🚀 Com Ruphus</button>
+    </div>
+  </div>
+  <div id="week-timeline" class="week-timeline"></div>
+  <div id="week-summary" class="week-summary"></div>
+</div>
+</section>
+
 <!-- DEPOIMENTOS / PROVA SOCIAL -->
 <section class="proof" id="depoimentos" aria-label="Depoimentos de clientes">
 <div class="w">
@@ -306,6 +360,19 @@
   </div>
 </div>
 </section>
+
+<!-- DIAGNÓSTICO COM IA -->
+<section class="diag" id="diagnostico" aria-label="Diagnóstico inteligente">
+<div class="w">
+  <h2>Diagnóstico Gratuito da Sua Operação</h2>
+  <p class="diag-sub">Responda 5 perguntas rápidas e receba uma análise personalizada com módulos recomendados e economia estimada.</p>
+  <div class="diag-container">
+    <div class="diag-chat" id="diag-chat"></div>
+    <div class="diag-result" id="diag-result" style="display:none"></div>
+  </div>
+</div>
+</section>
+
 <!-- DEMO CTA (replaces pricing) -->
 <section class="demo-cta" id="contato" aria-label="Solicitar demonstração">
 <div class="w">

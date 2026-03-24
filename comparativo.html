@@ -240,10 +240,136 @@
 </div>
 </section>
 
+
+<!-- CALCULADORA TCO (3 ANOS) -->
+<section class="tco" id="tco" aria-label="Calculadora de custo total">
+<div class="w">
+  <h2>Custo Total de Propriedade: Ruphus vs. Alternativas</h2>
+  <p class="tco-sub">Calcule quanto sua operação gasta hoje com múltiplas ferramentas versus uma plataforma integrada — em 1, 2 ou 3 anos.</p>
+  <div class="tco-grid">
+    <div class="tco-inputs" id="tco-form">
+      <div class="tco-field"><label>Quantidade de usuários</label><input type="number" id="tco-users" value="10" min="1" max="500"/></div>
+      <div class="tco-field"><label>Ferramentas usadas hoje</label><input type="number" id="tco-tools" value="5" min="1" max="20"/></div>
+      <div class="tco-field"><label>Horas semanais em retrabalho (por pessoa)</label><input type="number" id="tco-hours" value="20" min="1" max="40"/></div>
+      <div class="tco-field"><label>Salário médio da equipe (R$)</label><input type="number" id="tco-salary" value="5000" min="1500" max="30000" step="500"/></div>
+    </div>
+    <div class="tco-results">
+      <div class="tco-year-tabs">
+        <button class="active" data-y="1" onclick="tcoYear(1)">1 Ano</button>
+        <button data-y="2" onclick="tcoYear(2)">2 Anos</button>
+        <button data-y="3" onclick="tcoYear(3)">3 Anos</button>
+      </div>
+      <div class="tco-bar-group">
+        <div class="tco-bar-label"><span class="name">Cenário Atual</span><span class="amount" id="tco-val-current">R$ 0</span></div>
+        <div class="tco-bar"><span id="tco-bar-current" style="width:0%"></span></div>
+      </div>
+      <div class="tco-bar-group">
+        <div class="tco-bar-label"><span class="name">Com Ruphus</span><span class="amount" id="tco-val-ruphus">R$ 0</span></div>
+        <div class="tco-bar"><span id="tco-bar-ruphus" style="width:0%"></span></div>
+      </div>
+      <div class="tco-savings">
+        <div class="big" id="tco-saving">R$ 0</div>
+        <div class="desc" id="tco-pct">de economia</div>
+      </div>
+      <button class="diag-report-btn" onclick="openModal()" style="margin-top:16px">Quero essa economia na minha operação →</button>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- RADAR DE MATURIDADE DIGITAL -->
+<section class="radar" id="radar" aria-label="Radar de maturidade digital">
+<div class="w">
+  <h2>Radar de Maturidade Digital</h2>
+  <p class="radar-sub">Avalie 6 dimensões da sua operação e descubra seus gaps. Mova os controles para refletir sua realidade.</p>
+  <div class="radar-container">
+    <div class="radar-questions">
+      <div class="radar-q"><label>📊 Financeiro</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-0">5</span></div></div>
+      <div class="radar-q"><label>⚙️ Operacional</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-1">5</span></div></div>
+      <div class="radar-q"><label>🎯 Comercial</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-2">5</span></div></div>
+      <div class="radar-q"><label>📋 Contábil</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-3">5</span></div></div>
+      <div class="radar-q"><label>💻 Tecnológico</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-4">5</span></div></div>
+      <div class="radar-q"><label>👥 Pessoas</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-5">5</span></div></div>
+    </div>
+    <div class="radar-chart-wrap">
+      <canvas id="radar-canvas" width="300" height="300"></canvas>
+      <div class="radar-score-big" id="radar-score">5.0</div>
+      <div class="radar-score-label" id="radar-level">Em desenvolvimento</div>
+      <div class="radar-gaps" id="radar-gaps"></div>
+      <button class="radar-share-btn" onclick="openModal()">Quero evoluir minha maturidade digital →</button>
+    </div>
+  </div>
+</div>
+</section>
+
 </main>
 
 
 <!-- FOOTER -->
+
+<!-- CALCULADORA TCO (3 ANOS) -->
+<section class="tco" id="tco" aria-label="Calculadora de custo total">
+<div class="w">
+  <h2>Custo Total de Propriedade: Ruphus vs. Alternativas</h2>
+  <p class="tco-sub">Calcule quanto sua operação gasta hoje com múltiplas ferramentas versus uma plataforma integrada — em 1, 2 ou 3 anos.</p>
+  <div class="tco-grid">
+    <div class="tco-inputs" id="tco-form">
+      <div class="tco-field"><label>Quantidade de usuários</label><input type="number" id="tco-users" value="10" min="1" max="500"/></div>
+      <div class="tco-field"><label>Ferramentas usadas hoje</label><input type="number" id="tco-tools" value="5" min="1" max="20"/></div>
+      <div class="tco-field"><label>Horas semanais em retrabalho (por pessoa)</label><input type="number" id="tco-hours" value="20" min="1" max="40"/></div>
+      <div class="tco-field"><label>Salário médio da equipe (R$)</label><input type="number" id="tco-salary" value="5000" min="1500" max="30000" step="500"/></div>
+    </div>
+    <div class="tco-results">
+      <div class="tco-year-tabs">
+        <button class="active" data-y="1" onclick="tcoYear(1)">1 Ano</button>
+        <button data-y="2" onclick="tcoYear(2)">2 Anos</button>
+        <button data-y="3" onclick="tcoYear(3)">3 Anos</button>
+      </div>
+      <div class="tco-bar-group">
+        <div class="tco-bar-label"><span class="name">Cenário Atual</span><span class="amount" id="tco-val-current">R$ 0</span></div>
+        <div class="tco-bar"><span id="tco-bar-current" style="width:0%"></span></div>
+      </div>
+      <div class="tco-bar-group">
+        <div class="tco-bar-label"><span class="name">Com Ruphus</span><span class="amount" id="tco-val-ruphus">R$ 0</span></div>
+        <div class="tco-bar"><span id="tco-bar-ruphus" style="width:0%"></span></div>
+      </div>
+      <div class="tco-savings">
+        <div class="big" id="tco-saving">R$ 0</div>
+        <div class="desc" id="tco-pct">de economia</div>
+      </div>
+      <button class="diag-report-btn" onclick="openModal()" style="margin-top:16px">Quero essa economia na minha operação →</button>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- RADAR DE MATURIDADE DIGITAL -->
+<section class="radar" id="radar" aria-label="Radar de maturidade digital">
+<div class="w">
+  <h2>Radar de Maturidade Digital</h2>
+  <p class="radar-sub">Avalie 6 dimensões da sua operação e descubra seus gaps. Mova os controles para refletir sua realidade.</p>
+  <div class="radar-container">
+    <div class="radar-questions">
+      <div class="radar-q"><label>📊 Financeiro</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-0">5</span></div></div>
+      <div class="radar-q"><label>⚙️ Operacional</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-1">5</span></div></div>
+      <div class="radar-q"><label>🎯 Comercial</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-2">5</span></div></div>
+      <div class="radar-q"><label>📋 Contábil</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-3">5</span></div></div>
+      <div class="radar-q"><label>💻 Tecnológico</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-4">5</span></div></div>
+      <div class="radar-q"><label>👥 Pessoas</label><div class="radar-slider-wrap"><input type="range" class="radar-slider" min="1" max="10" value="5"/><span class="radar-val" id="rv-5">5</span></div></div>
+    </div>
+    <div class="radar-chart-wrap">
+      <canvas id="radar-canvas" width="300" height="300"></canvas>
+      <div class="radar-score-big" id="radar-score">5.0</div>
+      <div class="radar-score-label" id="radar-level">Em desenvolvimento</div>
+      <div class="radar-gaps" id="radar-gaps"></div>
+      <button class="radar-share-btn" onclick="openModal()">Quero evoluir minha maturidade digital →</button>
+    </div>
+  </div>
+</div>
+</section>
+
 </main>
 <footer role="contentinfo">
 <div class="w">
