@@ -310,6 +310,54 @@ html.dark .ec-ft{border-color:rgba(255,255,255,.04)}
 .edu-nl-form input{padding:11px 16px;border:1.5px solid var(--brd);border-radius:99px;font-family:var(--sans);font-size:.85rem;color:var(--tx);background:var(--bg2);outline:none;min-width:220px;transition:border-color .2s}
 .edu-nl-form input:focus{border-color:var(--teal)}
 
+/* ── BLOG — Insights & Mercado ── */
+.blog{padding:80px 0;border-top:1px solid var(--brd)}
+.blog-dash{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:32px 0 40px;padding:20px;border-radius:var(--rl);border:1px solid var(--brd);background:var(--bg2);position:relative;overflow:hidden}
+.blog-dash::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,124,102,.03),transparent 60%);pointer-events:none}
+.bd-card{padding:14px;border-radius:var(--r);border:1px solid var(--brd);background:var(--bg);text-align:center;transition:border-color .3s}
+.bd-card:hover{border-color:var(--teal)}
+.bd-label{font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--tx3);margin-bottom:2px}
+.bd-val{font-family:var(--mono);font-size:1.35rem;font-weight:600;line-height:1.2}
+.bd-change{font-size:.65rem;font-weight:600;margin-top:2px;display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:99px}
+.bd-up{color:#166534;background:#DCFCE7}
+.bd-down{color:#991B1B;background:#FEE2E2}
+.bd-neutral{color:var(--tx3);background:var(--sand)}
+html.dark .bd-up{color:#4ade80;background:rgba(22,101,52,.2)}
+html.dark .bd-down{color:#f87171;background:rgba(153,27,27,.2)}
+.bd-src{font-size:.56rem;color:var(--tx3);text-align:center;margin-top:8px}
+.blog-cats{display:flex;gap:6px;margin-bottom:24px;flex-wrap:wrap}
+.bc-cat{padding:7px 14px;border-radius:99px;font-size:.78rem;font-weight:500;border:1px solid var(--brd);color:var(--tx2);background:transparent;transition:all .2s;cursor:pointer}
+.bc-cat.on,.bc-cat:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+html.dark .bc-cat.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+.blog-feat{grid-column:span 2;display:grid;grid-template-columns:1.2fr 1fr;border-radius:var(--rl);overflow:hidden;border:1px solid var(--brd);background:var(--bg2);transition:transform .3s,box-shadow .3s}
+.blog-feat:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.05)}
+html.dark .blog-feat:hover{box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.bf-visual{position:relative;overflow:hidden;min-height:260px;display:flex;align-items:center;justify-content:center}
+.bf-visual .ev-pattern{position:absolute;inset:0;overflow:hidden}
+.bf-visual .grid-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:32px 32px}
+.bf-visual .circle{position:absolute;border-radius:50%;border:1.5px solid rgba(255,255,255,.1)}
+.bf-visual .glow{position:absolute;border-radius:50%;filter:blur(40px)}
+.bf-body{padding:28px;display:flex;flex-direction:column;justify-content:center}
+.bf-badge{display:inline-flex;align-items:center;gap:5px;font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:10px;width:fit-content}
+.bf-body h3{font-family:var(--serif);font-size:1.2rem;font-weight:700;line-height:1.25;margin-bottom:8px}
+.bf-body p{font-size:.84rem;color:var(--tx2);line-height:1.6;margin-bottom:12px}
+.bf-meta{font-size:.7rem;color:var(--tx3);display:flex;gap:12px;align-items:center;margin-top:auto}
+.ba-card2{border-radius:var(--rl);overflow:hidden;border:1px solid var(--brd);background:var(--bg2);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.ba-card2:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.05)}
+html.dark .ba-card2:hover{box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.ba-card2 .bc-visual{aspect-ratio:16/9;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ba-card2 .bc-body{padding:18px;flex:1;display:flex;flex-direction:column}
+.ba-card2 .bc-tag{font-size:.58rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:4px}
+.ba-card2 h4{font-family:var(--serif);font-size:.92rem;font-weight:700;line-height:1.3;margin-bottom:4px}
+.ba-card2 p{font-size:.76rem;color:var(--tx2);line-height:1.5;flex:1}
+.ba-card2 .bc-foot{display:flex;justify-content:space-between;align-items:center;padding:10px 18px;border-top:1px solid rgba(0,0,0,.04);font-size:.68rem;color:var(--tx3)}
+html.dark .ba-card2 .bc-foot{border-color:rgba(255,255,255,.04)}
+.bc-arrow{font-weight:600;color:var(--teal);transition:gap .2s;display:flex;align-items:center;gap:3px}
+.ba-card2:hover .bc-arrow{gap:6px}
+@media(max-width:1024px){.blog-dash{grid-template-columns:repeat(3,1fr)}.blog-feat{grid-template-columns:1fr}}
+@media(max-width:768px){.blog-dash{grid-template-columns:1fr 1fr}.blog-grid{grid-template-columns:1fr}.blog-feat{grid-column:span 1}}
+
 /* ── FAQ — rich ── */
 .faq{padding:80px 0}
 .faq-head{text-align:center;margin-bottom:12px}
@@ -454,6 +502,7 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
     <a href="#roadmap">Ecossistema</a>
     <a href="#calculadora">ROI</a>
     <a href="#educacao">Recursos</a>
+    <a href="#blog">Blog</a>
     <a href="#faq">FAQ</a>
   </div>
   <div class="ncta">
@@ -470,6 +519,7 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
   <a href="#roadmap" onclick="this.parentElement.classList.remove('open')">Ecossistema</a>
   <a href="#calculadora" onclick="this.parentElement.classList.remove('open')">ROI</a>
   <a href="#educacao" onclick="this.parentElement.classList.remove('open')">Recursos</a>
+  <a href="#blog" onclick="this.parentElement.classList.remove('open')">Blog</a>
   <a href="#faq" onclick="this.parentElement.classList.remove('open')">FAQ</a>
   <button type="button" class="btn btn-t" style="margin-top:12px" onclick="this.parentElement.classList.remove('open');openModal()">Agendar demonstração →</button>
 </div>
@@ -862,6 +912,172 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 </div>
 </section>
 
+<!-- BLOG — Insights & Mercado -->
+<section class="blog" id="blog" aria-label="Blog e indicadores econômicos">
+<div class="w">
+  <div data-r>
+    <div class="s-ey">Blog · Insights & Mercado</div>
+    <h2 class="s-hd">Indicadores, tendências e inteligência para quem decide</h2>
+  </div>
+
+  <!-- Dashboard de Indicadores -->
+  <div class="blog-dash" data-r="1">
+    <div class="bd-card">
+      <div class="bd-label">Selic</div>
+      <div class="bd-val" style="color:var(--teal)">15,00%</div>
+      <div class="bd-change bd-neutral">= estável desde jan</div>
+    </div>
+    <div class="bd-card">
+      <div class="bd-label">IPCA 12m</div>
+      <div class="bd-val" style="color:var(--coral)">3,81%</div>
+      <div class="bd-change bd-down">↓ vs 4,44% dez/25</div>
+    </div>
+    <div class="bd-card">
+      <div class="bd-label">Dólar (proj. 2026)</div>
+      <div class="bd-val">R$ 5,40</div>
+      <div class="bd-change bd-neutral">= 13 sem. estável</div>
+    </div>
+    <div class="bd-card">
+      <div class="bd-label">PIB 2026</div>
+      <div class="bd-val" style="color:var(--teal)">+1,84%</div>
+      <div class="bd-change bd-up">↑ crescimento moderado</div>
+    </div>
+    <div class="bd-card">
+      <div class="bd-label">Selic fim 2026</div>
+      <div class="bd-val" style="color:var(--amber)">12,50%</div>
+      <div class="bd-change bd-down">↓ projeção Focus</div>
+    </div>
+    <div class="bd-src">Fonte: Boletim Focus / BCB · Março 2026 · Atualizado semanalmente</div>
+  </div>
+
+  <!-- Filtros -->
+  <div class="blog-cats" data-r="2">
+    <button type="button" class="bc-cat on" onclick="fBlog(this,'all')">Todos</button>
+    <button type="button" class="bc-cat" onclick="fBlog(this,'economia')">Economia</button>
+    <button type="button" class="bc-cat" onclick="fBlog(this,'gestao')">Gestão</button>
+    <button type="button" class="bc-cat" onclick="fBlog(this,'tech')">Tecnologia</button>
+    <button type="button" class="bc-cat" onclick="fBlog(this,'inter')">Internacional</button>
+  </div>
+
+  <!-- Grid de Artigos -->
+  <div class="blog-grid">
+
+    <!-- FEATURED — Economia -->
+    <article class="blog-feat" data-bcat="economia" data-r="3">
+      <div class="bf-visual" style="background:linear-gradient(135deg,#064e3b 0%,#0D7C66 50%,#34d399 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:180px;height:180px;top:-40px;right:-40px;border-color:rgba(255,255,255,.08)"></div><div class="glow" style="width:140px;height:140px;bottom:10%;left:20%;background:rgba(255,255,255,.05)"></div></div>
+        <svg aria-hidden="true" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="1.2" stroke-linecap="round" style="position:relative;z-index:1"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      </div>
+      <div class="bf-body">
+        <div class="bf-badge" style="background:var(--tl);color:var(--teal)">Análise · Economia</div>
+        <h3>Selic a 15% e IPCA em queda: o que muda para a gestão financeira das empresas em 2026</h3>
+        <p>Com a taxa básica em 15% ao ano — a mais alta desde 2023 — o custo do crédito permanece elevado. Mas a inflação acumulada em 12 meses caiu para 3,81%, sinalizando que o ciclo de aperto pode estar próximo do fim. O Boletim Focus projeta Selic em 12,50% até dezembro de 2026 e IPCA em 4,17%. Para empresas, o cenário exige fluxo de caixa apertado, renegociação de dívidas e priorização de investimentos com payback curto.</p>
+        <div class="bf-meta"><span>Mar 2026</span><span>·</span><span>8 min leitura</span><span>·</span><span style="color:var(--teal)">Ler análise →</span></div>
+      </div>
+    </article>
+
+    <!-- Gestão -->
+    <article class="ba-card2" data-bcat="gestao" data-r="4">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#3b1f6e 0%,#6C5CE7 60%,#a78bfa 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:80px;height:80px;top:-10px;right:-10px;border-color:rgba(255,255,255,.07)"></div></div>
+        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.5" stroke-linecap="round" style="position:relative;z-index:1"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="bc-body">
+        <div class="bc-tag" style="color:var(--violet)">Gestão</div>
+        <h4>78% das empresas brasileiras já usam IA na gestão — e o ROI médio é de 3,7x</h4>
+        <p>Pesquisas recentes mostram que a adoção de IA saiu da experimentação para implantações em escala. CRM inteligente, automação contábil e análise preditiva de inadimplência lideram os casos de uso no Brasil.</p>
+      </div>
+      <div class="bc-foot"><span>Mar 2026 · 6 min</span><span class="bc-arrow">Ler →</span></div>
+    </article>
+
+    <!-- Tecnologia -->
+    <article class="ba-card2" data-bcat="tech" data-r="5">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#64748b 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:90px;height:90px;bottom:0;left:10px;border-color:rgba(255,255,255,.06)"></div></div>
+        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.5" stroke-linecap="round" style="position:relative;z-index:1"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5" opacity=".5"/><path d="M2 12l10 5 10-5" opacity=".3"/></svg>
+      </div>
+      <div class="bc-body">
+        <div class="bc-tag" style="color:var(--tx2)">Tecnologia</div>
+        <h4>Agentes autônomos e MCPs: como a IA vai se conectar direto ao seu ERP em 2026</h4>
+        <p>Os Model Context Protocols permitem que IA acesse sistemas internos e execute ações dentro de ERPs, CRMs e ferramentas de gestão — sem intervenção humana.</p>
+      </div>
+      <div class="bc-foot"><span>Mar 2026 · 10 min</span><span class="bc-arrow">Ler →</span></div>
+    </article>
+
+    <!-- Economia -->
+    <article class="ba-card2" data-bcat="economia">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#7f1d1d 0%,#E8634A 50%,#fca5a5 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:70px;height:70px;top:10px;left:-10px;border-color:rgba(255,255,255,.06)"></div></div>
+        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.5" stroke-linecap="round" style="position:relative;z-index:1"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <div class="bc-body">
+        <div class="bc-tag" style="color:var(--coral)">Economia</div>
+        <h4>Dólar estável a R$ 5,40 por 13 semanas: o que isso sinaliza para importações e custos</h4>
+        <p>A estabilidade cambial reflete o diferencial de juros Brasil-EUA e a disciplina fiscal. Para empresas que importam insumos, é janela de previsibilidade rara.</p>
+      </div>
+      <div class="bc-foot"><span>Mar 2026 · 5 min</span><span class="bc-arrow">Ler →</span></div>
+    </article>
+
+    <!-- Internacional -->
+    <article class="ba-card2" data-bcat="inter">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#1e1b4b 0%,#3730a3 50%,#818cf8 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:80px;height:80px;bottom:-10px;right:20px;border-color:rgba(255,255,255,.07)"></div></div>
+        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.5" stroke-linecap="round" style="position:relative;z-index:1"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
+      <div class="bc-body">
+        <div class="bc-tag" style="color:var(--violet)">Internacional</div>
+        <h4>Mercado global de IA ultrapassa US$ 300 bilhões em 2026 — e o Brasil quer sua fatia</h4>
+        <p>Estudo da IDC aponta que agentes autônomos e personalização de modelos impulsionam o crescimento. Empresas brasileiras correm para se posicionar na América Latina.</p>
+      </div>
+      <div class="bc-foot"><span>Mar 2026 · 7 min</span><span class="bc-arrow">Ler →</span></div>
+    </article>
+
+    <!-- Gestão -->
+    <article class="ba-card2" data-bcat="gestao">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#78350f 0%,#D4A017 50%,#fde68a 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:70px;height:70px;top:5px;right:5px;border-color:rgba(255,255,255,.07)"></div></div>
+        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.5" stroke-linecap="round" style="position:relative;z-index:1"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <div class="bc-body">
+        <div class="bc-tag" style="color:var(--amber)">Gestão</div>
+        <h4>O ERP invisível: como plataformas que se integram ao fluxo de trabalho substituem sistemas legados</h4>
+        <p>A tendência é clara — ERPs que exigem treinamento extenso perdem espaço para plataformas que se adaptam ao processo, não o contrário. Workflows de agentes e MCPs aceleram essa transição.</p>
+      </div>
+      <div class="bc-foot"><span>Mar 2026 · 8 min</span><span class="bc-arrow">Ler →</span></div>
+    </article>
+
+    <!-- Tech -->
+    <article class="ba-card2" data-bcat="tech">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#0a3d2e 0%,#0D7C66 40%,#14b89c 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:80px;height:80px;top:-15px;left:-15px;border-color:rgba(255,255,255,.07)"></div></div>
+        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.5" stroke-linecap="round" style="position:relative;z-index:1"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="bc-body">
+        <div class="bc-tag" style="color:var(--teal)">Tecnologia</div>
+        <h4>BI com IA: por que dashboards estáticos morreram e o que os substitui em 2026</h4>
+        <p>Análises assistidas por inteligência artificial identificam anomalias, geram insights proativos e recomendam ações — sem que ninguém precise construir um relatório.</p>
+      </div>
+      <div class="bc-foot"><span>Mar 2026 · 9 min</span><span class="bc-arrow">Ler →</span></div>
+    </article>
+
+    <!-- Internacional -->
+    <article class="ba-card2" data-bcat="inter">
+      <div class="bc-visual" style="background:linear-gradient(135deg,#4c1d95 0%,#7c3aed 50%,#c4b5fd 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:70px;height:70px;bottom:5px;left:10px;border-color:rgba(255,255,255,.06)"></div></div>
+        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.8)" stroke-width="1.5" stroke-linecap="round" style="position:relative;z-index:1"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+      </div>
+      <div class="bc-body">
+        <div class="bc-tag" style="color:var(--violet)">Internacional</div>
+        <h4>Fed, BCE e juros globais: como o cenário externo impacta o custo de capital no Brasil</h4>
+        <p>O diferencial de juros entre Brasil e EUA sustenta o câmbio estável, mas movimentos do Fed podem alterar fluxos de capital para emergentes a qualquer momento.</p>
+      </div>
+      <div class="bc-foot"><span>Mar 2026 · 6 min</span><span class="bc-arrow">Ler →</span></div>
+    </article>
+
+  </div>
+</div>
+</section>
+
 <!-- FAQ -->
 <section class="faq" id="faq" aria-label="Perguntas frequentes">
 <div class="w">
@@ -1142,7 +1358,7 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
   <div class="ft-top">
     <div class="ft-brand"><a href="/" class="logo" style="font-size:1.1rem"><svg viewBox="0 0 40 40" fill="none" width="26" height="26" role="img" aria-label="Logo Ruphus"><defs><linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="50%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs><path d="M20 2L36.66 11V29L20 38L3.34 29V11L20 2Z" stroke="url(#lg2)" stroke-width="2" fill="none"/><path d="M14 12H22C24.5 12 26.5 14 26.5 16.5C26.5 19 24.5 21 22 21H18L26 28" stroke="url(#lg2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M14 12V28" stroke="url(#lg2)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>Ruphus</a><p>ERP completo com 22 módulos integrados — Vendas, CRM, Financeiro, Contábil, Fiscal, BI com IA, Chat, Workflows e mais. Em evolução contínua.</p></div>
     <div class="ft-col"><h5>Produto</h5><a href="#modulos">Módulos</a><a href="#roadmap">Ecossistema</a><a href="#calculadora">Calculadora ROI</a><a href="#contato">Demonstração</a></div>
-    <div class="ft-col"><h5>Recursos</h5><a href="#educacao">Deep Dives</a><a href="#educacao">Playbooks</a><a href="#educacao">Lab</a><a href="#educacao">Newsletter</a></div>
+    <div class="ft-col"><h5>Recursos</h5><a href="#blog">Blog &amp; Indicadores</a><a href="#educacao">Deep Dives</a><a href="#educacao">Playbooks</a><a href="#educacao">Lab</a><a href="#educacao">Newsletter</a></div>
     <div class="ft-col"><h5>Legal</h5><a href="#">Termos</a><a href="#">Privacidade</a><a href="#">LGPD</a><a href="#">Segurança</a></div>
   </div>
   <div class="ft-bot"><span>© 2026 Ruphus. Todos os direitos reservados. Plataforma em evolução contínua.</span><span>Feito no Brasil 🇧🇷</span></div>
@@ -1235,6 +1451,9 @@ const feat=document.querySelector('.edu-featured');if(feat){const visibleFeat=fe
 // ── FAQ ──
 function togFaq(b){const card=b.parentElement;const a=b.nextElementSibling;const isOpen=a.classList.contains('show');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('show'));document.querySelectorAll('.faq-q').forEach(x=>{x.classList.remove('open');x.setAttribute('aria-expanded','false')});document.querySelectorAll('.faq-it').forEach(x=>x.classList.remove('open-card'));if(!isOpen){a.classList.add('show');b.classList.add('open');b.setAttribute('aria-expanded','true');card.classList.add('open-card')}}
 function fFaq(btn,cat){document.querySelectorAll('.fq-cat').forEach(x=>x.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('show'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-it').forEach(x=>{x.classList.remove('open-card');if(cat==='all'||x.dataset.fcat===cat){x.style.display='';x.style.animation='fadeUp .3s ease'}else{x.style.display='none'}})}
+
+// ── BLOG FILTER ──
+function fBlog(btn,cat){document.querySelectorAll('.bc-cat').forEach(x=>x.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.blog-feat,.ba-card2').forEach(x=>{if(cat==='all'||x.dataset.bcat===cat){x.style.display='';x.style.animation='fadeUp .4s ease'}else{x.style.display='none'}})}
 
 // ── ROI CALCULATOR (fixed) ──
 function calcROI(){
