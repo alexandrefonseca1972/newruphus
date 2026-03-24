@@ -1,6 +1,3 @@
-# Ruphus ERP — robots.txt
-# https://www.ruphus.app
-
 User-agent: *
 Allow: /
 Disallow: /dashboard/
@@ -8,8 +5,5 @@ Disallow: /login
 Disallow: /register
 Disallow: /api/
 
-# Sitemaps
 Sitemap: https://www.ruphus.app/sitemap.xml
-
-# Crawl-delay (optional, respeitado por Bing/Yandex)
 Crawl-delay: 1

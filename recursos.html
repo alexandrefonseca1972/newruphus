@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Recursos & Insights — Deep Dives, Playbooks e Changelog | Ruphus ERP</title>
+<meta name="description" content="Conteúdo técnico, guias práticos e a evolução real da plataforma. Deep Dives, Playbooks, Lab e Changelog."/>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
+<meta name="author" content="Ruphus"/>
+<meta name="theme-color" content="#0D7C66"/>
+<meta name="color-scheme" content="light dark"/>
+<link rel="canonical" href="https://www.ruphus.app/recursos.html"/>
+<meta property="og:title" content="Recursos & Insights — Deep Dives, Playbooks e Changelog | Ruphus ERP"/>
+<meta property="og:description" content="Conteúdo técnico, guias práticos e a evolução real da plataforma. Deep Dives, Playbooks, Lab e Changelog."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.ruphus.app/recursos.html"/>
+<meta property="og:locale" content="pt_BR"/>
+<meta property="og:site_name" content="Ruphus ERP"/>
+<meta property="og:image" content="https://www.ruphus.app/og-image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Recursos & Insights — Deep Dives, Playbooks e Changelog | Ruphus ERP"/>
+<meta name="twitter:description" content="Conteúdo técnico, guias práticos e a evolução real da plataforma. Deep Dives, Playbooks, Lab e Changelog."/>
+<meta name="twitter:image" content="https://www.ruphus.app/og-image.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<a href="#conteudo" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--teal);color:#fff;padding:8px 16px;z-index:9999;font-size:.85rem;transition:top .2s;border-radius:0 0 8px 0">Pular para o conteúdo</a>
+<style>.skip-link:focus{top:0}</style>
+<noscript><div style="background:#E8634A;color:#fff;text-align:center;padding:12px;font-size:.85rem">Este site funciona melhor com JavaScript ativado.</div></noscript>
+
+
+<!-- NAV -->
+<nav class="nav" id="nav" role="navigation" aria-label="Navegação principal">
+<div class="w nav-in">
+  <a href="/" class="logo">
+    <svg viewBox="0 0 40 40" fill="none" role="img" aria-label="Logo Ruphus"><defs><linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="50%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs><path d="M20 2L36.66 11V29L20 38L3.34 29V11L20 2Z" stroke="url(#lg)" stroke-width="2" fill="none"/><path d="M14 12H22C24.5 12 26.5 14 26.5 16.5C26.5 19 24.5 21 22 21H18L26 28" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M14 12V28" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+    Ruphus
+  </a>
+  <div class="nlinks">
+    <a href="/segmentos">Segmentos</a>
+    <a href="/modulos">Módulos</a>
+    <a href="/comparativo">Comparativo</a>
+    <a href="/blog">Blog</a>
+    <a href="/recursos">Recursos</a>
+    <a href="/faq">FAQ</a>
+  </div>
+  <div class="ncta">
+    <button type="button" class="theme-btn" onclick="toggleTheme()" aria-label="Alternar tema"><span id="t-ico">☀</span></button>
+    <a href="/login" class="btn btn-g">Entrar</a>
+    <button type="button" class="btn btn-t" onclick="openModal()">Ver o sistema ao vivo</button>
+  </div>
+  <button type="button" class="hambg" onclick="document.getElementById('mob').classList.add('open')" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" role="img" aria-label="Menu" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div>
+</nav>
+<div class="mob" id="mob">
+  <button type="button" class="mob-x" aria-label="Fechar menu" onclick="this.parentElement.classList.remove('open')">✕</button>
+  <a href="/segmentos" onclick="this.parentElement.classList.remove('open')">Segmentos</a>
+  <a href="/modulos" onclick="this.parentElement.classList.remove('open')">Módulos</a>
+  <a href="/comparativo" onclick="this.parentElement.classList.remove('open')">Comparativo</a>
+  <a href="/blog" onclick="this.parentElement.classList.remove('open')">Blog</a>
+  <a href="/recursos" onclick="this.parentElement.classList.remove('open')">Recursos</a>
+  <a href="/faq" onclick="this.parentElement.classList.remove('open')">FAQ</a>
+  <button type="button" class="btn btn-t" style="margin-top:12px" onclick="this.parentElement.classList.remove('open');openModal()">Quero ver funcionando →</button>
+</div>
+
+
+<main id="conteudo">
+<!-- EDUCATION — Resource Hub -->
+<section class="edu" id="educacao" aria-label="Recursos e insights">
+<div class="w">
+  <div class="edu-top">
+    <div data-r>
+      <div class="s-ey">Recursos & Insights</div>
+      <h2 class="s-hd">Não é blog genérico. É inteligência aplicada.</h2>
+    </div>
+    <div class="edu-cats" data-r="1">
+      <button type="button" class="ecat on" onclick="fEdu(this,'all')">Todos</button>
+      <button class="ecat" onclick="fEdu(this,'deep')">Deep Dive</button>
+      <button class="ecat" onclick="fEdu(this,'playbook')">Playbooks</button>
+      <button class="ecat" onclick="fEdu(this,'lab')">Lab</button>
+    </div>
+  </div>
+
+  <!-- Featured 2-col -->
+  <div class="edu-featured" data-r>
+    <article class="ef-card" data-cat="deep">
+      <div class="ef-visual" style="background:linear-gradient(135deg,#0a3d2e 0%,#0D7C66 40%,#14b89c 100%)">
+        <div class="ev-pattern">
+          <div class="grid-lines"></div>
+          <div class="circle" style="width:200px;height:200px;top:-40px;right:-40px;border-color:rgba(255,255,255,.08)"></div>
+          <div class="circle" style="width:120px;height:120px;bottom:20px;left:30px;border-color:rgba(255,255,255,.06)"></div>
+          <div class="glow" style="width:160px;height:160px;top:20%;right:20%;background:rgba(255,255,255,.06)"></div>
+        </div>
+        <div class="ef-overlay"></div>
+        <div class="ef-badge" style="background:rgba(255,255,255,.15)">Deep Dive</div>
+        <svg class="ev-icon-center" aria-hidden="true" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/><circle cx="18" cy="7" r="2" fill="rgba(255,255,255,.3)" stroke="none"/></svg>
+        <div class="ef-title">
+          <h3>Por que BI sem IA é só um painel bonito — e como o Ruphus resolve isso</h3>
+          <p>Como análises com IA integrada transformam dados passivos em recomendações acionáveis.</p>
+        </div>
+      </div>
+    </article>
+    <article class="ef-card" data-cat="playbook">
+      <div class="ef-body" style="flex:1">
+        <div class="ef-meta"><div class="tag-dot" style="background:var(--coral)"></div> Playbook · 18 min</div>
+        <h4>O fim do fechamento mensal: como empresas operam em tempo contínuo</h4>
+        <p>O conceito de "fechar o mês" é resquício de quando dados viviam em planilhas. Com lançamentos integrados a regras contábeis automáticas, o balancete é só um snapshot de algo que já está pronto. Mostramos como 3 operações migraram do ciclo mensal para o modelo contínuo usando Mapa Contábil + Workflows do Ruphus.</p>
+      </div>
+      <div class="ef-foot"><span>Financeiro + Contábil</span><span class="ef-arrow">Abrir o passo a passo →</span></div>
+    </article>
+  </div>
+
+  <!-- Grid 3-col -->
+  <div class="edu-g">
+    <article class="ec" data-cat="lab" data-r>
+      <div class="ec-visual" style="background:linear-gradient(135deg,#3b1f6e 0%,#6C5CE7 60%,#a78bfa 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:100px;height:100px;top:-20px;right:-20px;border-color:rgba(255,255,255,.08)"></div><div class="glow" style="width:100px;height:100px;bottom:10%;left:20%;background:rgba(255,255,255,.05)"></div></div>
+        <svg class="ev-icon" aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.5" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4"/><path d="M14 9l-2 2 2 2" opacity=".5"/></svg>
+      </div>
+      <div class="ec-body">
+        <div class="ec-tag" style="color:var(--violet)">Lab</div>
+        <h4>Workflows que substituem pessoas (e liberam pessoas)</h4>
+        <p>Automação de aprovações, cobranças escalonadas e checklists recorrentes — sem código, direto no ERP.</p>
+      </div>
+      <div class="ec-ft"><span>6 min · Plataforma</span><span class="ec-arr">Ver como automatizar →</span></div>
+    </article>
+
+    <article class="ec" data-cat="deep" data-r="1">
+      <div class="ec-visual" style="background:linear-gradient(135deg,#064e3b 0%,#0D7C66 50%,#34d399 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:80px;height:80px;bottom:-10px;right:20px;border-color:rgba(255,255,255,.08)"></div><div class="glow" style="width:120px;height:120px;top:10%;right:10%;background:rgba(255,255,255,.04)"></div></div>
+        <svg class="ev-icon" aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M10 6.5h4M6.5 10v4M17.5 10v4M10 17.5h4" opacity=".4"/></svg>
+      </div>
+      <div class="ec-body">
+        <div class="ec-tag" style="color:var(--teal)">Deep Dive</div>
+        <h4>Multi-tenant na prática: 50 empresas, dados 100% isolados</h4>
+        <p>RLS do Supabase, schemas compartilhados e 257 permissões granulares explicados para quem opera.</p>
+      </div>
+      <div class="ec-ft"><span>12 min · Arquitetura</span><span class="ec-arr">Entender a arquitetura →</span></div>
+    </article>
+
+    <article class="ec" data-cat="playbook" data-r="2">
+      <div class="ec-visual" style="background:linear-gradient(135deg,#7f1d1d 0%,#E8634A 50%,#fca5a5 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:90px;height:90px;top:10px;left:-20px;border-color:rgba(255,255,255,.07)"></div></div>
+        <svg class="ev-icon" aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 9h8M8 13h4" opacity=".5"/></svg>
+      </div>
+      <div class="ec-body">
+        <div class="ec-tag" style="color:var(--coral)">Playbook</div>
+        <h4>Cobrança automatizada via WhatsApp: recuperação em 7 dias</h4>
+        <p>Régua de cobrança com Z-API, gatilhos no Financeiro e templates que realmente funcionam.</p>
+      </div>
+      <div class="ec-ft"><span>10 min · Financeiro</span><span class="ec-arr">Copiar a estratégia →</span></div>
+    </article>
+
+    <article class="ec" data-cat="lab" data-r="3">
+      <div class="ec-visual" style="background:linear-gradient(135deg,#78350f 0%,#D4A017 50%,#fde68a 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:70px;height:70px;bottom:0;right:10px;border-color:rgba(255,255,255,.08)"></div></div>
+        <svg class="ev-icon" aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><circle cx="9" cy="10" r="1" fill="rgba(255,255,255,.6)" stroke="none"/><circle cx="12" cy="10" r="1" fill="rgba(255,255,255,.6)" stroke="none"/><circle cx="15" cy="10" r="1" fill="rgba(255,255,255,.6)" stroke="none"/></svg>
+      </div>
+      <div class="ec-body">
+        <div class="ec-tag" style="color:var(--amber)">Lab</div>
+        <h4>Chat + Tickets: como eliminar o WhatsApp corporativo desordenado</h4>
+        <p>Comunicação contextualizada por projeto, cliente ou departamento — com histórico e rastreabilidade total.</p>
+      </div>
+      <div class="ec-ft"><span>5 min · Operações</span><span class="ec-arr">Resolver o caos →</span></div>
+    </article>
+
+    <article class="ec" data-cat="deep" data-r="4">
+      <div class="ec-visual" style="background:linear-gradient(135deg,#1e293b 0%,#334155 50%,#64748b 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:110px;height:110px;top:-30px;right:-30px;border-color:rgba(255,255,255,.06)"></div><div class="glow" style="width:80px;height:80px;bottom:20%;left:15%;background:rgba(59,130,246,.08)"></div></div>
+        <svg class="ev-icon" aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5" opacity=".5"/><path d="M2 12l10 5 10-5" opacity=".3"/></svg>
+      </div>
+      <div class="ec-body">
+        <div class="ec-tag" style="color:var(--tx2)">Deep Dive</div>
+        <h4>22 módulos, 1 decisão: como mapear sua operação antes de ativar o ERP</h4>
+        <p>Framework prático para diagnosticar quais módulos ativar primeiro e a sequência ideal de implantação.</p>
+      </div>
+      <div class="ec-ft"><span>15 min · Estratégia</span><span class="ec-arr">Montar meu plano →</span></div>
+    </article>
+
+    <article class="ec" data-cat="playbook" data-r="5">
+      <div class="ec-visual" style="background:linear-gradient(135deg,#1e1b4b 0%,#3730a3 50%,#818cf8 100%)">
+        <div class="ev-pattern"><div class="grid-lines"></div><div class="circle" style="width:90px;height:90px;top:10px;left:10px;border-color:rgba(255,255,255,.06)"></div></div>
+        <svg class="ev-icon" aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.5" stroke-linecap="round"><path d="M4 14.899A7 7 0 1115.71 8h1.79a4.5 4.5 0 012.5 8.242"/><path d="M12 12v9"/><path d="M8 17l4-4 4 4" opacity=".6"/></svg>
+      </div>
+      <div class="ec-body">
+        <div class="ec-tag" style="color:var(--violet)">Playbook</div>
+        <h4>De Superlógica ao Ruphus: migração sem downtime</h4>
+        <p>Passo a passo real de integração e migração entre sistemas, com cronograma e checklist completo.</p>
+      </div>
+      <div class="ec-ft"><span>20 min · Migração</span><span class="ec-arr">Planejar minha migração →</span></div>
+    </article>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="edu-nl" data-r>
+    <div class="edu-nl-text">
+      <h4>Toda segunda-feira, direto no seu email</h4>
+      <p>Novidades do produto, indicadores econômicos e insights que você não encontra em blog genérico.</p>
+    </div>
+    <div class="edu-nl-form">
+      <input type="email" placeholder="seu@email.com.br" aria-label="Email para newsletter"/>
+      <button class="btn btn-t" onclick="toast('Inscrito com sucesso! Bem-vindo ao changelog.')">Quero receber →</button>
+    </div>
+  </div>
+</div>
+</section>
+<!-- CHANGELOG -->
+<section class="clog" id="changelog" aria-label="Evolução da plataforma">
+<div class="w">
+  <div style="text-align:center" data-r>
+    <div class="s-ey">Changelog</div>
+    <h2 class="s-hd" style="max-width:100%;text-align:center">Evolução real, não promessas de roadmap</h2>
+    <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Funcionalidades entregues, IA aplicada e módulos que resolvem problemas reais.</p>
+  </div>
+  <div class="clog-line" data-r="1">
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Março 2026</div>
+      <h4>Gestão de Serviços: agendamento inteligente e fila de espera <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Módulo completo para operações de serviço: agendamento com disponibilidade em tempo real, fila de espera inteligente com priorização automática, reserva de espaços e recursos, e notificações para prestadores e clientes. Ideal para facilities, clínicas, manutenção predial e qualquer operação com escala de serviços.</p>
+      <div class="clog-tags"><span class="clog-tag">Gestão de Serviços</span><span class="clog-tag">Agendamento</span><span class="clog-tag">Fila de Espera</span><span class="clog-tag">Automação</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Março 2026</div>
+      <h4>Checklists com controle de progresso por cliente <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Crie rotinas e tarefas recorrentes vinculadas a clientes, contratos ou projetos. Cada checklist tem progresso visual em tempo real, atribuição por responsável, prazo, evidências fotográficas e histórico completo de execução. 7 permissões granulares para controle de acesso.</p>
+      <div class="clog-tags"><span class="clog-tag">Checklists</span><span class="clog-tag">Operações</span><span class="clog-tag">Controle de Qualidade</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Fevereiro 2026</div>
+      <h4>IA aplicada ao BI: detecção de anomalias e insights proativos <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>O módulo de Business Intelligence agora usa inteligência artificial para identificar padrões fora do normal — picos de despesa, queda de receita, inadimplência crescente — e gera alertas antes que virem crise. Dashboards com recomendações acionáveis, não apenas gráficos.</p>
+      <div class="clog-tags"><span class="clog-tag">BI</span><span class="clog-tag">Inteligência Artificial</span><span class="clog-tag">Anomalias</span><span class="clog-tag">Alertas</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Fevereiro 2026</div>
+      <h4>Relatórios inteligentes com geração assistida por IA <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>36 permissões de relatórios com novo motor de geração: descreva o que precisa em linguagem natural e o sistema monta o relatório, aplica filtros e exporta em PDF ou Excel. Fim dos relatórios fixos — cada empresa personaliza sem depender de TI.</p>
+      <div class="clog-tags"><span class="clog-tag">Relatórios</span><span class="clog-tag">IA Generativa</span><span class="clog-tag">Exportação</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Janeiro 2026</div>
+      <h4>Workflows automatizados: regras de negócio sem código <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Automação de processos completos: aprovações em cadeia, escalonamento de cobranças, disparo de checklists por evento, notificações condicionais e integração entre módulos. Configure regras visuais que executam sozinhas — sem escrever uma linha de código.</p>
+      <div class="clog-tags"><span class="clog-tag">Workflows</span><span class="clog-tag">Automação</span><span class="clog-tag">No-code</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Janeiro 2026</div>
+      <h4>22 módulos em produção — marco de plataforma completa <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Todos os 22 módulos operacionais com 257 permissões granulares: Vendas & CRM (4), Financeiro (5), Pessoas & Operações (7) e Plataforma (6). Cada empresa adquire apenas os módulos que precisar — e pode expandir com um clique.</p>
+      <div class="clog-tags"><span class="clog-tag">Plataforma</span><span class="clog-tag">Marco</span><span class="clog-tag">22 Módulos</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Dezembro 2025</div>
+      <h4>Chat interno com contexto por departamento e projeto <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Comunicação em tempo real entre membros da empresa — com canais por departamento, projeto ou cliente. Histórico pesquisável, menções, e 12 permissões para controle de quem vê o quê. Substitui o WhatsApp corporativo desordenado.</p>
+      <div class="clog-tags"><span class="clog-tag">Chat</span><span class="clog-tag">Comunicação</span><span class="clog-tag">Contexto</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Dezembro 2025</div>
+      <h4>Cobrança automatizada via WhatsApp com régua inteligente <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Régua de cobrança com escalonamento automático: lembrete antes do vencimento, cobrança no dia, segunda via, e mensagem de negativação — tudo via WhatsApp com rastreio de leitura. Integração nativa com o módulo Financeiro.</p>
+      <div class="clog-tags"><span class="clog-tag">Financeiro</span><span class="clog-tag">WhatsApp</span><span class="clog-tag">Cobrança</span><span class="clog-tag">Automação</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Novembro 2025</div>
+      <h4>Módulo Fiscal: notas fiscais, cancelamentos e planejamento tributário <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Emissão de NF-e integrada com NFe.io, cancelamento com motivo rastreável, e planejamento tributário básico. 5 permissões dedicadas. Conecta direto com Financeiro e Contabilidade — o lançamento gera a nota e a escrituração automaticamente.</p>
+      <div class="clog-tags"><span class="clog-tag">Fiscal</span><span class="clog-tag">NF-e</span><span class="clog-tag">Tributário</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot live"></div>
+      <div class="clog-date">Outubro 2025</div>
+      <h4>Aprovações em múltiplos níveis com delegação <span class="clog-badge" style="background:#DCFCE7;color:#166534">Live</span></h4>
+      <p>Sistema de aprovações com hierarquia configurável: defina quem aprova o quê por valor, tipo ou departamento. Delegação temporária para férias/viagens, histórico completo de decisões e integração com notificações e workflows.</p>
+      <div class="clog-tags"><span class="clog-tag">Aprovações</span><span class="clog-tag">Governança</span><span class="clog-tag">Hierarquia</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot dev"></div>
+      <div class="clog-date">Abril 2026 · Em construção</div>
+      <h4>IA no CRM: scoring de leads e previsão de conversão <span class="clog-badge" style="background:var(--al);color:#92400E">Em dev</span></h4>
+      <p>Machine learning aplicado ao pipeline de vendas: score automático de leads baseado em comportamento, previsão de probabilidade de fechamento e sugestão de próxima ação. O CRM para de ser um banco de dados e vira um assistente de vendas.</p>
+      <div class="clog-tags"><span class="clog-tag">CRM</span><span class="clog-tag">IA</span><span class="clog-tag">Lead Scoring</span><span class="clog-tag">Predição</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot dev"></div>
+      <div class="clog-date">Abril 2026 · Em construção</div>
+      <h4>App mobile PWA com aprovações offline <span class="clog-badge" style="background:var(--al);color:#92400E">Em dev</span></h4>
+      <p>Progressive Web App para uso em campo: aprovações, consultas financeiras, execução de checklists e notificações push. Funciona offline — sincroniza quando voltar à rede.</p>
+      <div class="clog-tags"><span class="clog-tag">Mobile</span><span class="clog-tag">PWA</span><span class="clog-tag">Offline</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot plan"></div>
+      <div class="clog-date">Q2 2026 · Planejado</div>
+      <h4>IA no Financeiro: previsão de fluxo de caixa e detecção de fraude <span class="clog-badge" style="background:var(--vl);color:var(--violet)">Planejado</span></h4>
+      <p>Modelo preditivo que projeta receitas e despesas futuras baseado em histórico e sazonalidade. Detecção de movimentações atípicas com alertas automáticos para o gestor.</p>
+      <div class="clog-tags"><span class="clog-tag">Financeiro</span><span class="clog-tag">IA Preditiva</span><span class="clog-tag">Fluxo de Caixa</span></div>
+    </div>
+
+    <div class="clog-item">
+      <div class="clog-dot plan"></div>
+      <div class="clog-date">Q3 2026 · Planejado</div>
+      <h4>API pública REST + Webhooks <span class="clog-badge" style="background:var(--vl);color:var(--violet)">Planejado</span></h4>
+      <p>Endpoints REST documentados para integrações externas, automações e conexão com ferramentas de terceiros. Webhooks para eventos em tempo real — cada módulo emite eventos consumíveis por qualquer sistema.</p>
+      <div class="clog-tags"><span class="clog-tag">API</span><span class="clog-tag">Webhooks</span><span class="clog-tag">Integrações</span></div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+</main>
+<footer role="contentinfo">
+<div class="w">
+  <div class="ft-top">
+    <div class="ft-brand"><a href="/" class="logo" style="font-size:1.1rem"><svg viewBox="0 0 40 40" fill="none" width="26" height="26" role="img" aria-label="Logo Ruphus"><defs><linearGradient id="lg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="50%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs><path d="M20 2L36.66 11V29L20 38L3.34 29V11L20 2Z" stroke="url(#lg2)" stroke-width="2" fill="none"/><path d="M14 12H22C24.5 12 26.5 14 26.5 16.5C26.5 19 24.5 21 22 21H18L26 28" stroke="url(#lg2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M14 12V28" stroke="url(#lg2)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>Ruphus</a><p>ERP completo com 22 módulos integrados — Vendas, CRM, Financeiro, Contábil, Fiscal, BI com IA, Chat, Workflows e mais. Em evolução contínua.</p></div>
+    <div class="ft-col"><h5>Produto</h5><a href="/modulos">Módulos (22)</a><a href="/modulos#roadmap">Ecossistema</a><a href="/comparativo#calculadora">Calculadora ROI</a><a href="/contato">Demonstração</a></div>
+    <div class="ft-col"><h5>Recursos</h5><a href="/blog">Blog & Indicadores</a><a href="/recursos">Deep Dives</a><a href="/recursos#changelog">Changelog</a><a href="/recursos#newsletter">Newsletter</a></div>
+    <div class="ft-col"><h5>Confiança</h5><a href="/seguranca">Arquitetura</a><a href="/seguranca#garantias">Garantias</a><a href="/faq">FAQ</a><a href="/seguranca">LGPD</a></div>
+  </div>
+  <div class="ft-bot"><span>© 2026 Ruphus. Todos os direitos reservados. Plataforma em evolução contínua.</span><span>Feito no Brasil 🇧🇷</span></div>
+</div>
+</footer>
+
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button type="button" class="modal-x" onclick="closeModal()" aria-label="Fechar modal">✕</button>
+    <h3>Reserve seus 30 minutos</h3>
+    <div class="sub">Preencha abaixo — nossa equipe responde em até 2 horas com data e horário.</div>
+    <div class="fg" id="fg-m-nome">
+      <label>Nome *</label>
+      <input type="text" placeholder="Seu nome completo" id="m-nome" autocomplete="name" oninput="vNome(this)" onblur="vNome(this)"/>
+      <span class="vicon"></span>
+      <div class="hint">Mínimo 3 caracteres</div>
+    </div>
+    <div class="fg" id="fg-m-email">
+      <label>Email corporativo *</label>
+      <input type="email" placeholder="nome@empresa.com.br" id="m-email" autocomplete="email" oninput="vEmail(this)" onblur="vEmail(this)"/>
+      <span class="vicon"></span>
+      <div class="hint">Use seu email profissional</div>
+    </div>
+    <div class="fg" id="fg-m-fone">
+      <label>WhatsApp</label>
+      <input type="tel" placeholder="(00) 00000-0000" id="m-fone" autocomplete="tel" maxlength="15" oninput="maskFone(this);vFone(this)" onblur="vFone(this)"/>
+      <span class="vicon"></span>
+      <div class="hint">Formato: (00) 00000-0000</div>
+    </div>
+    <label>Porte da operação</label>
+    <select id="m-porte"><option>1-10 colaboradores</option><option>11-50 colaboradores</option><option>51-200 colaboradores</option><option>200+</option></select>
+    <label>O que mais interessa?</label>
+    <select id="m-interesse"><option>CRM + Financeiro</option><option>Módulo Contábil</option><option>BI & Analytics</option><option>Todos os módulos</option></select>
+    <button type="button" class="btn btn-t btn-submit" id="btn-modal" style="width:100%;padding:13px;margin-top:4px" disabled onclick="submitModal()">Reservar minha vaga →</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast-el">✓ <span id="toast-msg"></span></div>
+
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" role="img" aria-label="Ícone WhatsApp"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+
+
+
+
+<script src="/scripts.js"></script>
+</body>
+</html>
