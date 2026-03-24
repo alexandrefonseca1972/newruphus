@@ -743,16 +743,18 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 <div class="w">
   <div style="text-align:center" data-r>
     <div class="s-ey">Para Quem</div>
-    <h2 class="s-hd" style="max-width:100%;text-align:center">Um ERP, oito realidades. Qual é a sua?</h2>
+    <h2 class="s-hd" style="max-width:100%;text-align:center">Um ERP, catorze realidades. Qual é a sua?</h2>
     <p class="s-desc" style="max-width:100%;text-align:center;margin:8px auto 0">Arraste para explorar. Cada segmento usa uma combinação diferente dos 22 módulos.</p>
   </div>
 
   <div class="seg-tabs" data-r="1">
-    <button type="button" class="sg-tab on" onclick="fSeg(this,'all')">Todos</button>
-    <button type="button" class="sg-tab" onclick="fSeg(this,'pme')">PMEs</button>
+    <button type="button" class="sg-tab on" onclick="fSeg(this,'all')">Todos (14)</button>
+    <button type="button" class="sg-tab" onclick="fSeg(this,'pme')">PMEs & Startups</button>
     <button type="button" class="sg-tab" onclick="fSeg(this,'gest')">Gestão Predial</button>
-    <button type="button" class="sg-tab" onclick="fSeg(this,'serv')">Serviços</button>
-    <button type="button" class="sg-tab" onclick="fSeg(this,'fin')">Financeiro</button>
+    <button type="button" class="sg-tab" onclick="fSeg(this,'serv')">Serviços & Operações</button>
+    <button type="button" class="sg-tab" onclick="fSeg(this,'fin')">Financeiro & Jurídico</button>
+    <button type="button" class="sg-tab" onclick="fSeg(this,'saude')">Saúde & Educação</button>
+    <button type="button" class="sg-tab" onclick="fSeg(this,'ind')">Indústria</button>
   </div>
 
   <div class="seg-scroll" data-r="2">
@@ -901,8 +903,116 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
       </div>
     </div>
 
+    <!-- 9. Clínicas e Consultórios -->
+    <div class="sc" data-scat="saude">
+      <div class="sc-header" style="background:linear-gradient(135deg,#0e4429,#16a34a)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">Saúde</span>
+        <span class="sc-icon">🏥</span>
+        <h3 style="color:#fff">Clínicas e Consultórios</h3>
+      </div>
+      <div class="sc-body">
+        <p>Agendamentos de pacientes, controle financeiro por convênio, gestão de profissionais, checklists de procedimentos e faturamento automatizado.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 3-30 profissionais, 200+ pacientes/mês</div>
+        <div class="sc-mods">
+          <span class="sc-mod">Gestão de Serviços</span><span class="sc-mod">Financeiro</span><span class="sc-mod">Funcionários</span><span class="sc-mod">Checklists</span><span class="sc-mod">Relatórios</span><span class="sc-mod">Chat</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Ver para clínicas →</div>
+      </div>
+    </div>
+
+    <!-- 10. Escolas e Instituições de Ensino -->
+    <div class="sc" data-scat="saude">
+      <div class="sc-header" style="background:linear-gradient(135deg,#1e3a5f,#3b82f6)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">Educação</span>
+        <span class="sc-icon">🎓</span>
+        <h3 style="color:#fff">Escolas e Instituições de Ensino</h3>
+      </div>
+      <div class="sc-body">
+        <p>Gestão financeira de mensalidades, controle de inadimplência, departamentos por unidade, contratos com fornecedores e relatórios por período letivo.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 100-2.000 alunos, múltiplos departamentos</div>
+        <div class="sc-mods">
+          <span class="sc-mod">Financeiro</span><span class="sc-mod">Contabilidade</span><span class="sc-mod">Departamentos</span><span class="sc-mod">Contratos</span><span class="sc-mod">Relatórios</span><span class="sc-mod">Aprovações</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Ver para educação →</div>
+      </div>
+    </div>
+
+    <!-- 11. Escritórios de Advocacia -->
+    <div class="sc" data-scat="fin">
+      <div class="sc-header" style="background:linear-gradient(135deg,#1c1917,#57534e)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">Jurídico</span>
+        <span class="sc-icon">⚖️</span>
+        <h3 style="color:#fff">Escritórios de Advocacia</h3>
+      </div>
+      <div class="sc-body">
+        <p>Gestão de clientes e processos, controle de honorários e prazos, timesheet por caso, tickets para acompanhamento e relatórios de rentabilidade por área.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 5-50 advogados, centenas de processos ativos</div>
+        <div class="sc-mods">
+          <span class="sc-mod">Clientes</span><span class="sc-mod">Tickets</span><span class="sc-mod">Contratos</span><span class="sc-mod">Financeiro</span><span class="sc-mod">Projetos</span><span class="sc-mod">Relatórios</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Ver para escritórios jurídicos →</div>
+      </div>
+    </div>
+
+    <!-- 12. Imobiliárias -->
+    <div class="sc" data-scat="gest">
+      <div class="sc-header" style="background:linear-gradient(135deg,#6b21a8,#a855f7)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">Gestão Predial</span>
+        <span class="sc-icon">🏠</span>
+        <h3 style="color:#fff">Imobiliárias</h3>
+      </div>
+      <div class="sc-body">
+        <p>Pipeline de vendas e locações, CRM de proprietários e inquilinos, contratos de aluguel, cobranças recorrentes e comissões por corretor.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 50-500 imóveis em carteira, 5-20 corretores</div>
+        <div class="sc-mods">
+          <span class="sc-mod">CRM</span><span class="sc-mod">Vendas</span><span class="sc-mod">Contratos</span><span class="sc-mod">Financeiro</span><span class="sc-mod">Clientes</span><span class="sc-mod">Relatórios</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Ver para imobiliárias →</div>
+      </div>
+    </div>
+
+    <!-- 13. Indústria e Manufatura -->
+    <div class="sc" data-scat="ind">
+      <div class="sc-header" style="background:linear-gradient(135deg,#422006,#b45309)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">Indústria</span>
+        <span class="sc-icon">🏭</span>
+        <h3 style="color:#fff">Indústria e Manufatura</h3>
+      </div>
+      <div class="sc-body">
+        <p>Controle de estoque de matérias-primas e produtos acabados, ordens de produção via workflows, fiscal integrado, custos por centro e vendas B2B.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 20-200 funcionários, múltiplas linhas de produção</div>
+        <div class="sc-mods">
+          <span class="sc-mod">Estoque</span><span class="sc-mod">Workflows</span><span class="sc-mod">Fiscal</span><span class="sc-mod">Financeiro</span><span class="sc-mod">Vendas</span><span class="sc-mod">Fornecedores</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Ver para indústria →</div>
+      </div>
+    </div>
+
+    <!-- 14. Startups e Empresas de Tecnologia -->
+    <div class="sc" data-scat="pme">
+      <div class="sc-header" style="background:linear-gradient(135deg,#0c0a09,#3f3f46)">
+        <div class="sc-bg" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22><rect width=%2240%22 height=%2240%22 fill=%22none%22 stroke=%22white%22 stroke-width=%220.3%22/></svg>') repeat"></div>
+        <span class="sc-porte" style="background:rgba(255,255,255,.15);color:#fff">PMEs & Tech</span>
+        <span class="sc-icon">⚡</span>
+        <h3 style="color:#fff">Startups e Empresas de Tecnologia</h3>
+      </div>
+      <div class="sc-body">
+        <p>CRM para pipeline de vendas SaaS, projetos ágeis com tickets, BI para métricas de crescimento, workflows de onboarding e chat entre squads.</p>
+        <div class="sc-use"><strong>Caso típico:</strong> 5-80 colaboradores, modelo SaaS ou serviço digital</div>
+        <div class="sc-mods">
+          <span class="sc-mod">CRM</span><span class="sc-mod">Projetos</span><span class="sc-mod">Tickets</span><span class="sc-mod">BI com IA</span><span class="sc-mod">Workflows</span><span class="sc-mod">Chat</span>
+        </div>
+        <div class="sc-cta" onclick="openModal()">Ver para startups →</div>
+      </div>
+    </div>
+
   </div>
-  <div class="seg-hint">← Arraste para explorar todos os segmentos →</div>
+  <div class="seg-hint">← Arraste para explorar os 14 segmentos →</div>
 </div>
 </section>
 
