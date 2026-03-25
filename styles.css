@@ -1059,3 +1059,49 @@ html.dark .waste-close:hover{color:#fff}
 .case-impact-item .ci-lbl{font-size:.72rem;color:var(--muted);margin-top:2px}
 .case-source{font-size:.7rem;color:var(--muted);margin-top:16px;font-style:italic;text-align:right}
 @media(max-width:768px){.case-split{grid-template-columns:1fr}.case-impact{grid-template-columns:repeat(2,1fr)}}
+
+/* ═══════════════════════════════════════════════════
+   PREMIUM FLOW DIAGRAMS
+   ═══════════════════════════════════════════════════ */
+.flow-diagram{padding:60px 0}
+.flow-diagram h2{text-align:center;font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:6px}
+.flow-diagram .flow-sub{text-align:center;color:var(--muted);max-width:560px;margin:0 auto 36px;font-size:.92rem}
+.flow-phase{display:flex;align-items:stretch;gap:8px;margin-bottom:8px;position:relative}
+.flow-phase::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:2px}
+.flow-phase[data-c="coral"]::before{background:#F0997B}
+.flow-phase[data-c="purple"]::before{background:#AFA9EC}
+.flow-phase[data-c="teal"]::before{background:#5DCAA5}
+.flow-phase[data-c="pink"]::before{background:#ED93B1}
+.flow-phase[data-c="blue"]::before{background:#85B7EB}
+.flow-phase[data-c="amber"]::before{background:#FAC775}
+.flow-phase-label{writing-mode:vertical-rl;text-orientation:mixed;font-size:.72rem;font-weight:600;letter-spacing:.05em;padding:8px 6px 8px 10px;color:var(--muted);min-width:32px;display:flex;align-items:center;justify-content:center;text-transform:uppercase}
+.flow-cards{display:flex;gap:8px;flex:1;flex-wrap:wrap}
+.flow-card{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;border:1px solid var(--brd);background:var(--card);cursor:pointer;transition:all .25s;flex:1;min-width:140px}
+.flow-card:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.flow-card .fc-ico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.flow-card .fc-ico svg{width:18px;height:18px}
+.flow-card .fc-tx h5{font-size:.85rem;font-weight:600;color:var(--fg);margin:0;line-height:1.3}
+.flow-card .fc-tx p{font-size:.73rem;color:var(--muted);margin:2px 0 0;line-height:1.3}
+.flow-conn{display:flex;align-items:center;justify-content:center;padding:4px 0;color:var(--muted)}
+.flow-conn svg{width:18px;height:18px}
+.flow-loop{display:flex;align-items:center;gap:8px;justify-content:center;padding:8px 18px;border-radius:99px;border:1px dashed var(--brd);font-size:.75rem;color:var(--muted);margin-top:8px}
+.flow-loop svg{width:13px;height:13px}
+/* Security tower */
+.sec-layer{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:14px;border:1px solid var(--brd);background:var(--card);margin-bottom:8px;cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
+.sec-layer:hover{border-color:var(--teal);transform:translateX(4px)}
+.sec-layer::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px}
+.sec-layer[data-c="blue"]::before{background:#85B7EB}
+.sec-layer[data-c="purple"]::before{background:#AFA9EC}
+.sec-layer[data-c="coral"]::before{background:#F0997B}
+.sec-layer[data-c="teal"]::before{background:#5DCAA5}
+.sec-layer[data-c="pink"]::before{background:#ED93B1}
+.sec-num{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600;flex-shrink:0}
+.sec-ico{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sec-ico svg{width:20px;height:20px}
+.sec-info h5{font-size:.92rem;font-weight:600;color:var(--fg);margin:0;line-height:1.3}
+.sec-info p{font-size:.78rem;color:var(--muted);margin:2px 0 0;line-height:1.4}
+.sec-between{display:flex;align-items:center;justify-content:center;gap:8px;padding:3px 0;font-size:.72rem;color:var(--muted)}
+.sec-between svg{width:14px;height:14px}
+.sec-foot{text-align:center;font-size:.8rem;color:var(--muted);padding:10px 18px;border-radius:12px;background:rgba(0,0,0,.02);margin-top:10px;line-height:1.5}
+html.dark .sec-foot{background:rgba(255,255,255,.03)}
+@media(max-width:768px){.flow-cards{flex-direction:column}.flow-card{min-width:100%}.sec-layer{flex-wrap:wrap}}
