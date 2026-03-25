@@ -1031,3 +1031,19 @@ function calcRetrabalho(){
   document.getElementById('ret-eco').textContent=fmt(eco);
 }
 document.addEventListener('DOMContentLoaded',calcRetrabalho);
+
+/* ═══════════════════════════════════════════════════════════════
+   BLOG CARDS — click entire card to follow CTA link
+   ═══════════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.ba-card2,.blog-feat').forEach(function(card){
+    var link=card.querySelector('.bc-arrow[href],.bf-meta a[href]');
+    if(link){
+      card.style.cursor='pointer';
+      card.addEventListener('click',function(e){
+        if(e.target.tagName==='A')return;
+        link.click();
+      });
+    }
+  });
+});
