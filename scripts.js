@@ -1148,3 +1148,19 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   });
 });
+
+/* ═══════════════════════════════════════════════════════════════
+   RECURSOS CARDS — click to follow CTA link
+   ═══════════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.ec,.ef-card').forEach(function(card){
+    var link=card.querySelector('.ec-arr[href],.ef-arrow[href]');
+    if(link){
+      card.style.cursor='pointer';
+      card.addEventListener('click',function(e){
+        if(e.target.closest('a'))return;
+        link.click();
+      });
+    }
+  });
+});
