@@ -50,11 +50,13 @@ function fSeg(btn,cat){document.querySelectorAll('.sg-tab').forEach(x=>x.classLi
 
 // ── ROI CALCULATOR (fixed) ──
 function calcROI(){
-  const col=parseInt(document.getElementById('inp-col').value)||0;
+  const colEl=document.getElementById('inp-col');
+  if(!colEl)return;
+  const col=parseInt(colEl.value)||0;
   const fat=parseInt(document.getElementById('inp-fat').value)||0;
   const hrs=parseInt(document.getElementById('inp-hrs').value)||0;
   const sys=parseInt(document.getElementById('inp-sys').value)||1;
-  document.getElementById('hrs-val').textContent=hrs+'h';
+  const hrsEl=document.getElementById('hrs-val');if(hrsEl)hrsEl.textContent=hrs+'h';
   const custoHrs=hrs*4*55;
   const custoSys=(sys-1)*350;
   const custoRetrabalho=fat*0.012;
@@ -62,10 +64,10 @@ function calcROI(){
   const eco=Math.max(0,total);
   const ecoYr=eco*12;
   const hrsRecup=Math.round(hrs*0.8);
-  document.getElementById('r-custo').textContent='R$ '+Math.round(total).toLocaleString('pt-BR');
-  document.getElementById('r-eco').textContent='R$ '+Math.round(eco).toLocaleString('pt-BR');
-  document.getElementById('r-eco-yr').textContent='R$ '+Math.round(ecoYr).toLocaleString('pt-BR');
-  document.getElementById('r-hrs').textContent=hrsRecup*4+'h';
+  const el1=document.getElementById('r-custo');if(el1)el1.textContent='R$ '+Math.round(total).toLocaleString('pt-BR');
+  const el2=document.getElementById('r-eco');if(el2)el2.textContent='R$ '+Math.round(eco).toLocaleString('pt-BR');
+  const el3=document.getElementById('r-eco-yr');if(el3)el3.textContent='R$ '+Math.round(ecoYr).toLocaleString('pt-BR');
+  const el4=document.getElementById('r-hrs');if(el4)el4.textContent=hrsRecup*4+'h';
 }
 calcROI();
 
