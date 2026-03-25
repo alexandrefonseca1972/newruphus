@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774437239"/>
+<link rel="stylesheet" href="/styles.css?v=1774438299"/>
 </head>
 <body>
 <a href="#conteudo" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--teal);color:#fff;padding:8px 16px;z-index:9999;font-size:.85rem;transition:top .2s;border-radius:0 0 8px 0">Pular para o conteúdo</a>
@@ -676,9 +676,21 @@
 <div class="w">
   <h2>Diagnóstico Gratuito da Sua Operação</h2>
   <p class="diag-sub">Responda 5 perguntas rápidas e receba uma análise personalizada com módulos recomendados e economia estimada.</p>
-  <div class="diag-container">
-    <div class="diag-chat" id="diag-chat"></div>
-    <div class="diag-result" id="diag-result" style="display:none"></div>
+  <div class="diag-layout">
+    <div class="diag-benefits">
+      <div class="diag-ben"><div class="diag-ben-ico" style="background:#EEEDFE"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#534AB7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><div><h5>5 perguntas rápidas</h5><p>Menos de 2 minutos para completar</p></div></div>
+      <div class="diag-ben"><div class="diag-ben-ico" style="background:#E1F5EE"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div><div><h5>Módulos recomendados</h5><p>Análise personalizada por IA</p></div></div>
+      <div class="diag-ben"><div class="diag-ben-ico" style="background:#FDF0EB"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#DA7756" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div><div><h5>Economia estimada</h5><p>Em 12 meses com o Ruphus</p></div></div>
+    </div>
+    <div class="diag-container">
+      <div class="diag-header">
+        <div class="diag-hdr-dot"></div>
+        <span>Assistente de diagnóstico</span>
+        <div class="diag-hdr-steps" id="diag-steps">Etapa 0/5</div>
+      </div>
+      <div class="diag-chat" id="diag-chat"></div>
+      <div class="diag-result" id="diag-result" style="display:none"></div>
+    </div>
   </div>
 </div>
 </section>
@@ -799,6 +811,6 @@
 
 
 
-<script src="/scripts.js?v=1774437239"></script>
+<script src="/scripts.js?v=1774438299"></script>
 </body>
 </html>

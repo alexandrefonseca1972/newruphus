@@ -512,12 +512,14 @@ function initDiag(){
     addMsg(answer,false);
     answers.push(answer);
     step++;
+    const stEl=document.getElementById('diag-steps');if(stEl)stEl.textContent='Etapa '+Math.min(step,5)+'/5';
 
     if(step<diagQuestions.length){
       showTyping();
       setTimeout(()=>{removeTyping();addMsg(diagQuestions[step].q,true,diagQuestions[step].opts);},800);
     }else{
       showTyping();
+      if(stEl)stEl.textContent='Concluído ✓';
       setTimeout(()=>{removeTyping();addMsg('Análise concluída! Aqui está seu diagnóstico personalizado:',true);showResult();},1200);
     }
   };
