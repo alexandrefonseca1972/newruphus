@@ -1299,3 +1299,22 @@ html.dark .sec-foot{background:rgba(255,255,255,.03)}
 .rm-vote-card.hidden{display:none}
 .rm-vote-btn:hover{border-color:var(--teal) !important;color:var(--teal) !important}
 .rm-vote-btn.voted{background:var(--tl) !important;border-color:var(--teal) !important;color:var(--teal) !important}
+
+/* ═══════════════════════════════════════════════════
+   BLOG ARTICLE READER
+   ═══════════════════════════════════════════════════ */
+.article-reader{position:fixed;inset:0;z-index:100;background:var(--bg);overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .3s}
+.article-reader.open{opacity:1;pointer-events:auto}
+.ar-close{position:fixed;top:20px;right:24px;z-index:101;width:40px;height:40px;border-radius:50%;border:1px solid var(--brd);background:var(--card);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;color:var(--fg);box-shadow:0 2px 8px rgba(0,0,0,.1);transition:transform .2s}
+.ar-close:hover{transform:scale(1.1)}
+.ar-hero{width:100%;max-height:360px;object-fit:cover;border-radius:0 0 20px 20px}
+.ar-body{max-width:720px;margin:0 auto;padding:40px 24px 80px}
+.ar-tag{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--teal);margin-bottom:8px;display:block}
+.ar-body h1{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin-bottom:12px}
+.ar-meta{font-size:.78rem;color:var(--muted);margin-bottom:28px;display:flex;gap:12px;align-items:center}
+.ar-body p{font-size:1rem;color:var(--fg);line-height:1.75;margin-bottom:16px}
+.ar-body h2{font-size:1.2rem;font-weight:700;margin:32px 0 12px;color:var(--fg)}
+.ar-body blockquote{border-left:3px solid var(--teal);padding:12px 20px;margin:20px 0;background:rgba(218,119,86,.03);border-radius:0 10px 10px 0;font-size:.92rem;color:var(--muted);font-style:italic}
+.ar-cta{text-align:center;padding:32px;margin-top:32px;border-radius:16px;background:rgba(218,119,86,.04);border:1px solid rgba(218,119,86,.1)}
+.ar-cta p{font-size:.88rem;color:var(--muted);margin-bottom:12px}
+@media(max-width:600px){.ar-body{padding:24px 16px 60px}.ar-hero{max-height:220px}}
