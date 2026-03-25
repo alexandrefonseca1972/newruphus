@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774439465"/>
+<link rel="stylesheet" href="/styles.css?v=1774439882"/>
 </head>
 <body>
 <a href="#conteudo" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--teal);color:#fff;padding:8px 16px;z-index:9999;font-size:.85rem;transition:top .2s;border-radius:0 0 8px 0">Pular para o conteúdo</a>
@@ -128,68 +128,85 @@
 
   <div class="eco-hub" data-r>
     <div class="eco-center">
-      <svg viewBox="0 0 40 40" fill="none" width="56" height="56"><defs><linearGradient id="elg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="50%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs><path d="M20 2L36.66 11V29L20 38L3.34 29V11L20 2Z" stroke="url(#elg)" stroke-width="2" fill="none"/><path d="M14 12H22C24.5 12 26.5 14 26.5 16.5C26.5 19 24.5 21 22 21H18L26 28" stroke="url(#elg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M14 12V28" stroke="url(#elg)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+      <svg viewBox="0 0 40 40" fill="none" width="52" height="52"><defs><linearGradient id="elg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3B82F6"/><stop offset="50%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs><path d="M20 2L36.66 11V29L20 38L3.34 29V11L20 2Z" stroke="url(#elg)" stroke-width="2" fill="none"/><path d="M14 12H22C24.5 12 26.5 14 26.5 16.5C26.5 19 24.5 21 22 21H18L26 28" stroke="url(#elg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M14 12V28" stroke="url(#elg)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
       <span class="eco-c-label">Ruphus ERP</span>
       <span class="eco-c-sub">22 módulos · 257 permissões · multi-tenant</span>
     </div>
 
     <div class="eco-ring">
-      <div class="eco-group" data-cat="vendas">
-        <div class="eco-g-header" style="--gc:#3B82F6"><span class="eco-g-dot" style="background:#3B82F6"></span>Vendas & CRM</div>
-        <div class="eco-g-items">
-          <div class="eco-chip">CRM<small>70 perm</small></div>
-          <div class="eco-chip">Clientes<small>4 perm</small></div>
-          <div class="eco-chip">Vendas<small>4 perm</small></div>
-          <div class="eco-chip">Fornecedores<small>4 perm</small></div>
+
+      <div class="eco-card" style="--ec:#3B82F6;--ecl:#E6F1FB;--ecd:#0C447C">
+        <div class="eco-card-hdr">
+          <div class="eco-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div><div class="eco-card-title">Vendas & CRM</div><div class="eco-card-count">4 módulos · 82 permissões</div></div>
         </div>
-        <div class="eco-g-total">82 permissões</div>
+        <div class="eco-card-bar"><div style="width:32%"></div></div>
+        <div class="eco-card-chips">
+          <span>CRM <b>70</b></span>
+          <span>Clientes <b>4</b></span>
+          <span>Vendas <b>4</b></span>
+          <span>Fornecedores <b>4</b></span>
+        </div>
       </div>
 
-      <div class="eco-group" data-cat="financeiro">
-        <div class="eco-g-header" style="--gc:#DA7756"><span class="eco-g-dot" style="background:#DA7756"></span>Financeiro</div>
-        <div class="eco-g-items">
-          <div class="eco-chip">Financeiro<small>32 perm</small></div>
-          <div class="eco-chip">Contas Bancárias<small>17 perm</small></div>
-          <div class="eco-chip">Aprovações<small>7 perm</small></div>
+      <div class="eco-card" style="--ec:#DA7756;--ecl:#FDF0EB;--ecd:#712B13">
+        <div class="eco-card-hdr">
+          <div class="eco-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#DA7756" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+          <div><div class="eco-card-title">Financeiro</div><div class="eco-card-count">3 módulos · 56 permissões</div></div>
         </div>
-        <div class="eco-g-total">56 permissões</div>
+        <div class="eco-card-bar"><div style="width:22%"></div></div>
+        <div class="eco-card-chips">
+          <span>Financeiro <b>32</b></span>
+          <span>Contas Bancárias <b>17</b></span>
+          <span>Aprovações <b>7</b></span>
+        </div>
       </div>
 
-      <div class="eco-group" data-cat="contabil">
-        <div class="eco-g-header" style="--gc:#8B5CF6"><span class="eco-g-dot" style="background:#8B5CF6"></span>Contábil & Fiscal</div>
-        <div class="eco-g-items">
-          <div class="eco-chip">Contabilidade<small>12 perm</small></div>
-          <div class="eco-chip">Fiscal<small>5 perm</small></div>
-          <div class="eco-chip">Relatórios<small>36 perm</small></div>
+      <div class="eco-card" style="--ec:#8B5CF6;--ecl:#EEEDFE;--ecd:#3C3489">
+        <div class="eco-card-hdr">
+          <div class="eco-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+          <div><div class="eco-card-title">Contábil & Fiscal</div><div class="eco-card-count">3 módulos · 53 permissões</div></div>
         </div>
-        <div class="eco-g-total">53 permissões</div>
+        <div class="eco-card-bar"><div style="width:21%"></div></div>
+        <div class="eco-card-chips">
+          <span>Contabilidade <b>12</b></span>
+          <span>Fiscal <b>5</b></span>
+          <span>Relatórios <b>36</b></span>
+        </div>
       </div>
 
-      <div class="eco-group" data-cat="pessoas">
-        <div class="eco-g-header" style="--gc:#0F6E56"><span class="eco-g-dot" style="background:#0F6E56"></span>Pessoas & Operações</div>
-        <div class="eco-g-items">
-          <div class="eco-chip">Funcionários<small>9 perm</small></div>
-          <div class="eco-chip">Departamentos<small>4 perm</small></div>
-          <div class="eco-chip">Tickets<small>5 perm</small></div>
-          <div class="eco-chip">Checklists<small>7 perm</small></div>
-          <div class="eco-chip">Contratos<small>5 perm</small></div>
-          <div class="eco-chip">Projetos<small>4 perm</small></div>
-          <div class="eco-chip">Gestão de Serviços<small>7 perm</small></div>
+      <div class="eco-card" style="--ec:#0F6E56;--ecl:#E1F5EE;--ecd:#04342C">
+        <div class="eco-card-hdr">
+          <div class="eco-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div><div class="eco-card-title">Pessoas & Operações</div><div class="eco-card-count">7 módulos · 41 permissões</div></div>
         </div>
-        <div class="eco-g-total">41 permissões</div>
+        <div class="eco-card-bar"><div style="width:16%"></div></div>
+        <div class="eco-card-chips">
+          <span>Funcionários <b>9</b></span>
+          <span>Departamentos <b>4</b></span>
+          <span>Tickets <b>5</b></span>
+          <span>Checklists <b>7</b></span>
+          <span>Contratos <b>5</b></span>
+          <span>Projetos <b>4</b></span>
+          <span>Gestão de Serviços <b>7</b></span>
+        </div>
       </div>
 
-      <div class="eco-group" data-cat="plataforma">
-        <div class="eco-g-header" style="--gc:#993556"><span class="eco-g-dot" style="background:#993556"></span>Plataforma</div>
-        <div class="eco-g-items">
-          <div class="eco-chip">Workflows<small>4 perm</small></div>
-          <div class="eco-chip">Integrações<small>3 perm</small></div>
-          <div class="eco-chip">BI com IA<small>6 perm</small></div>
-          <div class="eco-chip">Chat<small>12 perm</small></div>
-          <div class="eco-chip">Estoque<small>2 perm</small></div>
+      <div class="eco-card" style="--ec:#993556;--ecl:#FBEAF0;--ecd:#4B1528">
+        <div class="eco-card-hdr">
+          <div class="eco-card-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div><div class="eco-card-title">Plataforma</div><div class="eco-card-count">5 módulos · 27 permissões</div></div>
         </div>
-        <div class="eco-g-total">27 permissões</div>
+        <div class="eco-card-bar"><div style="width:10%"></div></div>
+        <div class="eco-card-chips">
+          <span>Workflows <b>4</b></span>
+          <span>Integrações <b>3</b></span>
+          <span>BI com IA <b>6</b></span>
+          <span>Chat <b>12</b></span>
+          <span>Estoque <b>2</b></span>
+        </div>
       </div>
+
     </div>
 
     <div class="eco-techs-divider"></div>
@@ -514,6 +531,6 @@
 
 
 
-<script src="/scripts.js?v=1774439465"></script>
+<script src="/scripts.js?v=1774439882"></script>
 </body>
 </html>
