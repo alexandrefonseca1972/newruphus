@@ -28,9 +28,10 @@ a{color:inherit;text-decoration:none}button{font-family:var(--sans);cursor:point
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
 /* ── NAV ── */
-.nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:12px 0;transition:all .3s}
-.nav.scrolled{background:rgba(250,247,242,.92);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--brd);padding:8px 0}
-html.dark .nav.scrolled{background:rgba(15,17,23,.92)}
+.nav{position:fixed;top:0;left:0;width:100%;z-index:100;padding:12px 0;transition:all .3s;background:rgba(250,247,242,.85);backdrop-filter:blur(12px)}
+.nav.scrolled{background:rgba(250,247,242,.95);backdrop-filter:blur(16px);box-shadow:0 1px 0 var(--brd);padding:8px 0}
+html.dark .nav{background:rgba(15,17,23,.85)}
+html.dark .nav.scrolled{background:rgba(15,17,23,.95)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:1.25rem;letter-spacing:-.02em}
 .logo svg{width:30px;height:30px}
@@ -635,17 +636,21 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
 /* ═══════════════════════════════════════════════════════════════
    FEATURE 1: CONTADOR DE DESPERDÍCIO (waste ticker)
    ═══════════════════════════════════════════════════════════════ */
-.waste-bar{background:linear-gradient(135deg,#1a1a2e,#16213e);border-bottom:1px solid rgba(232,99,74,.15);padding:10px 0;position:relative;overflow:hidden;z-index:99}
-.waste-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(232,99,74,.03),transparent);animation:wastePulse 3s ease infinite}
+.waste-bar{background:linear-gradient(135deg,rgba(13,124,102,.06),rgba(59,130,246,.04));border-bottom:1px solid rgba(13,124,102,.12);padding:10px 0;position:relative;overflow:hidden;z-index:99}
+html.dark .waste-bar{background:linear-gradient(135deg,#1a1a2e,#16213e);border-bottom-color:rgba(232,99,74,.15)}
+.waste-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(13,124,102,.03),transparent);animation:wastePulse 3s ease infinite}
 @keyframes wastePulse{0%,100%{opacity:.3}50%{opacity:1}}
-.waste-inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font-size:.82rem;color:rgba(255,255,255,.7)}
+.waste-inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font-size:.82rem;color:var(--tx2)}
+html.dark .waste-inner{color:rgba(255,255,255,.7)}
 .waste-icon{font-size:1.1rem;animation:wasteBurn 1.5s ease infinite}
 @keyframes wasteBurn{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 .waste-amount{font-family:'JetBrains Mono',monospace;font-size:1.15rem;font-weight:700;color:#E8634A;min-width:140px;text-align:center;letter-spacing:-.5px}
 .waste-cta{color:#0D7C66;font-weight:600;cursor:pointer;text-decoration:none;transition:all .2s}
 .waste-cta:hover{color:#3B82F6;text-decoration:underline}
-.waste-close{background:none;border:none;color:rgba(255,255,255,.3);cursor:pointer;font-size:1rem;padding:4px 8px;transition:color .2s}
-.waste-close:hover{color:#fff}
+.waste-close{background:none;border:none;color:var(--tx2);cursor:pointer;font-size:1rem;padding:4px 8px;transition:color .2s}
+.waste-close:hover{color:var(--tx)}
+html.dark .waste-close{color:rgba(255,255,255,.3)}
+html.dark .waste-close:hover{color:#fff}
 
 /* ═══════════════════════════════════════════════════════════════
    FEATURE 2: MAPA DE CALOR DO ECOSSISTEMA
