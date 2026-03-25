@@ -1137,3 +1137,12 @@ html.dark .sec-foot{background:rgba(255,255,255,.03)}
 .diag-hdr-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0}
 .diag-hdr-steps{margin-left:auto;font-size:.72rem;font-weight:500;color:var(--muted);font-family:var(--mono)}
 @media(max-width:768px){.diag-layout{grid-template-columns:1fr}.diag-benefits{flex-direction:row;flex-wrap:wrap;gap:12px}.diag-ben{flex:1;min-width:140px}}
+
+/* ECO HUB — additions */
+.eco-g-total{font-size:.68rem;font-weight:500;color:var(--muted);text-align:right;margin-top:8px;font-family:var(--mono);padding-top:4px;border-top:1px solid var(--brd)}
+.eco-techs-divider{width:100%;height:1px;background:var(--brd);margin:20px 0 12px}
+.eco-techs-label{font-size:.78rem;color:var(--muted);text-align:center;margin-bottom:10px;font-weight:600}
+.eco-techs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.eco-tech{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:99px;border:1px solid var(--brd);background:var(--card);font-size:.72rem;font-weight:500;color:var(--muted);transition:all .15s}
+.eco-tech:hover{border-color:var(--teal);color:var(--fg)}
+.eco-tech svg{opacity:.5;flex-shrink:0}
