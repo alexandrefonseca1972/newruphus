@@ -1228,3 +1228,28 @@ html.dark .sec-foot{background:rgba(255,255,255,.03)}
 .exit-ben{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--fg)}
 .exit-ben svg{flex-shrink:0;color:var(--teal)}
 @media(max-width:480px){.exit-popup{padding:28px 24px}.exit-popup h3{font-size:1.2rem}}
+
+/* ═══════════════════════════════════════════════════
+   DIAGNOSTIC RESULTS — AI-powered
+   ═══════════════════════════════════════════════════ */
+.diag-r-header{text-align:center;padding:20px 0 16px}
+.diag-r-score{display:flex;align-items:baseline;justify-content:center;gap:2px}
+.diag-r-num{font-family:var(--serif);font-size:3.5rem;font-weight:900;color:var(--teal);line-height:1}
+.diag-r-of{font-size:1.2rem;color:var(--muted);font-weight:500}
+.diag-r-label{font-size:.78rem;color:var(--muted);margin-top:4px}
+.diag-r-analise{font-size:.88rem;color:var(--fg);line-height:1.6;padding:16px 20px;background:rgba(218,119,86,.04);border-radius:12px;border-left:3px solid var(--teal);margin:0 0 16px}
+.diag-r-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.diag-r-m{text-align:center;padding:14px 8px;border-radius:12px;background:var(--bg);border:1px solid var(--brd)}
+.diag-r-mv{font-family:var(--serif);font-size:1.3rem;font-weight:800;color:var(--teal)}
+.diag-r-ml{font-size:.68rem;color:var(--muted);margin-top:2px}
+.diag-r-section{margin-bottom:14px}
+.diag-r-section strong{font-size:.82rem;color:var(--fg);display:block;margin-bottom:8px}
+.diag-r-mods{display:flex;flex-wrap:wrap;gap:6px}
+.diag-r-mods span{padding:5px 12px;border-radius:8px;font-size:.75rem;font-weight:500;background:var(--tl);color:var(--teal);border:1px solid rgba(218,119,86,.15)}
+.diag-r-wins{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+.diag-r-wins li{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--fg)}
+.diag-r-wins li svg{flex-shrink:0}
+.diag-r-risk{font-size:.8rem;color:var(--coral);padding:10px 14px;border-radius:10px;background:rgba(218,119,86,.04);border:1px solid rgba(218,119,86,.1);margin-bottom:16px}
+.diag-r-actions{display:flex;gap:8px;flex-wrap:wrap}
+.diag-r-actions .btn{flex:1;min-width:180px;text-align:center;justify-content:center}
+@media(max-width:480px){.diag-r-metrics{grid-template-columns:1fr}.diag-r-actions{flex-direction:column}}

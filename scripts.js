@@ -507,19 +507,76 @@ function initDiag(){
   function showResult(){
     const gargalo=answers[1];const area=answers[3];
     const tools=parseInt(answers[2])||3;
-    const modSet=new Set([...(diagModuleMap[gargalo]||[]),...(diagModuleMap[area]||[])]);
-    const score=Math.min(95,50+modSet.size*4+tools*2);
-    const savings=tools>5?'R$ 180.000':'R$ 95.000';
 
-    const result=document.getElementById('diag-result');
-    result.style.display='block';
-    result.innerHTML='<h3>📋 Seu Diagnóstico</h3>'+
-      '<div style="text-align:center"><div class="radar-score-big">'+score+'/100</div><div class="radar-score-label">Potencial de otimização com Ruphus</div></div>'+
-      '<div style="margin:16px 0"><strong style="font-size:.85rem">Módulos recomendados:</strong><div class="diag-modules-rec">'+
-      Array.from(modSet).map(m=>'<span>'+m+'</span>').join('')+'</div></div>'+
-      '<div style="font-size:.85rem;margin:12px 0;padding:12px;background:rgba(218,119,86,.05);border-radius:8px">💰 <strong>Economia estimada em 12 meses:</strong> '+savings+'<br><small style="color:var(--muted)">Baseado na redução de '+tools+' ferramentas para 1 plataforma</small></div>'+
-      '<button class="diag-report-btn" onclick="openModal()">📄 Agendar demonstração personalizada →</button>';
+    // Try AI-powered diagnostic first
+    fetch('/api/diagnostico',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({answers:answers})
+    })
+    .then(r=>{if(!r.ok)throw new Error('API '+r.status);return r.json()})
+    .then(ai=>{
+      if(ai.error)throw new Error(ai.error);
+      renderAIResult(ai);
+    })
+    .catch(()=>{
+      // Fallback to local scoring
+      const modSet=new Set([...(diagModuleMap[gargalo]||[]),...(diagModuleMap[area]||[])]);
+      const score=Math.min(95,50+modSet.size*4+tools*2);
+      renderAIResult({
+        score:score,
+        analise:'Com base nas suas respostas, identificamos oportunidades significativas de otimização. Seu gargalo principal ('+gargalo+') e a área que mais consome tempo ('+area+') podem ser resolvidos com os módulos certos.',
+        modulos:Array.from(modSet),
+        economia_mensal:tools>5?'R$ 15.000':'R$ 7.900',
+        economia_anual:tools>5?'R$ 180.000':'R$ 95.000',
+        horas_recuperadas:tools>5?'48':'24',
+        quick_wins:['Automatizar cobrança via WhatsApp Z-API','Centralizar dados em uma só plataforma','Dashboard de indicadores com BI em tempo real'],
+        risco:'Cada mês sem otimização é receita perdida e retrabalho acumulado.'
+      });
+    });
   }
+
+  function renderAIResult(ai){
+    const result=document.getElementById('diag-result');
+    const stEl=document.getElementById('diag-steps');if(stEl)stEl.textContent='Concluído ✓';
+    result.style.display='block';
+    result.innerHTML=
+      '<div class="diag-r-header">'+
+        '<div class="diag-r-score"><div class="diag-r-num">'+ai.score+'</div><div class="diag-r-of">/100</div></div>'+
+        '<div class="diag-r-label">Potencial de otimização</div>'+
+      '</div>'+
+      '<p class="diag-r-analise">'+ai.analise+'</p>'+
+      '<div class="diag-r-metrics">'+
+        '<div class="diag-r-m"><div class="diag-r-mv">'+ai.economia_mensal+'</div><div class="diag-r-ml">economia/mês</div></div>'+
+        '<div class="diag-r-m"><div class="diag-r-mv">'+ai.economia_anual+'</div><div class="diag-r-ml">economia/ano</div></div>'+
+        '<div class="diag-r-m"><div class="diag-r-mv">'+ai.horas_recuperadas+'h</div><div class="diag-r-ml">recuperadas/mês</div></div>'+
+      '</div>'+
+      '<div class="diag-r-section"><strong>Módulos recomendados</strong><div class="diag-r-mods">'+
+        ai.modulos.map(function(m){return '<span>'+m+'</span>'}).join('')+
+      '</div></div>'+
+      '<div class="diag-r-section"><strong>Resultados em 30 dias</strong><ul class="diag-r-wins">'+
+        ai.quick_wins.map(function(w){return '<li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#DA7756" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>'+w+'</li>'}).join('')+
+      '</ul></div>'+
+      '<div class="diag-r-risk">⚠️ '+ai.risco+'</div>'+
+      '<div class="diag-r-actions">'+
+        '<button class="btn btn-t" onclick="openModal()">Agendar demonstração personalizada →</button>'+
+        '<button class="btn btn-ol" onclick="diagShareWA()">Enviar resultado via WhatsApp</button>'+
+      '</div>';
+    
+    if(window.plausible)plausible('Diagnostic-Complete',{props:{score:String(ai.score)}});
+  }
+
+  window.diagShareWA=function(){
+    var r=document.getElementById('diag-result');
+    if(!r)return;
+    var score=r.querySelector('.diag-r-num');
+    var eco=r.querySelector('.diag-r-mv');
+    var msg='Fiz o diagnóstico gratuito do Ruphus ERP!\n\n';
+    msg+='Score: '+(score?score.textContent:'--')+'/100\n';
+    msg+='Economia estimada: '+(eco?eco.textContent:'--')+'/mês\n\n';
+    msg+='Faça o seu em: https://newruphus.vercel.app/#diagnostico';
+    window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
+  };
 
   window.diagAnswer=function(answer){
     // Remove option buttons from last message
@@ -534,8 +591,8 @@ function initDiag(){
       setTimeout(()=>{removeTyping();addMsg(diagQuestions[step].q,true,diagQuestions[step].opts);},800);
     }else{
       showTyping();
-      if(stEl)stEl.textContent='Concluído ✓';
-      setTimeout(()=>{removeTyping();addMsg('Análise concluída! Aqui está seu diagnóstico personalizado:',true);showResult();},1200);
+      if(stEl)stEl.textContent='Analisando...';
+      setTimeout(()=>{removeTyping();addMsg('Analisando suas respostas com IA...',true);showResult();},1200);
     }
   };
 
