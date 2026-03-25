@@ -6,14 +6,14 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Segurança — Arquitetura, LGPD e Garantias | Ruphus ERP</title>
-<meta name="description" content="Supabase RLS, SSL/TLS, HSTS, Sentry, 257 permissões, LGPD. Garantia de 30 dias. Sem fidelidade."/>
+<meta name="description" content="Firebase Security Rules, Custom Claims, SSL/TLS, HSTS, Sentry, LGPD. Garantia de 30 dias. Sem fidelidade."/>
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1"/>
 <meta name="author" content="Ruphus"/>
 <meta name="theme-color" content="#DA7756"/>
 <meta name="color-scheme" content="light dark"/>
 <link rel="canonical" href="https://www.ruphus.app/seguranca"/>
 <meta property="og:title" content="Segurança — Arquitetura, LGPD e Garantias | Ruphus ERP"/>
-<meta property="og:description" content="Supabase RLS, SSL/TLS, HSTS, Sentry, 257 permissões, LGPD. Garantia de 30 dias. Sem fidelidade."/>
+<meta property="og:description" content="Firebase Security Rules, Custom Claims, SSL/TLS, HSTS, Sentry, LGPD. Garantia de 30 dias. Sem fidelidade."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://www.ruphus.app/seguranca"/>
 <meta property="og:locale" content="pt_BR"/>
@@ -21,13 +21,13 @@
 <meta property="og:image" content="https://www.ruphus.app/og-image.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Segurança — Arquitetura, LGPD e Garantias | Ruphus ERP"/>
-<meta name="twitter:description" content="Supabase RLS, SSL/TLS, HSTS, Sentry, 257 permissões, LGPD. Garantia de 30 dias. Sem fidelidade."/>
+<meta name="twitter:description" content="Firebase Security Rules, Custom Claims, SSL/TLS, HSTS, Sentry, LGPD. Garantia de 30 dias. Sem fidelidade."/>
 <meta name="twitter:image" content="https://www.ruphus.app/og-image.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774477117"/>
+<link rel="stylesheet" href="/styles.css?v=1774478319"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ruphus.app/"},{"@type":"ListItem","position":2,"name":"Segurança","item":"https://www.ruphus.app/seguranca"}]}</script>
 </head>
 <body>
@@ -93,19 +93,19 @@
       <div class="sec-layer" data-c="purple">
         <div class="sec-num" style="background:#EEEDFE;color:#534AB7">2</div>
         <div class="sec-ico" style="background:#EEEDFE"><svg viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1"/></svg></div>
-        <div class="sec-info"><h5>Autenticação Supabase</h5><p>JWT + refresh tokens + 2FA opcional por empresa</p></div>
+        <div class="sec-info"><h5>Firebase Auth + Custom Claims</h5><p>Autenticação com Custom Claims por empresa, sessões seguras, 2FA opcional</p></div>
       </div>
       <div class="sec-between"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>Token validado e decodificado</div>
       <div class="sec-layer" data-c="coral">
         <div class="sec-num" style="background:#FAECE7;color:#993C1D">3</div>
         <div class="sec-ico" style="background:#FAECE7"><svg viewBox="0 0 24 24" fill="none" stroke="#993C1D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <div class="sec-info"><h5>257 permissões granulares</h5><p>Por módulo, ação e escopo. Perfis por cargo configuráveis</p></div>
+        <div class="sec-info"><h5>40+ permissões por módulo</h5><p>Por módulo, ação e escopo. Perfis por cargo configuráveis</p></div>
       </div>
       <div class="sec-between"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>Operação autorizada</div>
       <div class="sec-layer" data-c="teal">
         <div class="sec-num" style="background:#E1F5EE;color:#0F6E56">4</div>
         <div class="sec-ico" style="background:#E1F5EE"><svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
-        <div class="sec-info"><h5>Row Level Security</h5><p>PostgreSQL RLS nativo. Isolamento absoluto por tenant</p></div>
+        <div class="sec-info"><h5>Isolamento Multi-tenant</h5><p>Firestore Security Rules nativas. Isolamento absoluto por tenant</p></div>
       </div>
       <div class="sec-between"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14"/><path d="M19 12l-7 7-7-7"/></svg>Dados isolados retornados</div>
       <div class="sec-layer" data-c="pink">
@@ -118,7 +118,7 @@
 
     <!-- Features de segurança -->
     <div class="arq-features">
-      <div class="arq-feat"><div class="af-icon" style="background:var(--tl);color:var(--teal)">🔒</div><div><h4>Isolamento Total entre Empresas</h4><p>Row Level Security garante que cada tenant opera em um universo isolado. Mesmo que 100 empresas compartilhem a infraestrutura, nenhum dado cruza fronteiras — jamais.</p></div></div>
+      <div class="arq-feat"><div class="af-icon" style="background:var(--tl);color:var(--teal)">🔒</div><div><h4>Isolamento Total entre Empresas</h4><p>Firebase Security Rules garante que cada tenant opera em um universo isolado. Mesmo que 100 empresas compartilhem a infraestrutura, nenhum dado cruza fronteiras — jamais.</p></div></div>
       <div class="arq-feat"><div class="af-icon" style="background:var(--vl);color:var(--violet)">🧬</div><div><h4>Criptografia Ponta a Ponta</h4><p>SSL/TLS com HSTS Preload em 100% das conexões. Dados em trânsito e em repouso são criptografados. Certificado renovado automaticamente.</p></div></div>
       <div class="arq-feat"><div class="af-icon" style="background:var(--al);color:var(--amber)">📋</div><div><h4>LGPD — Conformidade Nativa</h4><p>Gestão de consentimento, anonimização sob demanda, portabilidade de dados e logs de acesso auditáveis. Não é um checkbox — é como o sistema foi desenhado.</p></div></div>
       <div class="arq-feat"><div class="af-icon" style="background:var(--cl);color:var(--coral)">🔄</div><div><h4>Backups e Disaster Recovery</h4><p>Backups automáticos diários com retenção configurável. Restauração em minutos. Infraestrutura distribuída com failover automático.</p></div></div>
@@ -263,6 +263,6 @@
 
 
 
-<script src="/scripts.js?v=1774477117"></script>
+<script src="/scripts.js?v=1774478319"></script>
 </body>
 </html>
