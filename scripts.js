@@ -159,6 +159,7 @@ function checkSubmitState(){
 
 // ── MODAL ──
 function openModal(){
+  if(window.plausible)plausible('CTA-Demo');
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow='hidden';
   // Reset states
@@ -883,6 +884,41 @@ function subNews(){
   }
   const msg=encodeURIComponent('Olá! Quero receber a newsletter do Ruphus. Meu email: '+v);
   window.open('https://wa.me/5511948680554?text='+msg,'_blank');
+  if(window.plausible)plausible('Newsletter-Subscribe');
   el.value='';
   el.placeholder='Inscrição enviada ✓';
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   EXIT-INTENT POPUP
+   ═══════════════════════════════════════════════════════════════ */
+(function(){
+  if(sessionStorage.getItem('exit-shown'))return;
+  
+  var overlay=document.createElement('div');
+  overlay.className='exit-overlay';
+  overlay.innerHTML='<div class="exit-popup">'+
+    '<button class="exit-close" onclick="this.parentElement.parentElement.classList.remove(\'show\')" aria-label="Fechar">✕</button>'+
+    '<h3>Antes de ir...</h3>'+
+    '<p>Faça um diagnóstico gratuito da sua operação em 2 minutos e descubra quanto está perdendo por mês.</p>'+
+    '<div class="exit-benefits">'+
+    '<div class="exit-ben"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>5 perguntas rápidas</div>'+
+    '<div class="exit-ben"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Módulos recomendados por IA</div>'+
+    '<div class="exit-ben"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Economia estimada em 12 meses</div>'+
+    '</div>'+
+    '<button class="btn btn-t btn-lg" style="width:100%" onclick="this.parentElement.parentElement.classList.remove(\'show\');document.getElementById(\'diagnostico\')&&document.getElementById(\'diagnostico\').scrollIntoView({behavior:\'smooth\'})">Fazer diagnóstico gratuito →</button>'+
+    '<div style="text-align:center;margin-top:12px"><button style="background:none;border:none;color:var(--muted);font-size:.75rem;cursor:pointer" onclick="this.closest(\'.exit-overlay\').classList.remove(\'show\')">Não, obrigado</button></div>'+
+    '</div>';
+  document.body.appendChild(overlay);
+  
+  overlay.addEventListener('click',function(e){
+    if(e.target===overlay)overlay.classList.remove('show');
+  });
+  
+  document.addEventListener('mouseout',function(e){
+    if(e.clientY<5 && !sessionStorage.getItem('exit-shown')){
+      overlay.classList.add('show');
+      sessionStorage.setItem('exit-shown','1');
+    }
+  });
+})();

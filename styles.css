@@ -1213,3 +1213,18 @@ html.dark .sec-foot{background:rgba(255,255,255,.03)}
   .hero h1{font-size:1.6rem}
   body{font-size:15px}
 }
+
+/* ═══════════════════════════════════════════════════
+   EXIT-INTENT POPUP
+   ═══════════════════════════════════════════════════ */
+.exit-overlay{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;padding:24px}
+.exit-overlay.show{opacity:1;pointer-events:auto}
+.exit-popup{max-width:480px;width:100%;background:var(--card);border-radius:20px;padding:40px 36px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.15);transform:translateY(20px);transition:transform .3s}
+.exit-overlay.show .exit-popup{transform:translateY(0)}
+.exit-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.2rem;color:var(--muted);cursor:pointer;padding:4px}
+.exit-popup h3{font-family:var(--serif);font-size:1.5rem;font-weight:800;color:var(--fg);line-height:1.2;margin-bottom:8px}
+.exit-popup p{font-size:.88rem;color:var(--muted);line-height:1.5;margin-bottom:20px}
+.exit-benefits{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.exit-ben{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--fg)}
+.exit-ben svg{flex-shrink:0;color:var(--teal)}
+@media(max-width:480px){.exit-popup{padding:28px 24px}.exit-popup h3{font-size:1.2rem}}
