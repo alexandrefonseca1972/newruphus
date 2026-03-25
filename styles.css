@@ -1165,7 +1165,7 @@ html.dark .sec-foot{background:rgba(255,255,255,.03)}
 .price-badge{position:absolute;top:-12px;left:24px;background:var(--teal);color:#fff;font-size:.68rem;font-weight:600;padding:4px 14px;border-radius:99px;text-transform:uppercase;letter-spacing:.04em}
 .price-card h3{font-family:var(--serif);font-size:1.4rem;font-weight:700;margin:8px 0 12px;color:var(--fg)}
 .price-val{font-size:.95rem;color:var(--muted);margin-bottom:16px}
-.price-val strong{font-size:2rem;font-weight:800;color:var(--fg);font-family:var(--serif)}
+.price-val strong{font-size:1.6rem;font-weight:800;color:var(--teal);font-family:var(--serif)}
 .price-val span{font-size:.8rem;color:var(--muted)}
 .price-card>p{font-size:.82rem;color:var(--muted);line-height:1.5;margin-bottom:20px}
 .price-list{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px}
