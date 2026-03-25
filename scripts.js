@@ -868,3 +868,21 @@ window.showCase=function(i,btn){
   if(panel)panel.classList.add('show');
   if(btn)btn.classList.add('active');
 };
+
+/* ═══════════════════════════════════════════════════════════════
+   NEWSLETTER SUBSCRIBE
+   ═══════════════════════════════════════════════════════════════ */
+function subNews(){
+  const el=document.getElementById('news-email');
+  if(!el)return;
+  const v=el.value.trim();
+  if(!v||!v.includes('@')||!v.includes('.')){
+    el.style.borderColor='#E8634A';
+    setTimeout(()=>el.style.borderColor='',1500);
+    return;
+  }
+  const msg=encodeURIComponent('Olá! Quero receber a newsletter do Ruphus. Meu email: '+v);
+  window.open('https://wa.me/5511948680554?text='+msg,'_blank');
+  el.value='';
+  el.placeholder='Inscrição enviada ✓';
+}

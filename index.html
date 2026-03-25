@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Ruphus — 22 módulos integrados para gestão empresarial completa</title>
 <meta name="description" content="ERP com 22 módulos: CRM, Financeiro, Contábil, Fiscal, BI com IA, Chat, Workflows, Estoque, Projetos e mais. Na nuvem, em evolução contínua."/>
@@ -25,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774440645"/>
+<link rel="stylesheet" href="/styles.css?v=1774453276"/>
 </head>
 <body>
 <a href="#conteudo" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--teal);color:#fff;padding:8px 16px;z-index:9999;font-size:.85rem;transition:top .2s;border-radius:0 0 8px 0">Pular para o conteúdo</a>
@@ -695,6 +696,54 @@
 </div>
 </section>
 
+<!-- PRICING TRANSPARENCY -->
+<section class="pricing" id="precos" aria-label="Modelo de preços">
+<div class="w">
+  <div class="s-ey" data-r>Investimento</div>
+  <h2 class="s-hd" data-r="1" style="text-align:center">Transparente desde o primeiro dia</h2>
+  <p class="s-desc" data-r="2" style="text-align:center;max-width:600px;margin:8px auto 32px">Sem surpresas, sem taxa de adesão, sem fidelidade. Pague apenas pelos módulos que usar.</p>
+  <div class="price-grid">
+    <div class="price-card" data-r>
+      <div class="price-badge">Mais popular</div>
+      <h3>Sob medida</h3>
+      <div class="price-val">A partir de <strong>R$ 297</strong><span>/mês</span></div>
+      <p>Preço varia conforme quantidade de módulos, usuários e volume. Sem custo de implantação para até 3 módulos.</p>
+      <ul class="price-list">
+        <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#DA7756" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Escolha de 1 a 22 módulos</li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#DA7756" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Usuários ilimitados no plano</li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#DA7756" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Suporte humanizado &lt; 2h</li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#DA7756" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Sem fidelidade — cancele quando quiser</li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#DA7756" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>30 dias de garantia total</li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#DA7756" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>Atualizações semanais inclusas</li>
+      </ul>
+      <button class="btn btn-t btn-lg" onclick="openModal()" style="width:100%">Solicitar orçamento personalizado →</button>
+    </div>
+    <div class="price-faq" data-r="1">
+      <div class="price-q"><h4>Tem taxa de implantação?</h4><p>Não para até 3 módulos. Acima disso, cobramos um setup único que cobre migração de dados, treinamento e configuração personalizada.</p></div>
+      <div class="price-q"><h4>Posso adicionar módulos depois?</h4><p>Sim. Ative novos módulos a qualquer momento sem migração — os dados já estão integrados.</p></div>
+      <div class="price-q"><h4>E se eu quiser cancelar?</h4><p>Sem fidelidade. Cancele quando quiser e exporte 100% dos seus dados em CSV/Excel.</p></div>
+      <div class="price-q"><h4>Tem desconto para pagamento anual?</h4><p>Sim. Planos anuais têm desconto de até 20%. Pergunte na demonstração.</p></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="news" id="newsletter" aria-label="Newsletter">
+<div class="w">
+  <div class="news-box" data-r>
+    <div class="news-left">
+      <h3>Receba insights toda semana</h3>
+      <p>Indicadores econômicos, dicas de gestão e novidades do Ruphus. Sem spam — só conteúdo útil.</p>
+    </div>
+    <div class="news-form">
+      <input type="email" placeholder="seu@email.com" id="news-email" aria-label="Seu email"/>
+      <button class="btn btn-t" onclick="subNews()">Inscrever →</button>
+    </div>
+  </div>
+</div>
+</section>
+
 <!-- DEMO CTA (replaces pricing) -->
 <section class="demo-cta" id="contato" aria-label="Solicitar demonstração">
 <div class="w">
@@ -811,6 +860,6 @@
 
 
 
-<script src="/scripts.js?v=1774440645"></script>
+<script src="/scripts.js?v=1774453276"></script>
 </body>
 </html>
