@@ -1274,3 +1274,9 @@ html.dark .sec-foot{background:rgba(255,255,255,.03)}
 .sim-metric .v{font-family:var(--serif);font-size:1.5rem;font-weight:800;color:var(--teal)}
 .sim-metric .l{font-size:.7rem;color:var(--muted);margin-top:2px}
 @media(max-width:480px){.sim-metrics{grid-template-columns:1fr}}
+
+
+/* Blog image support */
+.bf-visual img,.bc-visual img,.bc-head img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.bc-head{position:relative;aspect-ratio:16/9;overflow:hidden}
+.bc-head::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.3),transparent 60%)}
