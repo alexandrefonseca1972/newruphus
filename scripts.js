@@ -987,26 +987,47 @@ function toggleSim(el){
   el.classList.toggle('active');
   var mods=document.querySelectorAll('.sim-mod.active');
   var count=mods.length;
-  var perms=0;
-  var names=[];
+  var perms=0;var names=[];
   mods.forEach(function(m){perms+=parseInt(m.dataset.p)||0;names.push(m.dataset.m);});
   var days=count<=3?5:count<=8?10:count<=15?15:20;
   var apis=Math.round(count*3.2);
-  var res=document.getElementById('sim-result');
+  var empty=document.getElementById('sim-empty');
+  var content=document.getElementById('sim-content');
   if(count>0){
-    res.classList.add('show');
+    if(empty)empty.style.display='none';
+    if(content)content.style.display='block';
     document.getElementById('sim-count').textContent=count;
     document.getElementById('sim-perms').textContent=perms;
     document.getElementById('sim-time').textContent=days+'d';
     document.getElementById('sim-apis').textContent=apis+'+';
-    var summary=document.getElementById('sim-summary');
-    if(summary)summary.textContent=count+' módulos com '+perms+' permissões granulares. Implantação estimada em '+days+' dias úteis com acompanhamento dedicado.';
+    var bar=document.getElementById('sim-bar');
+    if(bar)bar.style.width=Math.round(count/22*100)+'%';
+    var barLabel=document.getElementById('sim-bar-label');
+    if(barLabel)barLabel.textContent=count+' de 22';
     var list=document.getElementById('sim-mods-list');
     if(list)list.innerHTML=names.map(function(n){return '<span>'+n+'</span>'}).join('');
   }else{
-    res.classList.remove('show');
+    if(empty)empty.style.display='flex';
+    if(content)content.style.display='none';
   }
+  // Update group toggle button text
+  el.closest('.sim-group-mods')&&updateGroupBtn(el.closest('.sim-group-mods'));
   if(window.plausible&&count>0)plausible('Simulator-Config',{props:{modules:String(count)}});
+}
+function toggleGroup(btn,group){
+  var mods=document.querySelector('[data-group="'+group+'"]').querySelectorAll('.sim-mod');
+  var allActive=true;
+  mods.forEach(function(m){if(!m.classList.contains('active'))allActive=false;});
+  mods.forEach(function(m){
+    if(allActive&&m.classList.contains('active'))m.click();
+    if(!allActive&&!m.classList.contains('active'))m.click();
+  });
+}
+function updateGroupBtn(groupEl){
+  var mods=groupEl.querySelectorAll('.sim-mod');
+  var active=groupEl.querySelectorAll('.sim-mod.active').length;
+  var btn=groupEl.previousElementSibling.querySelector('.sim-group-toggle');
+  if(btn)btn.textContent=active===mods.length?'Remover':'Selecionar';
 }
 
 /* ═══════════════════════════════════════════════════════════════

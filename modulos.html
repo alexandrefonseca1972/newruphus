@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774481547"/>
+<link rel="stylesheet" href="/styles.css?v=1774481805"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ruphus.app/"},{"@type":"ListItem","position":2,"name":"Módulos","item":"https://www.ruphus.app/modulos"}]}</script>
 </head>
 <body>
@@ -444,48 +444,108 @@
 <!-- SIMULADOR: MONTE SEU ERP -->
 <section style="padding:60px 0;background:linear-gradient(180deg,var(--bg),rgba(218,119,86,.03))" id="simulador" aria-label="Simulador Monte seu ERP">
 <div class="w">
-  <div class="s-ey" data-r>Simulador</div>
+  <div class="s-ey" data-r>Simulador interativo</div>
   <h2 class="s-hd" data-r="1" style="text-align:center">Monte seu ERP sob medida</h2>
-  <p class="s-desc" data-r="2" style="text-align:center;max-width:560px;margin:8px auto 32px">Selecione os módulos que sua empresa precisa e veja o resumo da sua configuração.</p>
-  <div style="display:flex;gap:8px;margin-bottom:12px;justify-content:center">
-    <button class="btn btn-ol" style="padding:6px 16px;font-size:.75rem" onclick="document.querySelectorAll('.sim-mod:not(.active)').forEach(function(m){m.click()})">Selecionar todos</button>
-    <button class="btn btn-ol" style="padding:6px 16px;font-size:.75rem" onclick="document.querySelectorAll('.sim-mod.active').forEach(function(m){m.click()})">Limpar</button>
-  </div>
-  <div class="sim-modules" id="sim-mods">
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="CRM" data-p="70"><div class="sim-check"></div>CRM<span class="sim-perms">70</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Clientes" data-p="4"><div class="sim-check"></div>Clientes<span class="sim-perms">4</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Vendas" data-p="4"><div class="sim-check"></div>Vendas<span class="sim-perms">4</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Fornecedores" data-p="4"><div class="sim-check"></div>Fornecedores<span class="sim-perms">4</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Financeiro" data-p="32"><div class="sim-check"></div>Financeiro<span class="sim-perms">32</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Contas Bancárias" data-p="17"><div class="sim-check"></div>Contas Bancárias<span class="sim-perms">17</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Aprovações" data-p="7"><div class="sim-check"></div>Aprovações<span class="sim-perms">7</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Contabilidade" data-p="12"><div class="sim-check"></div>Contabilidade<span class="sim-perms">12</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Fiscal" data-p="5"><div class="sim-check"></div>Fiscal<span class="sim-perms">5</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Relatórios" data-p="36"><div class="sim-check"></div>Relatórios<span class="sim-perms">36</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Funcionários" data-p="9"><div class="sim-check"></div>Funcionários<span class="sim-perms">9</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Departamentos" data-p="4"><div class="sim-check"></div>Departamentos<span class="sim-perms">4</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Tickets" data-p="5"><div class="sim-check"></div>Tickets<span class="sim-perms">5</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Checklists" data-p="7"><div class="sim-check"></div>Checklists<span class="sim-perms">7</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Contratos" data-p="5"><div class="sim-check"></div>Contratos<span class="sim-perms">5</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Projetos" data-p="4"><div class="sim-check"></div>Projetos<span class="sim-perms">4</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Gestão de Serviços" data-p="7"><div class="sim-check"></div>Serviços<span class="sim-perms">7</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Workflows" data-p="4"><div class="sim-check"></div>Workflows<span class="sim-perms">4</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Integrações" data-p="3"><div class="sim-check"></div>Integrações<span class="sim-perms">3</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="BI com IA" data-p="6"><div class="sim-check"></div>BI com IA<span class="sim-perms">6</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Chat" data-p="12"><div class="sim-check"></div>Chat<span class="sim-perms">12</span></div>
-    <div class="sim-mod" onclick="toggleSim(this)" data-m="Estoque" data-p="2"><div class="sim-check"></div>Estoque<span class="sim-perms">2</span></div>
-  </div>
-  <div class="sim-result" id="sim-result">
-    <h4 style="font-weight:700;font-size:1.05rem;margin-bottom:0">Sua configuração</h4>
-    <div class="sim-summary" id="sim-summary"></div>
-    <div class="sim-mods-list" id="sim-mods-list"></div>
-    <div class="sim-metrics">
-      <div class="sim-metric"><div class="v" id="sim-count">0</div><div class="l">módulos</div></div>
-      <div class="sim-metric"><div class="v" id="sim-perms">0</div><div class="l">permissões</div></div>
-      <div class="sim-metric"><div class="v" id="sim-time">0d</div><div class="l">implantação</div></div>
-      <div class="sim-metric"><div class="v" id="sim-apis">0</div><div class="l">rotas de API</div></div>
+  <p class="s-desc" data-r="2" style="text-align:center;max-width:560px;margin:8px auto 28px">Selecione os módulos e veja em tempo real o que sua configuração inclui.</p>
+
+  <div class="sim-layout">
+    <!-- LEFT: Module groups -->
+    <div class="sim-groups">
+      <div class="sim-group">
+        <div class="sim-group-head" style="--gc:#3B82F6">
+          <span class="sim-group-dot" style="background:#3B82F6"></span>
+          <span>Vendas & CRM</span>
+          <button class="sim-group-toggle" onclick="toggleGroup(this,'vendas')">Selecionar</button>
+        </div>
+        <div class="sim-group-mods" data-group="vendas">
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="CRM" data-p="70"><div class="sim-check"></div><span class="sim-name">CRM<small>Deal Coach, Pipeline, Lead Scoring</small></span><span class="sim-perms">70</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Clientes" data-p="4"><div class="sim-check"></div><span class="sim-name">Clientes<small>PF/PJ, CNPJ, Score de Saúde</small></span><span class="sim-perms">4</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Vendas" data-p="4"><div class="sim-check"></div><span class="sim-name">Vendas<small>Orçamentos, Pedidos, Propostas</small></span><span class="sim-perms">4</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Fornecedores" data-p="4"><div class="sim-check"></div><span class="sim-name">Fornecedores<small>Cadastro, Histórico, Risco</small></span><span class="sim-perms">4</span></div>
+        </div>
+      </div>
+
+      <div class="sim-group">
+        <div class="sim-group-head" style="--gc:#DA7756">
+          <span class="sim-group-dot" style="background:#DA7756"></span>
+          <span>Financeiro</span>
+          <button class="sim-group-toggle" onclick="toggleGroup(this,'financeiro')">Selecionar</button>
+        </div>
+        <div class="sim-group-mods" data-group="financeiro">
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Financeiro" data-p="32"><div class="sim-check"></div><span class="sim-name">Financeiro<small>Pagar/Receber, Fluxo de Caixa, Pix</small></span><span class="sim-perms">32</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Contas Bancárias" data-p="17"><div class="sim-check"></div><span class="sim-name">Contas Bancárias<small>Open Banking, Conciliação 97%</small></span><span class="sim-perms">17</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Aprovações" data-p="7"><div class="sim-check"></div><span class="sim-name">Aprovações<small>Multinível, Token sem Login</small></span><span class="sim-perms">7</span></div>
+        </div>
+      </div>
+
+      <div class="sim-group">
+        <div class="sim-group-head" style="--gc:#8B5CF6">
+          <span class="sim-group-dot" style="background:#8B5CF6"></span>
+          <span>Contábil & Fiscal</span>
+          <button class="sim-group-toggle" onclick="toggleGroup(this,'contabil')">Selecionar</button>
+        </div>
+        <div class="sim-group-mods" data-group="contabil">
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Contabilidade" data-p="12"><div class="sim-check"></div><span class="sim-name">Contabilidade<small>Sugestão por IA, DRE, Balancete</small></span><span class="sim-perms">12</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Fiscal" data-p="5"><div class="sim-check"></div><span class="sim-name">Fiscal<small>NF-e, NFS-e via NFe.io</small></span><span class="sim-perms">5</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Relatórios" data-p="36"><div class="sim-check"></div><span class="sim-name">Relatórios<small>20+ financeiros, CRM, Operações</small></span><span class="sim-perms">36</span></div>
+        </div>
+      </div>
+
+      <div class="sim-group">
+        <div class="sim-group-head" style="--gc:#0F6E56">
+          <span class="sim-group-dot" style="background:#0F6E56"></span>
+          <span>Pessoas & Operações</span>
+          <button class="sim-group-toggle" onclick="toggleGroup(this,'pessoas')">Selecionar</button>
+        </div>
+        <div class="sim-group-mods" data-group="pessoas">
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Funcionários" data-p="9"><div class="sim-check"></div><span class="sim-name">Funcionários<small>RH, Benefícios, Ponto</small></span><span class="sim-perms">9</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Departamentos" data-p="4"><div class="sim-check"></div><span class="sim-name">Departamentos<small>Equipes, Hierarquia</small></span><span class="sim-perms">4</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Tickets" data-p="5"><div class="sim-check"></div><span class="sim-name">Tickets<small>SLA, Recorrência, WhatsApp</small></span><span class="sim-perms">5</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Checklists" data-p="7"><div class="sim-check"></div><span class="sim-name">Checklists<small>Templates por IA, GPS, Fotos</small></span><span class="sim-perms">7</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Contratos" data-p="5"><div class="sim-check"></div><span class="sim-name">Contratos<small>Reajuste Auto, Versões</small></span><span class="sim-perms">5</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Projetos" data-p="4"><div class="sim-check"></div><span class="sim-name">Projetos<small>Milestones, Horas, Rentabilidade</small></span><span class="sim-perms">4</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Gestão de Serviços" data-p="7"><div class="sim-check"></div><span class="sim-name">Agendamentos<small>Serviços, Recursos, Fila</small></span><span class="sim-perms">7</span></div>
+        </div>
+      </div>
+
+      <div class="sim-group">
+        <div class="sim-group-head" style="--gc:#993556">
+          <span class="sim-group-dot" style="background:#993556"></span>
+          <span>Plataforma</span>
+          <button class="sim-group-toggle" onclick="toggleGroup(this,'plataforma')">Selecionar</button>
+        </div>
+        <div class="sim-group-mods" data-group="plataforma">
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Workflows" data-p="4"><div class="sim-check"></div><span class="sim-name">Workflows<small>Automações no-code</small></span><span class="sim-perms">4</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Integrações" data-p="3"><div class="sim-check"></div><span class="sim-name">Integrações<small>API REST, Webhooks, Z-API</small></span><span class="sim-perms">3</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="BI com IA" data-p="6"><div class="sim-check"></div><span class="sim-name">BI com IA<small>Dashboards, Insights Automáticos</small></span><span class="sim-perms">6</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Chat" data-p="12"><div class="sim-check"></div><span class="sim-name">Chat<small>Tempo Real, Canais, Push</small></span><span class="sim-perms">12</span></div>
+          <div class="sim-mod" onclick="toggleSim(this)" data-m="Estoque" data-p="2"><div class="sim-check"></div><span class="sim-name">Estoque<small>Previsão de Demanda por IA</small></span><span class="sim-perms">2</span></div>
+        </div>
+      </div>
     </div>
-    <div style="text-align:center;margin-top:16px"><button class="btn btn-t" onclick="openModal()">Solicitar orçamento para esta configuração →</button></div>
+
+    <!-- RIGHT: Sticky result panel -->
+    <div class="sim-panel" id="sim-result">
+      <div class="sim-panel-empty" id="sim-empty">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--brd)" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <p>Selecione módulos ao lado para montar sua configuração</p>
+      </div>
+      <div class="sim-panel-content" id="sim-content" style="display:none">
+        <h4 style="font-weight:700;font-size:1rem;margin-bottom:4px">Sua configuração</h4>
+        <div class="sim-bar-wrap">
+          <div class="sim-bar" id="sim-bar" style="width:0%"></div>
+          <span class="sim-bar-label" id="sim-bar-label">0 de 22</span>
+        </div>
+        <div class="sim-metrics">
+          <div class="sim-metric"><div class="v" id="sim-count">0</div><div class="l">módulos</div></div>
+          <div class="sim-metric"><div class="v" id="sim-perms">0</div><div class="l">permissões</div></div>
+          <div class="sim-metric"><div class="v" id="sim-time">0d</div><div class="l">implantação</div></div>
+          <div class="sim-metric"><div class="v" id="sim-apis">0</div><div class="l">rotas API</div></div>
+        </div>
+        <div class="sim-mods-list" id="sim-mods-list"></div>
+        <button class="btn btn-t" style="width:100%;margin-top:16px;justify-content:center" onclick="openModal()">Solicitar orçamento →</button>
+      </div>
+    </div>
   </div>
 </div>
 </section>
@@ -583,6 +643,6 @@
 
 
 
-<script src="/scripts.js?v=1774481547"></script>
+<script src="/scripts.js?v=1774481805"></script>
 </body>
 </html>
