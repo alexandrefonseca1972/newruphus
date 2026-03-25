@@ -1289,3 +1289,13 @@ html.dark .sec-foot{background:rgba(255,255,255,.03)}
 .sim-metric .l{font-size:.65rem;color:var(--muted);margin-top:2px}
 @media(max-width:600px){.sim-metrics{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:400px){.sim-modules{grid-template-columns:1fr 1fr}}
+
+/* Roadmap voting cards */
+.rm-vote-card{padding:18px;border-radius:12px;border:1px solid var(--brd);background:var(--card);transition:border-color .2s,opacity .3s}
+.rm-vote-card:hover{border-color:rgba(218,119,86,.3)}
+.rm-vote-card[data-status="done"]{border-left:3px solid #0F6E56}
+.rm-vote-card[data-status="progress"]{border-left:3px solid #3B82F6}
+.rm-vote-card[data-status="planned"]{border-left:3px solid #8B5CF6}
+.rm-vote-card.hidden{display:none}
+.rm-vote-btn:hover{border-color:var(--teal) !important;color:var(--teal) !important}
+.rm-vote-btn.voted{background:var(--tl) !important;border-color:var(--teal) !important;color:var(--teal) !important}

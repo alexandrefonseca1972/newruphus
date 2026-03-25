@@ -1047,3 +1047,29 @@ document.addEventListener('DOMContentLoaded',function(){
     }
   });
 });
+
+/* ═══════════════════════════════════════════════════════════════
+   ROADMAP — voting + filtering
+   ═══════════════════════════════════════════════════════════════ */
+function voteFeature(btn){
+  if(btn.classList.contains('voted')){
+    btn.classList.remove('voted');
+    var c=btn.querySelector('.vote-count');
+    c.textContent=parseInt(c.textContent)-1;
+  }else{
+    btn.classList.add('voted');
+    var c=btn.querySelector('.vote-count');
+    c.textContent=parseInt(c.textContent)+1;
+  }
+}
+function filterRoadmap(btn,status){
+  btn.parentElement.querySelectorAll('.bc-cat').forEach(function(b){b.classList.remove('on')});
+  btn.classList.add('on');
+  document.querySelectorAll('.rm-vote-card').forEach(function(card){
+    if(status==='all'||card.dataset.status===status){
+      card.classList.remove('hidden');
+    }else{
+      card.classList.add('hidden');
+    }
+  });
+}
