@@ -21,7 +21,7 @@ function toggleTheme(){
 })();
 
 // ── TYPING ──
-(function(){const w=['gestão.','operação.','decisão.','cobrança.','contabilidade.'];const el=document.getElementById('typed');if(!el)return;let wi=0,ci=0,del=false;
+(function(){const w=['inteligente.','eficiente.','integrada.','automatizada.','estratégica.'];const el=document.getElementById('typed');if(!el)return;let wi=0,ci=0,del=false;
 function t(){if(!el)return;const word=w[wi];if(!del){ci++;el.textContent=word.slice(0,ci);if(ci===word.length){del=true;setTimeout(t,2200);return}setTimeout(t,90)}else{ci--;el.textContent=word.slice(0,ci);if(ci===0){del=false;wi=(wi+1)%w.length;setTimeout(t,400);return}setTimeout(t,50)}}setTimeout(t,2500)})();
 
 // ── BENTO TABS ──
