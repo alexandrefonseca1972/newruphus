@@ -988,14 +988,21 @@ function toggleSim(el){
   var mods=document.querySelectorAll('.sim-mod.active');
   var count=mods.length;
   var perms=0;
-  mods.forEach(function(m){perms+=parseInt(m.dataset.p)||0;});
+  var names=[];
+  mods.forEach(function(m){perms+=parseInt(m.dataset.p)||0;names.push(m.dataset.m);});
   var days=count<=3?5:count<=8?10:count<=15?15:20;
+  var apis=Math.round(count*3.2);
   var res=document.getElementById('sim-result');
   if(count>0){
     res.classList.add('show');
     document.getElementById('sim-count').textContent=count;
     document.getElementById('sim-perms').textContent=perms;
-    document.getElementById('sim-time').textContent=days+' dias';
+    document.getElementById('sim-time').textContent=days+'d';
+    document.getElementById('sim-apis').textContent=apis+'+';
+    var summary=document.getElementById('sim-summary');
+    if(summary)summary.textContent=count+' módulos com '+perms+' permissões granulares. Implantação estimada em '+days+' dias úteis com acompanhamento dedicado.';
+    var list=document.getElementById('sim-mods-list');
+    if(list)list.innerHTML=names.map(function(n){return '<span>'+n+'</span>'}).join('');
   }else{
     res.classList.remove('show');
   }
