@@ -11,18 +11,18 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
 function toggleTheme(){
   const d=document.documentElement;d.classList.toggle('dark');
   localStorage.setItem('theme',d.classList.contains('dark')?'dark':'light');
-  document.getElementById('t-ico').textContent=d.classList.contains('dark')?'☾':'☀';
+  const ico=document.getElementById('t-ico');if(ico)ico.textContent=d.classList.contains('dark')?'☾':'☀';
 }
 (function(){
   if(localStorage.getItem('theme')==='dark'||(!localStorage.getItem('theme')&&matchMedia('(prefers-color-scheme:dark)').matches)){
     document.documentElement.classList.add('dark');
-    document.getElementById('t-ico').textContent='☾';
+    const ico=document.getElementById('t-ico');if(ico)ico.textContent='☾';
   }
 })();
 
 // ── TYPING ──
-(function(){const w=['gestão.','operação.','decisão.','cobrança.','contabilidade.'];const el=document.getElementById('typed');let wi=0,ci=0,del=false;
-function t(){const word=w[wi];if(!del){ci++;el.textContent=word.slice(0,ci);if(ci===word.length){del=true;setTimeout(t,2200);return}setTimeout(t,90)}else{ci--;el.textContent=word.slice(0,ci);if(ci===0){del=false;wi=(wi+1)%w.length;setTimeout(t,400);return}setTimeout(t,50)}}setTimeout(t,2500)})();
+(function(){const w=['gestão.','operação.','decisão.','cobrança.','contabilidade.'];const el=document.getElementById('typed');if(!el)return;let wi=0,ci=0,del=false;
+function t(){if(!el)return;const word=w[wi];if(!del){ci++;el.textContent=word.slice(0,ci);if(ci===word.length){del=true;setTimeout(t,2200);return}setTimeout(t,90)}else{ci--;el.textContent=word.slice(0,ci);if(ci===0){del=false;wi=(wi+1)%w.length;setTimeout(t,400);return}setTimeout(t,50)}}setTimeout(t,2500)})();
 
 // ── BENTO TABS ──
 function swTab(b,p){b.parentElement.querySelectorAll('.tb').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.querySelectorAll('.pn').forEach(x=>x.classList.remove('show'));document.getElementById('p-'+p).classList.add('show')}
@@ -364,17 +364,21 @@ const sandboxFlows={
 };
 
 function initSandbox(){
+  try{
   const wrap=document.getElementById('sandbox-body');
   if(!wrap)return;
+  const sidebar=document.getElementById('sand-nav');
+  const content=document.getElementById('sand-main');
+  if(!sidebar||!content)return;
   let currentFlow='financeiro';
   let currentStep=0;
 
   function render(){
     const flow=sandboxFlows[currentFlow];
-    const sidebar=document.getElementById('sand-nav');
+    if(!flow||!flow.steps||!flow.sidebar)return;
     sidebar.innerHTML=flow.sidebar.map((s,i)=>'<a class="'+(i===currentStep?'active':'')+'" onclick="sandboxStep('+i+')">'+['📊','📝','💰','📥','🔄','📈','🤖','📋'][i%8]+' '+s+'</a>').join('');
-    const content=document.getElementById('sand-main');
     const step=flow.steps[currentStep];
+    if(!step)return;
     let html='<div class="sand-step active"><h3>'+step.title+'</h3>';
     if(step.type==='kpis'){
       html+='<div class="sand-kpi-row">';
@@ -421,10 +425,11 @@ function initSandbox(){
   window.sandboxFlow=function(f){
     currentFlow=f;currentStep=0;
     document.querySelectorAll('.sand-picker button').forEach(b=>b.classList.toggle('active',b.dataset.flow===f));
-    document.querySelector('.sand-url').textContent='app.ruphus.app/'+f;
+    const urlEl=document.querySelector('.sand-url');if(urlEl)urlEl.textContent='app.ruphus.app/'+f;
     render();
   };
   render();
+  }catch(e){console.error('Sandbox init error:',e)}
 }
 document.addEventListener('DOMContentLoaded',initSandbox);
 
