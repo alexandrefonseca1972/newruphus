@@ -235,7 +235,7 @@ html.dark .rm-plan{background:rgba(108,92,231,.15);color:#a78bfa}
 .calc-grid{display:grid;grid-template-columns:1fr 1fr;min-height:380px}
 .calc-left{padding:36px;display:flex;flex-direction:column;gap:18px;border-right:1px solid var(--brd)}
 .calc-left label{font-size:.78rem;font-weight:600;color:var(--tx2);margin-bottom:4px;display:block}
-.calc-left input[type=number],.calc-left select{width:100%;padding:11px 14px;border:1.5px solid var(--brd);border-radius:var(--r);font-family:var(--sans);font-size:.88rem;color:var(--tx);background:var(--bg);outline:none;transition:border-color .2s}
+.calc-left input[type=number],.calc-left input[type=text],.calc-left select{width:100%;padding:11px 14px;border:1.5px solid var(--brd);border-radius:var(--r);font-family:var(--sans);font-size:.88rem;color:var(--tx);background:var(--bg);outline:none;transition:border-color .2s}
 .calc-left input:focus,.calc-left select:focus{border-color:var(--teal)}
 .range-wrap input[type=range]{width:100%;height:6px;border-radius:3px;appearance:none;background:var(--sand);outline:none;cursor:pointer}
 .range-wrap input[type=range]::-webkit-slider-thumb{appearance:none;width:20px;height:20px;border-radius:50%;background:var(--teal);cursor:pointer;box-shadow:0 2px 8px rgba(218,119,86,.3)}
