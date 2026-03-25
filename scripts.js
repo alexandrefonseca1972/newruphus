@@ -979,3 +979,48 @@ function subNews(){
     }
   });
 })();
+
+/* ═══════════════════════════════════════════════════════════════
+   SIMULADOR MONTE SEU ERP
+   ═══════════════════════════════════════════════════════════════ */
+function toggleSim(el){
+  el.classList.toggle('active');
+  var mods=document.querySelectorAll('.sim-mod.active');
+  var count=mods.length;
+  var perms=0;
+  mods.forEach(function(m){perms+=parseInt(m.dataset.p)||0;});
+  var days=count<=3?5:count<=8?10:count<=15?15:20;
+  var res=document.getElementById('sim-result');
+  if(count>0){
+    res.classList.add('show');
+    document.getElementById('sim-count').textContent=count;
+    document.getElementById('sim-perms').textContent=perms;
+    document.getElementById('sim-time').textContent=days+' dias';
+  }else{
+    res.classList.remove('show');
+  }
+  if(window.plausible&&count>0)plausible('Simulator-Config',{props:{modules:String(count)}});
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CALCULADORA CUSTO DO RETRABALHO
+   ═══════════════════════════════════════════════════════════════ */
+function calcRetrabalho(){
+  var funcEl=document.getElementById('ret-func');
+  if(!funcEl)return;
+  var func=parseInt(funcEl.value)||10;
+  var sal=parseMoeda(document.getElementById('ret-sal'))||3500;
+  var tools=parseInt(document.getElementById('ret-tools').value)||3;
+  var hrs=parseInt(document.getElementById('ret-hrs').value)||10;
+  
+  var custoHora=sal/176;
+  var custoMes=Math.round(func*hrs*4.33*custoHora*(1+(tools-1)*0.15));
+  var custoAno=custoMes*12;
+  var eco=Math.round(custoAno*0.75);
+  
+  var fmt=function(v){return'R$ '+v.toLocaleString('pt-BR')};
+  document.getElementById('ret-custo-mes').textContent=fmt(custoMes);
+  document.getElementById('ret-custo-ano').textContent=fmt(custoAno);
+  document.getElementById('ret-eco').textContent=fmt(eco);
+}
+document.addEventListener('DOMContentLoaded',calcRetrabalho);
