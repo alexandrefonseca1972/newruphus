@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774482593"/>
+<link rel="stylesheet" href="/styles.css?v=1774483016"/>
 </head>
 <body>
 <a href="#conteudo" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--teal);color:#fff;padding:8px 16px;z-index:9999;font-size:.85rem;transition:top .2s;border-radius:0 0 8px 0">Pular para o conteúdo</a>
@@ -663,7 +663,15 @@
 </section>
 
 <!-- DIAGNÓSTICO COM IA -->
-<section class="diag" id="diagnostico" aria-label="Diagnóstico inteligente">
+<section class="diag" id="diagnostico" aria-label="Diagnóstico inteligente" style="display:none">
+<!-- 
+  ⚠️ SEÇÃO DESABILITADA — requer ANTHROPIC_API_KEY configurada no Vercel.
+  Para habilitar:
+  1. Acesse https://vercel.com/ruphus-projects/newruphus/settings/environment-variables
+  2. Adicione: ANTHROPIC_API_KEY = sk-ant-...
+  3. Redeploy o projeto
+  4. Remova style="display:none" desta section
+-->
 <div class="w">
   <h2>Diagnóstico Gratuito da Sua Operação</h2>
   <p class="diag-sub">Responda 5 perguntas rápidas e receba uma análise personalizada com módulos recomendados e economia estimada.</p>
@@ -850,6 +858,6 @@
 
 
 
-<script src="/scripts.js?v=1774482593"></script>
+<script src="/scripts.js?v=1774483016"></script>
 </body>
 </html>
