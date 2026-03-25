@@ -214,7 +214,7 @@ const ecoModules=[
   {id:'checklists',name:'Checklists',perms:7,cat:'pessoas',x:700,y:330},
   {id:'contratos',name:'Contratos',perms:5,cat:'pessoas',x:850,y:330},
   {id:'projetos',name:'Projetos',perms:4,cat:'pessoas',x:750,y:400},
-  {id:'servicos',name:'Gestão Serviços',perms:7,cat:'pessoas',x:600,y:370},
+  {id:'servicos',name:'Gestão de Serviços',perms:7,cat:'pessoas',x:600,y:370},
   {id:'workflows',name:'Workflows',perms:4,cat:'plataforma',x:350,y:400},
   {id:'integ',name:'Integrações',perms:3,cat:'plataforma',x:450,y:450},
   {id:'bi',name:'BI com IA',perms:6,cat:'plataforma',x:550,y:450},
