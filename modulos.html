@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774436704"/>
+<link rel="stylesheet" href="/styles.css?v=1774437239"/>
 </head>
 <body>
 <a href="#conteudo" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--teal);color:#fff;padding:8px 16px;z-index:9999;font-size:.85rem;transition:top .2s;border-radius:0 0 8px 0">Pular para o conteúdo</a>
@@ -121,19 +121,71 @@
 </section>
 
 <!-- MAPA DE CALOR DO ECOSSISTEMA -->
-<section class="eco-map" aria-label="Mapa interativo do ecossistema">
+<section class="eco-map" aria-label="Ecossistema de módulos">
 <div class="w">
-  <h2>Ecossistema Vivo: 22 Módulos Conectados</h2>
-  <p class="eco-sub">Passe o mouse sobre qualquer módulo para ver suas conexões. O tamanho reflete a quantidade de permissões granulares.</p>
-  <div class="eco-svg-wrap">
-    <svg id="eco-svg" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg"></svg>
-    <div class="eco-tooltip" id="eco-tip"></div>
-  </div>
-  <div class="eco-legend">
-    <span><i style="background:#3B82F6"></i> Vendas & CRM</span>
-    <span><i style="background:#DA7756"></i> Financeiro</span>
-    <span><i style="background:#8B5CF6"></i> Pessoas & Operações</span>
-    <span><i style="background:#EC4899"></i> Plataforma</span>
+  <h2>Ecossistema: 22 Módulos Integrados</h2>
+  <p class="eco-sub">Cada módulo conversa com todos os outros. Clique em uma categoria para destacar.</p>
+
+  <div class="eco-hub" data-r>
+    <div class="eco-center">
+      <svg viewBox="0 0 40 40" fill="none" width="44" height="44"><defs><linearGradient id="elg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#DA7756"/><stop offset="100%" stop-color="#B85A3A"/></linearGradient></defs><path d="M20 2L36.66 11V29L20 38L3.34 29V11L20 2Z" stroke="url(#elg)" stroke-width="1.8" fill="none"/><path d="M14 12H22C24.5 12 26.5 14 26.5 16.5C26.5 19 24.5 21 22 21H18L26 28" stroke="url(#elg)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M14 12V28" stroke="url(#elg)" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg>
+      <span class="eco-c-label">22 módulos</span>
+      <span class="eco-c-sub">257 permissões</span>
+    </div>
+
+    <div class="eco-ring">
+      <div class="eco-group" data-cat="vendas">
+        <div class="eco-g-header" style="--gc:#3B82F6;--gl:#E6F1FB"><span class="eco-g-dot" style="background:#3B82F6"></span>Vendas & CRM</div>
+        <div class="eco-g-items">
+          <div class="eco-chip" data-p="70">CRM<small>70 perm</small></div>
+          <div class="eco-chip" data-p="4">Clientes<small>4 perm</small></div>
+          <div class="eco-chip" data-p="4">Vendas<small>4 perm</small></div>
+          <div class="eco-chip" data-p="4">Fornecedores<small>4 perm</small></div>
+        </div>
+      </div>
+
+      <div class="eco-group" data-cat="financeiro">
+        <div class="eco-g-header" style="--gc:#DA7756;--gl:#FDF0EB"><span class="eco-g-dot" style="background:#DA7756"></span>Financeiro</div>
+        <div class="eco-g-items">
+          <div class="eco-chip" data-p="32">Financeiro<small>32 perm</small></div>
+          <div class="eco-chip" data-p="17">Contas Bancárias<small>17 perm</small></div>
+          <div class="eco-chip" data-p="7">Aprovações<small>7 perm</small></div>
+        </div>
+      </div>
+
+      <div class="eco-group" data-cat="contabil">
+        <div class="eco-g-header" style="--gc:#8B5CF6;--gl:#EEEDFE"><span class="eco-g-dot" style="background:#8B5CF6"></span>Contábil & Fiscal</div>
+        <div class="eco-g-items">
+          <div class="eco-chip" data-p="12">Contabilidade<small>12 perm</small></div>
+          <div class="eco-chip" data-p="5">Fiscal<small>5 perm</small></div>
+          <div class="eco-chip" data-p="36">Relatórios<small>36 perm</small></div>
+        </div>
+      </div>
+
+      <div class="eco-group" data-cat="pessoas">
+        <div class="eco-g-header" style="--gc:#0F6E56;--gl:#E1F5EE"><span class="eco-g-dot" style="background:#0F6E56"></span>Pessoas & Operações</div>
+        <div class="eco-g-items">
+          <div class="eco-chip" data-p="9">Funcionários<small>9 perm</small></div>
+          <div class="eco-chip" data-p="4">Departamentos<small>4 perm</small></div>
+          <div class="eco-chip" data-p="5">Tickets<small>5 perm</small></div>
+          <div class="eco-chip" data-p="7">Checklists<small>7 perm</small></div>
+          <div class="eco-chip" data-p="5">Contratos<small>5 perm</small></div>
+          <div class="eco-chip" data-p="4">Projetos<small>4 perm</small></div>
+          <div class="eco-chip" data-p="7">Gestão de Serviços<small>7 perm</small></div>
+        </div>
+      </div>
+
+      <div class="eco-group" data-cat="plataforma">
+        <div class="eco-g-header" style="--gc:#993556;--gl:#FBEAF0"><span class="eco-g-dot" style="background:#993556"></span>Plataforma</div>
+        <div class="eco-g-items">
+          <div class="eco-chip" data-p="4">Workflows<small>4 perm</small></div>
+          <div class="eco-chip" data-p="3">Integrações<small>3 perm</small></div>
+          <div class="eco-chip" data-p="6">BI com IA<small>6 perm</small></div>
+          <div class="eco-chip" data-p="12">Chat<small>12 perm</small></div>
+          <div class="eco-chip" data-p="2">Estoque<small>2 perm</small></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </section>
@@ -440,6 +492,6 @@
 
 
 
-<script src="/scripts.js?v=1774436704"></script>
+<script src="/scripts.js?v=1774437239"></script>
 </body>
 </html>
