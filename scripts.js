@@ -53,7 +53,7 @@ function calcROI(){
   const colEl=document.getElementById('inp-col');
   if(!colEl)return;
   const col=parseInt(colEl.value)||0;
-  const fat=parseInt(document.getElementById('inp-fat').value)||0;
+  const fat=parseMoeda(document.getElementById('inp-fat'));
   const hrs=parseInt(document.getElementById('inp-hrs').value)||0;
   const sys=parseInt(document.getElementById('inp-sys').value)||1;
   const hrsEl=document.getElementById('hrs-val');if(hrsEl)hrsEl.textContent=hrs+'h';
@@ -84,6 +84,20 @@ function maskFone(el){
   else if(v.length>2)v=v.replace(/^(\d{2})(\d)/,'($1) $2');
   else if(v.length>0)v=v.replace(/^(\d)/,'($1');
   el.value=v;
+}
+
+// Currency mask: R$ 1.234.567
+function maskMoeda(el){
+  let v=el.value.replace(/\D/g,'');
+  if(v.length>12)v=v.slice(0,12);
+  if(v.length===0){el.value='';return}
+  v=parseInt(v,10).toString();
+  v=v.replace(/(\d)(?=(\d{3})+$)/g,'$1.');
+  el.value='R$ '+v;
+}
+function parseMoeda(el){
+  if(!el)return 0;
+  return parseInt(el.value.replace(/\D/g,''),10)||0;
 }
 
 // Validators — set fg state and return bool
