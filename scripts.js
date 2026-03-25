@@ -235,7 +235,7 @@ const ecoLinks=[
   ['estoque','vendas'],['estoque','financeiro'],['vendas','financeiro'],
   ['relatorios','crm'],['relatorios','func']
 ];
-const ecoCatColors={vendas:'#3B82F6',financeiro:'#0D7C66',pessoas:'#8B5CF6',plataforma:'#EC4899'};
+const ecoCatColors={vendas:'#3B82F6',financeiro:'#DA7756',pessoas:'#8B5CF6',plataforma:'#EC4899'};
 
 function initEcoMap(){
   const wrap=document.getElementById('eco-svg');
@@ -500,7 +500,7 @@ function initDiag(){
       '<div style="text-align:center"><div class="radar-score-big">'+score+'/100</div><div class="radar-score-label">Potencial de otimização com Ruphus</div></div>'+
       '<div style="margin:16px 0"><strong style="font-size:.85rem">Módulos recomendados:</strong><div class="diag-modules-rec">'+
       Array.from(modSet).map(m=>'<span>'+m+'</span>').join('')+'</div></div>'+
-      '<div style="font-size:.85rem;margin:12px 0;padding:12px;background:rgba(13,124,102,.05);border-radius:8px">💰 <strong>Economia estimada em 12 meses:</strong> '+savings+'<br><small style="color:var(--muted)">Baseado na redução de '+tools+' ferramentas para 1 plataforma</small></div>'+
+      '<div style="font-size:.85rem;margin:12px 0;padding:12px;background:rgba(218,119,86,.05);border-radius:8px">💰 <strong>Economia estimada em 12 meses:</strong> '+savings+'<br><small style="color:var(--muted)">Baseado na redução de '+tools+' ferramentas para 1 plataforma</small></div>'+
       '<button class="diag-report-btn" onclick="openModal()">📄 Agendar demonstração personalizada →</button>';
   }
 
@@ -590,15 +590,15 @@ function initRadar(){
       i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
     }
     ctx.closePath();
-    ctx.fillStyle='rgba(13,124,102,.15)';ctx.fill();
-    ctx.strokeStyle='#0D7C66';ctx.lineWidth=2.5;ctx.stroke();
+    ctx.fillStyle='rgba(218,119,86,.15)';ctx.fill();
+    ctx.strokeStyle='#DA7756';ctx.lineWidth=2.5;ctx.stroke();
 
     // Data points
     for(let i=0;i<6;i++){
       const a=Math.PI*2*i/6-Math.PI/2;
       const r=R*values[i]/10;
       ctx.beginPath();ctx.arc(cx+r*Math.cos(a),cy+r*Math.sin(a),4,0,Math.PI*2);
-      ctx.fillStyle='#0D7C66';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();
+      ctx.fillStyle='#DA7756';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();
     }
 
     // Score
@@ -610,7 +610,7 @@ function initRadar(){
     const gapsEl=document.getElementById('radar-gaps');
     const sorted=radarAxes.map((a,i)=>({name:a,val:values[i]})).sort((a,b)=>a.val-b.val);
     gapsEl.innerHTML='<h4>Maiores gaps</h4>'+sorted.slice(0,3).map(g=>
-      '<div class="radar-gap-item"><span class="gap-dot" style="background:'+(g.val<4?'#E8634A':g.val<7?'#f5a623':'#0D7C66')+'"></span><span>'+g.name+': '+g.val+'/10</span><span style="margin-left:auto;font-size:.72rem;color:var(--teal)">→ '+radarModuleSuggestions[g.name][0]+'</span></div>'
+      '<div class="radar-gap-item"><span class="gap-dot" style="background:'+(g.val<4?'#E8634A':g.val<7?'#f5a623':'#DA7756')+'"></span><span>'+g.name+': '+g.val+'/10</span><span style="margin-left:auto;font-size:.72rem;color:var(--teal)">→ '+radarModuleSuggestions[g.name][0]+'</span></div>'
     ).join('');
   }
 
@@ -667,7 +667,7 @@ function initTCO(){
     document.getElementById('tco-bar-current').style.background='#E8634A';
     document.getElementById('tco-val-current').textContent='R$ '+(r.current/1000).toFixed(0)+'k';
     document.getElementById('tco-bar-ruphus').style.width=(r.ruphus/maxVal*100)+'%';
-    document.getElementById('tco-bar-ruphus').style.background='#0D7C66';
+    document.getElementById('tco-bar-ruphus').style.background='#DA7756';
     document.getElementById('tco-val-ruphus').textContent='R$ '+(r.ruphus/1000).toFixed(0)+'k';
     document.getElementById('tco-saving').textContent='R$ '+(r.saving/1000).toFixed(0)+'k';
     document.getElementById('tco-pct').textContent=((r.saving/r.current)*100).toFixed(0)+'% de economia em '+year+(year===1?' ano':' anos');
@@ -773,7 +773,7 @@ function initWeekSim(){
     if(mode==='sem'){
       sumEl.innerHTML='<div class="week-summary-card"><div class="val" style="color:#E8634A">~'+totalHrs.toFixed(0)+'h</div><div class="lbl">Horas gastas na semana</div></div><div class="week-summary-card"><div class="val" style="color:#E8634A">5+</div><div class="lbl">Ferramentas diferentes</div></div><div class="week-summary-card"><div class="val" style="color:#E8634A">Alto</div><div class="lbl">Risco de erro humano</div></div>';
     }else{
-      sumEl.innerHTML='<div class="week-summary-card"><div class="val" style="color:#0D7C66">~1h</div><div class="lbl">Horas gastas na semana</div></div><div class="week-summary-card"><div class="val" style="color:#0D7C66">1</div><div class="lbl">Plataforma integrada</div></div><div class="week-summary-card"><div class="val" style="color:#0D7C66">Zero</div><div class="lbl">Erros manuais</div></div>';
+      sumEl.innerHTML='<div class="week-summary-card"><div class="val" style="color:#DA7756">~1h</div><div class="lbl">Horas gastas na semana</div></div><div class="week-summary-card"><div class="val" style="color:#DA7756">1</div><div class="lbl">Plataforma integrada</div></div><div class="week-summary-card"><div class="val" style="color:#DA7756">Zero</div><div class="lbl">Erros manuais</div></div>';
     }
   }
 
