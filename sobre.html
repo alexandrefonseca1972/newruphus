@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774539458"/>
+<link rel="stylesheet" href="/styles.css?v=1774539706"/>
 <title>Quem Somos — Ruphus ERP</title>
 <meta name="description" content="Conheça a história, valores e stack tecnológico do Ruphus ERP — construído para simplificar a gestão de PMEs brasileiras."/>
 <link rel="canonical" href="https://www.ruphus.app/sobre"/>
@@ -33,69 +33,157 @@
 <div class="mob" id="mob"><button type="button" class="mob-x" aria-label="Fechar" onclick="this.parentElement.classList.remove('open')">✕</button><a href="/">Home</a><a href="/segmentos">Segmentos</a><a href="/modulos">Módulos</a><a href="/comparativo">Comparativo</a><a href="/blog">Blog</a><a href="/recursos">Recursos</a><button type="button" class="btn btn-t" style="margin-top:12px" onclick="this.parentElement.classList.remove('open');openModal()">Demonstração →</button></div>
 <main>
 
-<section class="hero" style="padding:120px 0 40px">
+<!-- HERO -->
+<section class="hero" style="padding:130px 0 48px">
 <div class="w">
   <div class="s-ey" data-r>Quem Somos</div>
   <h1 data-r="1" style="max-width:700px">Nascemos para simplificar<br/>a gestão de empresas brasileiras</h1>
-  <p class="hero-desc" data-r="2" style="max-width:600px">O Ruphus é um ERP na nuvem com 22 módulos integrados, construído por quem conhece a realidade operacional de PMEs no Brasil — de perto.</p>
+  <p class="hero-desc" data-r="2" style="max-width:580px">O Ruphus é um ERP AI-first na nuvem com 22 módulos integrados, construído por quem conhece a realidade operacional de PMEs no Brasil — de perto.</p>
 </div>
 </section>
 
-<section style="padding:60px 0">
+<!-- MÉTRICAS EM DESTAQUE -->
+<section class="ab-metrics-section" data-r>
 <div class="w">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center" class="about-grid">
-    <div>
-      <h2 style="font-size:1.6rem;font-weight:800;line-height:1.2;margin-bottom:16px">A dor que nos moveu</h2>
-      <p style="font-size:.92rem;color:var(--muted);line-height:1.7;margin-bottom:16px">Antes do Ruphus, a operação dependia de 6+ ferramentas desconectadas: CRM num canto, financeiro no outro, planilhas no meio. Cada novo cliente significava mais sistemas, mais logins, mais chances de erro.</p>
-      <p style="font-size:.92rem;color:var(--muted);line-height:1.7;margin-bottom:16px">Não encontramos no mercado brasileiro um ERP AI-first de verdade — que usasse inteligência artificial não como marketing, mas como motor central de cada módulo — onde cada empresa pudesse ativar apenas o que precisa, sem pagar por pacotes inflados ou ficar refém de contratos longos.</p>
-      <p style="font-size:.92rem;color:var(--muted);line-height:1.7">Então construímos o Ruphus: um ERP AI-first com arquitetura multi-provider (Claude + GPT + Gemini), Model Router para otimização de custos e explicabilidade nativa em cada decisão — para compliance LGPD e confiança do usuário.</p>
+  <div class="ab-metrics-bar">
+    <div class="ab-m"><span class="ab-mv count-up">22</span><span class="ab-ml">módulos AI-first</span></div>
+    <div class="ab-m-div"></div>
+    <div class="ab-m"><span class="ab-mv count-up">5.470+</span><span class="ab-ml">testes automatizados</span></div>
+    <div class="ab-m-div"></div>
+    <div class="ab-m"><span class="ab-mv count-up">70+</span><span class="ab-ml">rotas de API</span></div>
+    <div class="ab-m-div"></div>
+    <div class="ab-m"><span class="ab-mv count-up">15+</span><span class="ab-ml">integrações nativas</span></div>
+    <div class="ab-m-div"></div>
+    <div class="ab-m"><span class="ab-mv count-up">9</span><span class="ab-ml">Cloud Functions</span></div>
+    <div class="ab-m-div"></div>
+    <div class="ab-m"><span class="ab-mv">0</span><span class="ab-ml">erros TS em produção</span></div>
+  </div>
+</div>
+</section>
+
+<!-- HISTÓRIA -->
+<section class="ab-story" data-r>
+<div class="w">
+  <div class="ab-story-grid">
+    <div class="ab-story-text">
+      <h2>A dor que nos moveu</h2>
+      <p>Antes do Ruphus, a operação dependia de 6+ ferramentas desconectadas: CRM num canto, financeiro no outro, planilhas no meio. Cada novo cliente significava mais sistemas, mais logins, mais chances de erro.</p>
+      <p>Não encontramos no mercado brasileiro um ERP AI-first de verdade — que usasse inteligência artificial não como marketing, mas como motor central de cada módulo.</p>
+      <p>Então construímos o Ruphus: um ERP com arquitetura multi-provider (Claude + GPT + Gemini), Model Router para otimização de custos e explicabilidade nativa em cada decisão — para compliance LGPD e confiança do usuário.</p>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px">
-      <div style="padding:20px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="font-family:var(--serif);font-size:2rem;font-weight:800;color:var(--teal)">22</div><div style="font-size:.82rem;color:var(--muted)">módulos AI-first em produção</div></div>
-      <div style="padding:20px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="font-family:var(--serif);font-size:2rem;font-weight:800;color:var(--teal)">5.470+</div><div style="font-size:.82rem;color:var(--muted)">testes automatizados passando</div></div>
-      <div style="padding:20px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="font-family:var(--serif);font-size:2rem;font-weight:800;color:var(--teal)">70+</div><div style="font-size:.82rem;color:var(--muted)">rotas de API documentadas</div></div>
-      <div style="padding:20px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="font-family:var(--serif);font-size:2rem;font-weight:800;color:var(--teal)">15+</div><div style="font-size:.82rem;color:var(--muted)">integrações externas nativas</div></div>
-      <div style="padding:20px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="font-family:var(--serif);font-size:2rem;font-weight:800;color:var(--teal)">9</div><div style="font-size:.82rem;color:var(--muted)">Cloud Functions serverless</div></div>
-      <div style="padding:20px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="font-family:var(--serif);font-size:2rem;font-weight:800;color:var(--teal)">0</div><div style="font-size:.82rem;color:var(--muted)">erros TypeScript em produção</div></div>
+    <div class="ab-story-visual">
+      <div class="ab-before-after">
+        <div class="ab-ba-card ab-before">
+          <div class="ab-ba-label">Antes</div>
+          <div class="ab-ba-items">
+            <span>📊 Planilhas</span>
+            <span>💰 Sistema financeiro</span>
+            <span>📧 Email marketing</span>
+            <span>📱 WhatsApp manual</span>
+            <span>📋 CRM separado</span>
+            <span>🧾 Nota fiscal avulsa</span>
+          </div>
+          <div class="ab-ba-result">6+ ferramentas · R$ 800+/mês · dados desconectados</div>
+        </div>
+        <div class="ab-ba-arrow">→</div>
+        <div class="ab-ba-card ab-after">
+          <div class="ab-ba-label">Depois</div>
+          <div class="ab-ba-items">
+            <span style="font-size:1rem;font-weight:700;color:var(--teal)">Ruphus ERP</span>
+          </div>
+          <div class="ab-ba-result">22 módulos · 1 plataforma · dados integrados</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 </section>
 
-<section style="padding:60px 0;background:linear-gradient(180deg,var(--bg),rgba(249,124,43,.03))">
+<!-- VALORES -->
+<section class="ab-values" data-r>
 <div class="w">
-  <h2 class="s-hd" style="text-align:center">No que acreditamos</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:32px">
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><h4 style="font-weight:700;margin-bottom:8px">Modularidade real</h4><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Cada empresa é única. Ative 3 ou 22 módulos — pague apenas pelo que usa, sem pacotes forçados.</p></div>
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><h4 style="font-weight:700;margin-bottom:8px">Transparência total</h4><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Sem fidelidade, sem multa de cancelamento. Seus dados são seus — exporte tudo em CSV/Excel quando quiser.</p></div>
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><h4 style="font-weight:700;margin-bottom:8px">Evolução contínua</h4><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Novas funcionalidades toda semana. O ERP que você contrata hoje será melhor daqui a 30 dias — sem custo adicional.</p></div>
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><h4 style="font-weight:700;margin-bottom:8px">Segurança como fundação</h4><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Firestore Security Rules + Custom Claims, SSL/TLS, 40+ permissões/módulo, LGPD nativa. Não é marketing — é como o sistema funciona.</p></div>
+  <div class="s-ey" style="text-align:center;display:flex;justify-content:center">No que acreditamos</div>
+  <h2 class="s-hd" style="text-align:center">Princípios que guiam cada linha de código</h2>
+  <div class="ab-values-grid">
+    <div class="ab-val-card">
+      <div class="ab-val-ico">🧩</div>
+      <h4>Modularidade real</h4>
+      <p>Cada empresa é única. Ative 3 ou 22 módulos — pague apenas pelo que usa, sem pacotes forçados.</p>
+    </div>
+    <div class="ab-val-card">
+      <div class="ab-val-ico">🔍</div>
+      <h4>Transparência total</h4>
+      <p>Sem fidelidade, sem multa de cancelamento. Seus dados são seus — exporte tudo em CSV/Excel quando quiser.</p>
+    </div>
+    <div class="ab-val-card">
+      <div class="ab-val-ico">🚀</div>
+      <h4>Evolução contínua</h4>
+      <p>Novas funcionalidades toda semana. O ERP que você contrata hoje será melhor daqui a 30 dias — sem custo adicional.</p>
+    </div>
+    <div class="ab-val-card">
+      <div class="ab-val-ico">🛡</div>
+      <h4>Segurança como fundação</h4>
+      <p>Firestore Security Rules + Custom Claims, SSL/TLS, 40+ permissões/módulo, LGPD nativa. É como o sistema funciona.</p>
+    </div>
   </div>
 </div>
 </section>
 
-<section style="padding:60px 0">
+<!-- STACK TECNOLÓGICO -->
+<section class="ab-stack" data-r>
 <div class="w">
+  <div class="s-ey" style="text-align:center;display:flex;justify-content:center">Engenharia</div>
   <h2 class="s-hd" style="text-align:center">Stack tecnológico</h2>
-  <p class="s-desc" style="text-align:center;max-width:500px;margin:8px auto 32px">Construído sobre uma base moderna, escalável e segura.</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:800px;margin:0 auto">
-    <div style="padding:16px;border-radius:12px;border:1px solid var(--brd);background:var(--card);display:flex;align-items:center;gap:12px"><strong style="font-size:.85rem">Next.js 16</strong><span style="font-size:.72rem;color:var(--muted)">App Router, SSR, RSC</span></div>
-    <div style="padding:16px;border-radius:12px;border:1px solid var(--brd);background:var(--card);display:flex;align-items:center;gap:12px"><strong style="font-size:.85rem">Firebase</strong><span style="font-size:.72rem;color:var(--muted)">Auth + Firestore + Storage + Functions</span></div>
-    <div style="padding:16px;border-radius:12px;border:1px solid var(--brd);background:var(--card);display:flex;align-items:center;gap:12px"><strong style="font-size:.85rem">Vercel Edge</strong><span style="font-size:.72rem;color:var(--muted)">CDN global, SSL, HSTS</span></div>
-    <div style="padding:16px;border-radius:12px;border:1px solid var(--brd);background:var(--card);display:flex;align-items:center;gap:12px"><strong style="font-size:.85rem">Sentry</strong><span style="font-size:.72rem;color:var(--muted)">Monitoramento 24/7</span></div>
-    <div style="padding:16px;border-radius:12px;border:1px solid var(--brd);background:var(--card);display:flex;align-items:center;gap:12px"><strong style="font-size:.85rem">Z-API</strong><span style="font-size:.72rem;color:var(--muted)">WhatsApp automatizado</span></div>
-    <div style="padding:16px;border-radius:12px;border:1px solid var(--brd);background:var(--card);display:flex;align-items:center;gap:12px"><strong style="font-size:.85rem">NFe.io</strong><span style="font-size:.72rem;color:var(--muted)">Emissão NF-e integrada</span></div>
+  <p class="s-desc" style="text-align:center;max-width:480px;margin:8px auto 36px">Construído sobre uma base moderna, escalável e segura.</p>
+  <div class="ab-stack-grid">
+    <div class="ab-stack-card">
+      <div class="ab-stack-name">Next.js 16</div>
+      <div class="ab-stack-desc">App Router, SSR, React Server Components</div>
+    </div>
+    <div class="ab-stack-card">
+      <div class="ab-stack-name">Firebase</div>
+      <div class="ab-stack-desc">Auth + Firestore + Storage + Cloud Functions</div>
+    </div>
+    <div class="ab-stack-card">
+      <div class="ab-stack-name">Claude + GPT + Gemini</div>
+      <div class="ab-stack-desc">Model Router AI multi-provider com cache Redis</div>
+    </div>
+    <div class="ab-stack-card">
+      <div class="ab-stack-name">Pinecone + Algolia</div>
+      <div class="ab-stack-desc">Busca vetorial + full-text em tempo real</div>
+    </div>
+    <div class="ab-stack-card">
+      <div class="ab-stack-name">Vercel Edge</div>
+      <div class="ab-stack-desc">CDN global, SSL automático, HSTS</div>
+    </div>
+    <div class="ab-stack-card">
+      <div class="ab-stack-name">Open Banking</div>
+      <div class="ab-stack-desc">API Banco Central + Pix QR Code nativo</div>
+    </div>
+    <div class="ab-stack-card">
+      <div class="ab-stack-name">Z-API + NFe.io</div>
+      <div class="ab-stack-desc">WhatsApp automatizado + NF-e integrada</div>
+    </div>
+    <div class="ab-stack-card">
+      <div class="ab-stack-name">Vitest + Emulator</div>
+      <div class="ab-stack-desc">5.470+ testes com Firebase Emulator Suite</div>
+    </div>
   </div>
 </div>
 </section>
 
-<section style="padding:60px 0;text-align:center;background:linear-gradient(180deg,rgba(249,124,43,.03),var(--bg))">
-<div class="w">
-  <h2 style="font-size:clamp(1.4rem,3vw,2rem);font-weight:800">Quer conhecer o Ruphus por dentro?</h2>
-  <p style="color:var(--muted);margin:12px auto 24px;max-width:500px">30 minutos, dados reais do seu cenário. Sem compromisso.</p>
-  <button class="btn btn-t btn-lg" onclick="openModal()">Agendar demonstração gratuita →</button>
+<!-- CTA -->
+<section class="ab-cta" data-r>
+<div class="w" style="text-align:center">
+  <h2 style="font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:12px">Quer conhecer o Ruphus por dentro?</h2>
+  <p style="color:var(--muted);margin:0 auto 28px;max-width:480px;font-size:.92rem">30 minutos, dados reais do seu cenário. Sem compromisso, sem cartão.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <button class="btn btn-t btn-lg" onclick="openModal()">Agendar demonstração gratuita →</button>
+    <a href="/modulos" class="btn btn-ol btn-lg">Ver os 22 módulos</a>
+  </div>
 </div>
 </section>
+
 </main>
 <footer role="contentinfo">
 <div class="w">
@@ -146,6 +234,6 @@
 <div class="toast" id="toast-el">✓ <span id="toast-msg"></span></div>
 
 <a href="https://wa.me/5511948680554" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.13.556 4.13 1.53 5.87L.06 23.71l5.99-1.53C7.82 23.15 9.86 23.7 12 23.7c6.627 0 12-5.073 12-11.7S18.627 0 12 0zm0 21.6c-2.01 0-3.88-.54-5.49-1.48l-.39-.24-3.56.91.95-3.45-.26-.41C2.25 15.55 1.7 13.83 1.7 12 1.7 6.31 6.31 1.7 12 1.7S22.3 6.31 22.3 12 17.69 21.6 12 21.6z"/></svg></a>
-<script src="/scripts.js?v=1774539458"></script>
+<script src="/scripts.js?v=1774539706"></script>
 </body>
 </html>
