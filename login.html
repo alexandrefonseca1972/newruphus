@@ -149,10 +149,6 @@ html.dark .st-badge:hover{background:rgba(218,119,86,.08)}
 .field input{transition:border-color .2s,box-shadow .2s,transform .15s}
 .field input:focus{transform:translateY(-1px)}
 
-/* Strength indicator */
-.pw-strength{height:3px;border-radius:2px;margin-top:6px;background:var(--brd);overflow:hidden;transition:all .3s}
-.pw-bar{height:100%;border-radius:2px;width:0;transition:width .3s,background .3s}
-.pw-hint{font-size:.65rem;color:var(--muted);margin-top:4px;transition:color .3s}
 </style>
 </head>
 <body>
@@ -202,8 +198,6 @@ html.dark .st-badge:hover{background:rgba(218,119,86,.08)}
           <input type="password" id="password" placeholder="••••••••" autocomplete="current-password"/>
           <button type="button" class="pw-toggle" onclick="togglePw()" aria-label="Mostrar senha"><span id="pw-icon">👁</span></button>
         </div>
-        <div class="pw-strength" id="pw-str"><div class="pw-bar" id="pw-bar"></div></div>
-        <div class="pw-hint" id="pw-hint"></div>
       </div>
 
       <div class="check-row">
@@ -263,26 +257,6 @@ function togglePw(){
   if(inp.type==='password'){inp.type='text';ico.textContent='🙈';}
   else{inp.type='password';ico.textContent='👁';}
 }
-
-// Password strength
-document.getElementById('password').addEventListener('input',function(){
-  var v=this.value;
-  var bar=document.getElementById('pw-bar');
-  var hint=document.getElementById('pw-hint');
-  var score=0;
-  if(v.length>=6)score++;
-  if(v.length>=10)score++;
-  if(/[A-Z]/.test(v))score++;
-  if(/[0-9]/.test(v))score++;
-  if(/[^A-Za-z0-9]/.test(v))score++;
-  var pct=[0,20,40,60,80,100][score];
-  var colors=['var(--brd)','#E8634A','#D4A017','#D4A017','#3B82F6','#0F6E56'];
-  var labels=['','Fraca','Razoável','Boa','Forte','Excelente'];
-  bar.style.width=pct+'%';
-  bar.style.background=colors[score];
-  hint.textContent=v?labels[score]:'';
-  hint.style.color=colors[score];
-});
 
 // Login handler
 function handleLogin(){
