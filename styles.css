@@ -1583,3 +1583,49 @@ html.dark .ig-techs span{background:rgba(255,255,255,.06)}
   .ig-cta-btns{flex-direction:column;width:100%}
   .ig-cta-btns .btn{width:100%}
 }
+
+/* ═══════════════════════════════════════════════════
+   GLOBAL LAYOUT FIXES — Revisão detalhada
+   ═══════════════════════════════════════════════════ */
+
+/* Hero standardized padding */
+.hero{padding:130px 0 48px}
+
+/* Section spacing consistency */
+.s-hd{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:8px}
+.s-desc{font-size:.88rem;color:var(--muted);line-height:1.6}
+.s-ey{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--teal);background:var(--tl);padding:6px 14px;border-radius:99px;margin-bottom:14px}
+
+/* Card base — reusable */
+.card-base{padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card);transition:border-color .25s,transform .25s,box-shadow .25s}
+.card-base:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.05)}
+html.dark .card-base:hover{box-shadow:0 4px 16px rgba(0,0,0,.2)}
+
+/* Improve textarea dark mode */
+html.dark textarea{background:var(--card);border-color:var(--brd);color:var(--fg)}
+html.dark textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(249,124,43,.1)}
+
+/* Link visited state */
+.ft-col a:visited{color:var(--muted)}
+
+/* Smooth page load */
+html{scroll-behavior:smooth}
+
+/* Better mobile nav spacing */
+@media(max-width:768px){
+  .mob a{font-size:1.2rem;padding:6px 0}
+  .mob .btn{margin-top:8px;width:80%;text-align:center}
+}
+
+/* Fix for long content overflow */
+.w{overflow-wrap:break-word;word-wrap:break-word}
+
+/* Improve select styling */
+select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239B9B9B' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+
+/* Consistent section backgrounds */
+section:nth-of-type(even){background:linear-gradient(180deg,var(--bg),rgba(249,124,43,.015),var(--bg))}
+
+/* Skip link improvement */
+.skip-link{position:absolute;top:-60px;left:0;background:var(--teal);color:#fff;padding:10px 20px;z-index:9999;font-size:.85rem;transition:top .2s;border-radius:0 0 8px 0;font-weight:600}
+.skip-link:focus{top:0}
