@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Entrar — Ruphus ERP</title>
 <meta name="description" content="Acesse sua conta Ruphus ERP. Gestão inteligente com 22 módulos integrados."/>
-<meta name="theme-color" content="#DA7756"/>
+<meta name="theme-color" content="#f97c2b"/>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -15,7 +15,7 @@
 :root{
   --cream:#FAF7F2;--white:#FFF;--sand:#F0EBE3;--stone:#E5DFD5;
   --ink:#1A1A1A;--ink2:#3D3D3D;--ink3:#6B6B6B;--ink4:#9B9B9B;
-  --teal:#DA7756;--tl:#FDF0EB;--td:#B85A3A;
+  --teal:#f97c2b;--tl:#FEF0E5;--td:#D46620;
   --violet:#6C5CE7;--vl:#F0EEFB;
   --serif:'Fraunces',Georgia,serif;--sans:'Outfit',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
   --bg:var(--cream);--bg2:var(--white);--fg:var(--ink);--muted:var(--ink3);--brd:var(--stone);--card:var(--white);
@@ -23,11 +23,11 @@
 html.dark{
   --bg:#0D0F14;--bg2:#161820;--fg:#F0F0F8;--muted:#8888A0;--brd:#252536;--card:#1A1C24;
   --cream:#0D0F14;--white:#161820;--sand:#1A1B26;--stone:#252536;
-  --tl:rgba(218,119,86,.1);--vl:rgba(108,92,231,.08);
+  --tl:rgba(249,124,43,.1);--vl:rgba(108,92,231,.08);
 }
 html{height:100%}
 body{font-family:var(--sans);background:var(--bg);color:var(--fg);min-height:100vh;display:flex;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;transition:background .4s,color .4s}
-::selection{background:rgba(218,119,86,.15);color:var(--fg)}
+::selection{background:rgba(249,124,43,.15);color:var(--fg)}
 
 /* ── LAYOUT ── */
 .login-split{display:flex;width:100%;min-height:100vh}
@@ -40,18 +40,18 @@ body{font-family:var(--sans);background:var(--bg);color:var(--fg);min-height:100
 .brand-logo svg{width:48px;height:48px}
 .brand-logo span{font-family:var(--serif);font-weight:700;font-size:1.6rem;color:#F0F0F8;letter-spacing:-.02em}
 .brand-headline{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#F0F0F8;line-height:1.12;letter-spacing:-.03em;margin-bottom:16px}
-.brand-headline em{font-style:italic;font-weight:500;background:linear-gradient(135deg,#DA7756,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.brand-headline em{font-style:italic;font-weight:500;background:linear-gradient(135deg,#f97c2b,#EC4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .brand-desc{font-size:.92rem;color:#9494AB;line-height:1.65;margin-bottom:40px}
 
 /* Brand metrics */
 .brand-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .bm{text-align:center;padding:16px 12px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);backdrop-filter:blur(8px)}
-.bm-val{font-family:var(--serif);font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,#DA7756,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.bm-val{font-family:var(--serif);font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,#f97c2b,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .bm-lab{font-size:.65rem;color:#5A5A72;margin-top:2px}
 
 /* Animated orbs */
 .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none}
-.orb-1{width:400px;height:400px;background:radial-gradient(circle,#DA7756,transparent 70%);top:-100px;right:-80px;animation:orbMove 12s ease-in-out infinite}
+.orb-1{width:400px;height:400px;background:radial-gradient(circle,#f97c2b,transparent 70%);top:-100px;right:-80px;animation:orbMove 12s ease-in-out infinite}
 .orb-2{width:300px;height:300px;background:radial-gradient(circle,#3B82F6,transparent 70%);bottom:-60px;left:-60px;animation:orbMove 16s ease-in-out infinite reverse}
 .orb-3{width:200px;height:200px;background:radial-gradient(circle,#8B5CF6,transparent 70%);top:40%;left:20%;animation:orbMove 10s ease-in-out infinite 2s}
 @keyframes orbMove{0%,100%{transform:translate(0,0)}33%{transform:translate(30px,-20px)}66%{transform:translate(-15px,25px)}}
@@ -75,10 +75,10 @@ body{font-family:var(--sans);background:var(--bg);color:var(--fg);min-height:100
 .field{margin-bottom:18px;position:relative}
 .field label{display:block;font-size:.78rem;font-weight:600;color:var(--fg);margin-bottom:6px}
 .field input{width:100%;padding:12px 16px;border-radius:12px;border:1.5px solid var(--brd);background:var(--card);font-family:var(--sans);font-size:.88rem;color:var(--fg);transition:all .2s;outline:none}
-.field input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(218,119,86,.1)}
+.field input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(249,124,43,.1)}
 .field input::placeholder{color:var(--muted);opacity:.6}
 html.dark .field input{background:var(--card);border-color:var(--brd)}
-html.dark .field input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(218,119,86,.12)}
+html.dark .field input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(249,124,43,.12)}
 
 /* Password toggle */
 .pw-wrap{position:relative}
@@ -96,7 +96,7 @@ html.dark .field input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(
 
 /* Submit */
 .btn-login{width:100%;padding:14px;border:none;border-radius:12px;background:var(--teal);color:#fff;font-family:var(--sans);font-size:.92rem;font-weight:600;cursor:pointer;transition:all .25s;position:relative;overflow:hidden}
-.btn-login:hover{background:var(--td);transform:translateY(-1px);box-shadow:0 6px 20px rgba(218,119,86,.3)}
+.btn-login:hover{background:var(--td);transform:translateY(-1px);box-shadow:0 6px 20px rgba(249,124,43,.3)}
 .btn-login:active{transform:translateY(0)}
 .btn-login::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.1),transparent);transform:translateX(-100%)}
 .btn-login:hover::after{transform:translateX(100%);transition:transform .5s}
@@ -105,7 +105,7 @@ html.dark .field input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(
 .security-trust{margin-top:24px;display:flex;justify-content:center;gap:12px}
 .st-badge{width:42px;height:42px;border-radius:12px;border:1.5px solid var(--brd);background:var(--card);display:flex;align-items:center;justify-content:center;color:var(--muted);cursor:default;position:relative;transition:all .25s}
 .st-badge:hover{border-color:var(--teal);color:var(--teal);background:var(--tl);transform:translateY(-2px)}
-html.dark .st-badge:hover{background:rgba(218,119,86,.08)}
+html.dark .st-badge:hover{background:rgba(249,124,43,.08)}
 .st-badge::after{content:attr(data-tooltip);position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-4px);padding:8px 12px;border-radius:10px;font-size:.72rem;font-weight:500;font-family:var(--sans);line-height:1.4;background:var(--fg);color:var(--bg);white-space:normal;width:210px;text-align:center;z-index:10;pointer-events:none;opacity:0;transition:opacity .2s,transform .2s}
 .st-badge:hover::after{opacity:1;transform:translateX(-50%) translateY(0)}
 .st-badge::before{content:'';position:absolute;top:calc(100% + 5px);left:50%;transform:translateX(-50%);border:5px solid transparent;border-bottom-color:var(--fg);opacity:0;transition:opacity .2s;pointer-events:none}

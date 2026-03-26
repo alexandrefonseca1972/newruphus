@@ -252,7 +252,7 @@ const ecoLinks=[
   ['estoque','vendas'],['estoque','financeiro'],['vendas','financeiro'],
   ['relatorios','crm'],['relatorios','func']
 ];
-const ecoCatColors={vendas:'#3B82F6',financeiro:'#DA7756',pessoas:'#8B5CF6',plataforma:'#EC4899'};
+const ecoCatColors={vendas:'#3B82F6',financeiro:'#f97c2b',pessoas:'#8B5CF6',plataforma:'#EC4899'};
 
 function initEcoMap(){
   const wrap=document.getElementById('eco-svg');
@@ -555,7 +555,7 @@ function initDiag(){
         ai.modulos.map(function(m){return '<span>'+m+'</span>'}).join('')+
       '</div></div>'+
       '<div class="diag-r-section"><strong>Resultados em 30 dias</strong><ul class="diag-r-wins">'+
-        ai.quick_wins.map(function(w){return '<li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#DA7756" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>'+w+'</li>'}).join('')+
+        ai.quick_wins.map(function(w){return '<li><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#f97c2b" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>'+w+'</li>'}).join('')+
       '</ul></div>'+
       '<div class="diag-r-risk">⚠️ '+ai.risco+'</div>'+
       '<div class="diag-r-actions">'+
@@ -666,15 +666,15 @@ function initRadar(){
       i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
     }
     ctx.closePath();
-    ctx.fillStyle='rgba(218,119,86,.15)';ctx.fill();
-    ctx.strokeStyle='#DA7756';ctx.lineWidth=2.5;ctx.stroke();
+    ctx.fillStyle='rgba(249,124,43,.15)';ctx.fill();
+    ctx.strokeStyle='#f97c2b';ctx.lineWidth=2.5;ctx.stroke();
 
     // Data points
     for(let i=0;i<6;i++){
       const a=Math.PI*2*i/6-Math.PI/2;
       const r=R*values[i]/10;
       ctx.beginPath();ctx.arc(cx+r*Math.cos(a),cy+r*Math.sin(a),4,0,Math.PI*2);
-      ctx.fillStyle='#DA7756';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();
+      ctx.fillStyle='#f97c2b';ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();
     }
 
     // Score
@@ -686,7 +686,7 @@ function initRadar(){
     const gapsEl=document.getElementById('radar-gaps');
     const sorted=radarAxes.map((a,i)=>({name:a,val:values[i]})).sort((a,b)=>a.val-b.val);
     gapsEl.innerHTML='<h4>Maiores gaps</h4>'+sorted.slice(0,3).map(g=>
-      '<div class="radar-gap-item"><span class="gap-dot" style="background:'+(g.val<4?'#E8634A':g.val<7?'#f5a623':'#DA7756')+'"></span><span>'+g.name+': '+g.val+'/10</span><span style="margin-left:auto;font-size:.72rem;color:var(--teal)">→ '+radarModuleSuggestions[g.name][0]+'</span></div>'
+      '<div class="radar-gap-item"><span class="gap-dot" style="background:'+(g.val<4?'#E8634A':g.val<7?'#f5a623':'#f97c2b')+'"></span><span>'+g.name+': '+g.val+'/10</span><span style="margin-left:auto;font-size:.72rem;color:var(--teal)">→ '+radarModuleSuggestions[g.name][0]+'</span></div>'
     ).join('');
   }
 
@@ -743,7 +743,7 @@ function initTCO(){
     document.getElementById('tco-bar-current').style.background='#E8634A';
     document.getElementById('tco-val-current').textContent='R$ '+(r.current/1000).toFixed(0)+'k';
     document.getElementById('tco-bar-ruphus').style.width=(r.ruphus/maxVal*100)+'%';
-    document.getElementById('tco-bar-ruphus').style.background='#DA7756';
+    document.getElementById('tco-bar-ruphus').style.background='#f97c2b';
     document.getElementById('tco-val-ruphus').textContent='R$ '+(r.ruphus/1000).toFixed(0)+'k';
     document.getElementById('tco-saving').textContent='R$ '+(r.saving/1000).toFixed(0)+'k';
     document.getElementById('tco-pct').textContent=((r.saving/r.current)*100).toFixed(0)+'% de economia em '+year+(year===1?' ano':' anos');
@@ -849,7 +849,7 @@ function initWeekSim(){
     if(mode==='sem'){
       sumEl.innerHTML='<div class="week-summary-card"><div class="val" style="color:#E8634A">~'+totalHrs.toFixed(0)+'h</div><div class="lbl">Horas gastas na semana</div></div><div class="week-summary-card"><div class="val" style="color:#E8634A">5+</div><div class="lbl">Ferramentas diferentes</div></div><div class="week-summary-card"><div class="val" style="color:#E8634A">Alto</div><div class="lbl">Risco de erro humano</div></div>';
     }else{
-      sumEl.innerHTML='<div class="week-summary-card"><div class="val" style="color:#DA7756">~1h</div><div class="lbl">Horas gastas na semana</div></div><div class="week-summary-card"><div class="val" style="color:#DA7756">1</div><div class="lbl">Plataforma integrada</div></div><div class="week-summary-card"><div class="val" style="color:#DA7756">Zero</div><div class="lbl">Erros manuais</div></div>';
+      sumEl.innerHTML='<div class="week-summary-card"><div class="val" style="color:#f97c2b">~1h</div><div class="lbl">Horas gastas na semana</div></div><div class="week-summary-card"><div class="val" style="color:#f97c2b">1</div><div class="lbl">Plataforma integrada</div></div><div class="week-summary-card"><div class="val" style="color:#f97c2b">Zero</div><div class="lbl">Erros manuais</div></div>';
     }
   }
 
