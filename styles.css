@@ -1631,3 +1631,9 @@ section:nth-of-type(even){background:linear-gradient(180deg,var(--bg),rgba(249,1
 /* Skip link improvement */
 .skip-link{position:absolute;top:-60px;left:0;background:var(--teal);color:#fff;padding:10px 20px;z-index:9999;font-size:.85rem;transition:top .2s;border-radius:0 0 8px 0;font-weight:600}
 .skip-link:focus{top:0}
+
+/* Proof bottom — CTA + segment tags */
+.proof-bottom{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:28px}
+.proof-segs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.proof-segs span{font-size:.72rem;font-weight:500;color:var(--muted);padding:5px 14px;border-radius:99px;border:1px solid var(--brd);background:var(--card);transition:all .2s}
+.proof-segs span:hover{border-color:var(--teal);color:var(--teal);background:var(--tl)}
