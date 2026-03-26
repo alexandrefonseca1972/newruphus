@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774518508"/>
+<link rel="stylesheet" href="/styles.css?v=1774519931"/>
 </head>
 <body>
 <a href="#conteudo" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--teal);color:#fff;padding:8px 16px;z-index:9999;font-size:.85rem;transition:top .2s;border-radius:0 0 8px 0">Pular para o conteúdo</a>
@@ -63,7 +63,7 @@
     <a href="/recursos">Recursos</a>
   </div>
   <div class="ncta">
-    <button type="button" class="theme-btn" onclick="toggleTheme()" aria-label="Alternar tema"><span id="t-ico">☀</span></button>
+    <button type="button" class="theme-btn" onclick="toggleTheme()" aria-label="Alternar tema" data-tip="Alternar tema"><span id="t-ico">☀</span></button>
     <a href="/login" class="btn btn-g">Entrar</a>
     <button type="button" class="btn btn-t" onclick="openModal()">Demonstração</button>
   </div>
@@ -777,8 +777,8 @@
   <div class="demo-right">
     <h3>O que acontece nos próximos 30 minutos</h3>
     <div class="demo-sts">
-      <div class="demo-st"><div class="demo-st-v">22</div><div class="demo-st-l">Módulos integrados</div></div>
-      <div class="demo-st"><div class="demo-st-v">5.470+</div><div class="demo-st-l">Testes automatizados</div></div>
+      <div class="demo-st"><div class="demo-st-v" class="count-up">22</div><div class="demo-st-l">Módulos integrados</div></div>
+      <div class="demo-st"><div class="demo-st-v" class="count-up">5.470+</div><div class="demo-st-l">Testes automatizados</div></div>
     </div>
     <div class="demo-features">
       <div class="demo-feat">✓ Vemos o sistema rodando com seus dados</div>
@@ -857,6 +857,6 @@
 
 
 
-<script src="/scripts.js?v=1774518508"></script>
+<script src="/scripts.js?v=1774519931"></script>
 </body>
 </html>

@@ -1164,3 +1164,109 @@ document.addEventListener('DOMContentLoaded',function(){
     }
   });
 });
+
+/* ═══════════════════════════════════════════════════════════════
+   UX: Reading progress bar
+   ═══════════════════════════════════════════════════════════════ */
+(function(){
+  var bar=document.createElement('div');
+  bar.className='progress-bar';
+  document.body.prepend(bar);
+  var ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){
+      requestAnimationFrame(function(){
+        var scrollTop=window.scrollY;
+        var docHeight=document.documentElement.scrollHeight-window.innerHeight;
+        var progress=docHeight>0?(scrollTop/docHeight)*100:0;
+        bar.style.width=progress+'%';
+        bar.classList.toggle('visible',scrollTop>200);
+        ticking=false;
+      });
+      ticking=true;
+    }
+  });
+})();
+
+/* ═══════════════════════════════════════════════════════════════
+   UX: Animated counters (count up when visible)
+   ═══════════════════════════════════════════════════════════════ */
+(function(){
+  function animateCounter(el){
+    if(el.dataset.counted)return;
+    el.dataset.counted='1';
+    var text=el.textContent.trim();
+    // Extract number and suffix
+    var match=text.match(/^([R$\s]*)([0-9.,]+)(.*)$/);
+    if(!match)return;
+    var prefix=match[1];
+    var numStr=match[2].replace(/\./g,'').replace(',','.');
+    var suffix=match[3];
+    var target=parseFloat(numStr);
+    if(isNaN(target)||target===0)return;
+    var isDecimal=numStr.indexOf('.')!==-1&&!match[2].includes('.');
+    var duration=800;
+    var start=performance.now();
+    el.textContent=prefix+'0'+suffix;
+    function step(now){
+      var elapsed=now-start;
+      var progress=Math.min(elapsed/duration,1);
+      // Ease out cubic
+      var eased=1-Math.pow(1-progress,3);
+      var current=target*eased;
+      if(target>=1000){
+        el.textContent=prefix+Math.round(current).toLocaleString('pt-BR')+suffix;
+      }else if(isDecimal||target<10){
+        el.textContent=prefix+current.toFixed(1)+suffix;
+      }else{
+        el.textContent=prefix+Math.round(current)+suffix;
+      }
+      if(progress<1)requestAnimationFrame(step);
+      else el.textContent=text; // restore exact original
+    }
+    requestAnimationFrame(step);
+  }
+  // Observe elements with count-up class
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting)animateCounter(e.target);
+      });
+    },{threshold:0.5});
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.count-up').forEach(function(el){obs.observe(el)});
+    });
+  }
+})();
+
+/* ═══════════════════════════════════════════════════════════════
+   UX: Smooth scroll for anchor links
+   ═══════════════════════════════════════════════════════════════ */
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href^="#"]');
+  if(!a)return;
+  var id=a.getAttribute('href').slice(1);
+  var target=document.getElementById(id);
+  if(target){
+    e.preventDefault();
+    target.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+});
+
+/* ═══════════════════════════════════════════════════════════════
+   UX: Stagger entrance for segment cards
+   ═══════════════════════════════════════════════════════════════ */
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('v');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+  document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('.seg-scroll .sc').forEach(function(el){obs.observe(el)});
+  });
+})();
