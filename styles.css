@@ -561,25 +561,43 @@ html.dark .fq-cat.on{background:var(--teal);border-color:var(--teal);color:#fff}
 
 /* ── DEMO CTA (replaces pricing) ── */
 .demo-cta{padding:80px 0;background:var(--bg2);border-top:1px solid var(--brd)}
-.demo-box{display:grid;grid-template-columns:1.1fr 1fr;border-radius:var(--rl);overflow:hidden;border:1px solid var(--brd)}
+.demo-box{display:grid;grid-template-columns:1.15fr 1fr;border-radius:var(--rl);overflow:hidden;border:1px solid var(--brd)}
 .demo-left{padding:52px 48px;background:var(--bg)}
+.demo-left-ey{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;color:var(--teal);margin-bottom:16px;padding:5px 12px;background:var(--tl);border-radius:99px}
+.demo-left-ey svg{color:var(--teal)}
 .demo-left h2{font-family:var(--serif);font-size:clamp(1.4rem,2.8vw,2.2rem);font-weight:700;line-height:1.15;margin-bottom:12px}
-.demo-left>p{font-size:.95rem;color:var(--tx2);line-height:1.65;margin-bottom:24px;max-width:380px}
+.demo-left>p{font-size:.92rem;color:var(--tx2);line-height:1.65;margin-bottom:24px;max-width:420px}
 .demo-form{display:flex;flex-direction:column;gap:10px}
 .demo-form label{font-size:.75rem;font-weight:600;color:var(--tx2);margin-bottom:2px}
-.demo-form input,.demo-form select{padding:11px 14px;border:1.5px solid var(--brd);border-radius:var(--r);font-family:var(--sans);font-size:.86rem;color:var(--tx);background:var(--bg2);outline:none;transition:border-color .2s;width:100%}
-.demo-form input:focus,.demo-form select:focus{border-color:var(--teal)}
-.demo-form .btn{margin-top:6px}
-.demo-form .note{font-size:.7rem;color:var(--tx3);margin-top:4px}
-.demo-right{background:var(--teal);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:300px;padding:40px}
-.demo-right::before{content:'';position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.04);top:-70px;right:-70px}
-.demo-right h3{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:20px;text-align:center;position:relative;z-index:1}
-.demo-sts{display:grid;grid-template-columns:1fr 1fr;gap:18px;position:relative;z-index:1}
-.demo-st{text-align:center}
-.demo-st-v{font-family:var(--mono);font-size:1.7rem;font-weight:600;color:#fff}
-.demo-st-l{font-size:.72rem;color:rgba(255,255,255,.6);margin-top:2px}
-.demo-features{display:flex;flex-direction:column;gap:8px;margin-top:24px;position:relative;z-index:1}
-.demo-feat{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.85);font-weight:500}
+.demo-form input,.demo-form select,.demo-form textarea{padding:11px 14px;border:1.5px solid var(--brd);border-radius:var(--r);font-family:var(--sans);font-size:.86rem;color:var(--tx);background:var(--bg2);outline:none;transition:border-color .25s,box-shadow .25s;width:100%}
+.demo-form input:focus,.demo-form select:focus,.demo-form textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(249,124,43,.08)}
+.demo-form .btn{margin-top:6px;display:inline-flex;align-items:center;justify-content:center}
+.demo-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.demo-trust-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.demo-trust-row span{font-size:.68rem;color:var(--tx3);display:flex;align-items:center;gap:4px}
+.demo-right{background:linear-gradient(135deg,var(--teal) 0%,#D46620 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;min-height:300px;padding:44px 36px}
+.demo-right::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.04);top:-80px;right:-80px}
+.demo-right::after{content:'';position:absolute;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.03);bottom:-40px;left:-40px}
+.demo-right h3{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:28px;text-align:center;position:relative;z-index:1;line-height:1.2}
+.demo-timeline{display:flex;flex-direction:column;gap:0;position:relative;z-index:1;width:100%;max-width:280px;margin-bottom:28px}
+.demo-tl-item{display:flex;gap:14px;align-items:flex-start;padding-bottom:18px;position:relative}
+.demo-tl-item:last-child{padding-bottom:0}
+.demo-tl-item:not(:last-child)::after{content:'';position:absolute;left:6px;top:16px;width:1.5px;height:calc(100% - 8px);background:rgba(255,255,255,.2)}
+.demo-tl-dot{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.25);border:2px solid #fff;flex-shrink:0;margin-top:2px}
+.demo-tl-content{display:flex;flex-direction:column;gap:1px}
+.demo-tl-content strong{font-size:.78rem;color:#fff;font-weight:600}
+.demo-tl-content span{font-size:.7rem;color:rgba(255,255,255,.6);line-height:1.35}
+.demo-sts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;z-index:1;width:100%;max-width:280px}
+.demo-st{text-align:center;padding:10px 6px;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1)}
+.demo-st-v{font-family:var(--mono);font-size:1.2rem;font-weight:600;color:#fff}
+.demo-st-l{font-size:.62rem;color:rgba(255,255,255,.55);margin-top:1px}
+/* Contact channels */
+.contact-channels{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.cc-item{display:flex;align-items:center;gap:12px;padding:16px 20px;border-radius:var(--r);border:1px solid var(--brd);background:var(--bg2);text-decoration:none;color:var(--tx);transition:all .25s}
+.cc-item:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.cc-ico{font-size:1.3rem}
+.cc-item strong{display:block;font-size:.82rem;font-weight:600}
+.cc-item span{font-size:.7rem;color:var(--tx3)}
 
 /* ── FOOTER ── */
 footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
@@ -650,6 +668,10 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
   .edu-nl-form .btn{width:100%}
   .ft-top{grid-template-columns:1fr}.ft-bot{flex-direction:column}
   .trust-inner{gap:16px}
+  .demo-box{grid-template-columns:1fr}
+  .demo-right{min-height:auto;padding:32px 28px}
+  .demo-form-row{grid-template-columns:1fr}
+  .contact-channels{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .hero h1{font-size:2rem}
