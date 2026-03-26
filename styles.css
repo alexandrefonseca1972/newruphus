@@ -1545,3 +1545,41 @@ html.dark ::selection{background:rgba(249,124,43,.25)}
   .ab-values-grid{grid-template-columns:1fr}
   .ab-stack-grid{grid-template-columns:1fr}
 }
+
+/* ═══════════════════════════════════════════════════
+   INTEGRAÇÕES PAGE — /integracoes
+   ═══════════════════════════════════════════════════ */
+.ig-section{padding:48px 0}
+.ig-section + .ig-section{padding-top:0}
+.ig-cat-title{font-family:var(--serif);font-size:1.3rem;font-weight:800;display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.ig-cat-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.ig-cat-desc{font-size:.85rem;color:var(--muted);margin-bottom:20px;max-width:500px}
+.ig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.ig-card{padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card);transition:border-color .25s,transform .25s,box-shadow .25s}
+.ig-card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.06)}
+html.dark .ig-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.ig-card-featured{border-color:rgba(139,92,246,.2);background:linear-gradient(135deg,rgba(139,92,246,.03),transparent)}
+.ig-card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.ig-ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.65rem;flex-shrink:0}
+.ig-card h4{font-family:var(--sans);font-weight:700;font-size:.92rem}
+.ig-tag{font-size:.68rem;padding:2px 8px;border-radius:99px;font-weight:600;display:inline-block;margin-top:2px}
+.ig-active{background:rgba(15,110,86,.1);color:#0F6E56}
+.ig-soon{background:rgba(0,0,0,.06);color:var(--muted)}
+html.dark .ig-active{background:rgba(15,110,86,.15);color:#34D399}
+html.dark .ig-soon{background:rgba(255,255,255,.06)}
+.ig-card p{font-size:.82rem;color:var(--muted);line-height:1.55;margin-bottom:12px}
+.ig-techs{display:flex;gap:6px;flex-wrap:wrap}
+.ig-techs span{font-size:.65rem;padding:3px 8px;border-radius:6px;background:var(--sand);color:var(--muted);font-weight:500}
+html.dark .ig-techs span{background:rgba(255,255,255,.06)}
+/* CTA box */
+.ig-cta{padding:48px 0 72px}
+.ig-cta-box{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:36px 40px;border-radius:var(--rl);border:1px solid var(--brd);background:linear-gradient(135deg,rgba(249,124,43,.03),rgba(59,130,246,.02))}
+.ig-cta-box h2{font-family:var(--serif);font-size:1.3rem;font-weight:800;margin-bottom:6px}
+.ig-cta-box p{font-size:.85rem;color:var(--muted)}
+.ig-cta-btns{display:flex;gap:10px;flex-shrink:0}
+@media(max-width:768px){
+  .ig-grid{grid-template-columns:1fr}
+  .ig-cta-box{flex-direction:column;text-align:center;padding:28px 24px}
+  .ig-cta-btns{flex-direction:column;width:100%}
+  .ig-cta-btns .btn{width:100%}
+}

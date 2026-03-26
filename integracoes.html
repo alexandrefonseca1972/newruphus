@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774545115"/>
+<link rel="stylesheet" href="/styles.css?v=1774546276"/>
 <title>Integrações — Ruphus ERP</title>
 <meta name="description" content="Open Banking, Pix, WhatsApp Z-API, Telegram, Claude+GPT+Gemini, Pinecone, Algolia, NFe.io, AWS SES e 15+ integrações. Ecossistema completo."/>
 <link rel="canonical" href="https://www.ruphus.app/integracoes"/>
@@ -33,57 +33,227 @@
 <div class="mob" id="mob"><button type="button" class="mob-x" aria-label="Fechar" onclick="this.parentElement.classList.remove('open')">✕</button><a href="/">Home</a><a href="/segmentos">Segmentos</a><a href="/modulos">Módulos</a><a href="/comparativo">Comparativo</a><a href="/blog">Blog</a><a href="/recursos">Recursos</a><button type="button" class="btn btn-t" style="margin-top:12px" onclick="this.parentElement.classList.remove('open');openModal()">Demonstração →</button></div>
 <main>
 
-<section class="hero" style="padding:120px 0 40px">
+<!-- HERO -->
+<section class="hero" style="padding:130px 0 48px">
 <div class="w">
   <div class="s-ey" data-r>Integrações</div>
   <h1 data-r="1" style="max-width:700px">Conectado com o ecossistema<br/>que sua empresa já usa</h1>
-  <p class="hero-desc" data-r="2" style="max-width:600px">15+ integrações nativas — de Open Banking e Pix a IA multi-provider e busca semântica — conectando seu ERP ao ecossistema financeiro e tecnológico brasileiro.</p>
+  <p class="hero-desc" data-r="2" style="max-width:580px">15+ integrações nativas — de Open Banking e Pix a IA multi-provider e busca semântica. Sem configuração complexa.</p>
 </div>
 </section>
 
-<section style="padding:60px 0">
+<!-- METRICS BAR -->
+<section class="ab-metrics-section" data-r>
 <div class="w">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#25D366;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></div><div><h4 style="font-weight:700;font-size:.95rem">WhatsApp Z-API</h4><span style="font-size:.72rem;color:var(--muted);padding:2px 8px;border-radius:99px;background:rgba(37,211,102,.1);color:#166534">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Régua de cobrança automatizada, notificações de vencimento, confirmação de agendamento e comunicação em massa. Envio via Z-API com templates aprovados.</p></div>
-
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#0F6E56;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.7rem">NF</div><div><h4 style="font-weight:700;font-size:.95rem">NFe.io</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(15,110,86,.1);color:#0F6E56">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Emissão de NF-e, NFS-e, cancelamento e consulta automáticos. Integração direta com o módulo Fiscal — sem digitação dupla.</p></div>
-
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#3B82F6;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.7rem">MP</div><div><h4 style="font-weight:700;font-size:.95rem">Mercado Pago</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(59,130,246,.1);color:#1D4ED8">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Geração de boletos, Pix e links de pagamento. Webhooks atualizam o financeiro em tempo real quando o cliente paga.</p></div>
-
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#f97c2b;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.65rem">OFX</div><div><h4 style="font-weight:700;font-size:.95rem">Conciliação Bancária</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(249,124,43,.1);color:#D46620">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Importação de extratos OFX de qualquer banco. Match automático de 97% com lançamentos do financeiro.</p></div>
-
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#8B5CF6;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.65rem">API</div><div><h4 style="font-weight:700;font-size:.95rem">API REST</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(139,92,246,.1);color:#6D28D9">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">API completa para integrar qualquer sistema externo. Autenticação por token, rate limiting e documentação completa.</p></div>
-
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#993556;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.65rem">WH</div><div><h4 style="font-weight:700;font-size:.95rem">Webhooks</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(153,53,86,.1);color:#993556">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Receba eventos em tempo real: pagamento confirmado, lead criado, contrato assinado. Configure endpoints sem código.</p></div>
-
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#333;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.6rem">PWA</div><div><h4 style="font-weight:700;font-size:.95rem">PWA Mobile</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(0,0,0,.06);color:var(--muted)">Em dev</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">App mobile offline-first com push notifications, GPS para checklists e acesso rápido ao painel de indicadores.</p></div>
-
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#333;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.6rem">GS</div><div><h4 style="font-weight:700;font-size:.95rem">Google Sheets</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(0,0,0,.06);color:var(--muted)">Planejado</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Exportação automática de relatórios para planilhas compartilhadas. Ideal para equipes que ainda usam Sheets como dashboard.</p></div>
+  <div class="ab-metrics-bar">
+    <div class="ab-m"><span class="ab-mv count-up">15+</span><span class="ab-ml">integrações nativas</span></div>
+    <div class="ab-m-div"></div>
+    <div class="ab-m"><span class="ab-mv count-up">70+</span><span class="ab-ml">rotas de API</span></div>
+    <div class="ab-m-div"></div>
+    <div class="ab-m"><span class="ab-mv count-up">97%</span><span class="ab-ml">match conciliação</span></div>
+    <div class="ab-m-div"></div>
+    <div class="ab-m"><span class="ab-mv">0</span><span class="ab-ml">configuração manual</span></div>
   </div>
 </div>
 </section>
 
-<div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#0F6E56;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.6rem">OB</div><div><h4 style="font-weight:700;font-size:.95rem">Open Banking (Banco Central)</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(15,110,86,.1);color:#0F6E56">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Sincronização automática de extratos via API oficial do Banco Central. BB, Bradesco, Caixa, Itaú, Santander. Saldo em tempo real.</p></div>
+<!-- CATEGORY: FINANCEIRO -->
+<section class="ig-section" data-r>
+<div class="w">
+  <h2 class="ig-cat-title"><span class="ig-cat-dot" style="background:#0F6E56"></span> Financeiro & Pagamentos</h2>
+  <p class="ig-cat-desc">Conciliação automática, cobranças e fluxo de caixa integrado com o ecossistema bancário brasileiro.</p>
+  <div class="ig-grid">
 
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#3B82F6;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.6rem">PIX</div><div><h4 style="font-weight:700;font-size:.95rem">Pix Cobrança (QR Code)</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(59,130,246,.1);color:#1D4ED8">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Geração de cobranças Pix com QR Code dinâmico. Baixa automática via webhook. Vinculação a contas a receber.</p></div>
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#0F6E56">OB</div>
+        <div><h4>Open Banking</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Sincronização automática de extratos via API oficial do Banco Central. BB, Bradesco, Caixa, Itaú, Santander. Saldo em tempo real.</p>
+      <div class="ig-techs"><span>API Banco Central</span><span>Webhooks</span><span>OAuth 2.0</span></div>
+    </div>
 
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#0088cc;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.6rem">TG</div><div><h4 style="font-weight:700;font-size:.95rem">Telegram Bot</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(0,136,204,.1);color:#006699">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Bot de notificações de vendas e chatbot CRM. Comandos para atualizar deals sem abrir o sistema.</p></div>
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#3B82F6">PIX</div>
+        <div><h4>Pix Cobrança</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Geração de cobranças Pix com QR Code dinâmico. Baixa automática via webhook. Vinculação direta a contas a receber.</p>
+      <div class="ig-techs"><span>QR Code dinâmico</span><span>Webhook</span><span>Pix Copia e Cola</span></div>
+    </div>
 
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#8B5CF6;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.6rem">AI</div><div><h4 style="font-weight:700;font-size:.95rem">Claude + GPT + Gemini</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(139,92,246,.1);color:#6D28D9">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Multi-provider AI com Model Router. Deal Coach, sugestão contábil, previsão de churn, copilots contextuais. Cache Redis = 60-80% economia.</p></div>
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#3B82F6">MP</div>
+        <div><h4>Mercado Pago</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Boletos, Pix e links de pagamento. Webhooks atualizam o financeiro em tempo real quando o cliente paga.</p>
+      <div class="ig-techs"><span>Checkout Pro</span><span>Webhooks</span><span>Split de pagamento</span></div>
+    </div>
 
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#993556;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.6rem">PN</div><div><h4 style="font-weight:700;font-size:.95rem">Pinecone + Algolia</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(153,53,86,.1);color:#993556">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">Busca vetorial (embeddings semânticos) + full-text search em tempo real. Sugestão de conta contábil e deduplicação de leads.</p></div>
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#f97c2b">OFX</div>
+        <div><h4>Conciliação Bancária</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Importação de extratos OFX de qualquer banco. Match automático de 97% com lançamentos do financeiro.</p>
+      <div class="ig-techs"><span>OFX Parser</span><span>IA Match</span><span>Multi-banco</span></div>
+    </div>
 
-    <div style="padding:24px;border-radius:14px;border:1px solid var(--brd);background:var(--card)"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><div style="width:40px;height:40px;border-radius:10px;background:#f97c2b;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.6rem">SES</div><div><h4 style="font-weight:700;font-size:.95rem">AWS SES + Nodemailer</h4><span style="font-size:.72rem;padding:2px 8px;border-radius:99px;background:rgba(249,124,43,.1);color:#D46620">Ativa</span></div></div><p style="font-size:.82rem;color:var(--muted);line-height:1.5">E-mails transacionais em escala com rastreamento de abertura e clique. Sequências de e-mail CRM automatizadas.</p></div>
   </div>
 </div>
 </section>
 
-<section style="padding:40px 0 60px;text-align:center">
+<!-- CATEGORY: COMUNICAÇÃO -->
+<section class="ig-section" data-r>
 <div class="w">
-  <p style="font-size:.92rem;color:var(--muted)">Precisa de uma integração específica?</p>
-  <button class="btn btn-t" onclick="openModal()" style="margin-top:12px">Fale com a equipe técnica →</button>
+  <h2 class="ig-cat-title"><span class="ig-cat-dot" style="background:#25D366"></span> Comunicação</h2>
+  <p class="ig-cat-desc">Automatize cobranças, notificações e atendimento por WhatsApp, Telegram e email.</p>
+  <div class="ig-grid">
+
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#25D366"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></div>
+        <div><h4>WhatsApp Z-API</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Régua de cobrança automatizada, notificações de vencimento, confirmação de agendamento e comunicação em massa.</p>
+      <div class="ig-techs"><span>Z-API</span><span>Templates aprovados</span><span>Massa</span></div>
+    </div>
+
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#0088cc">TG</div>
+        <div><h4>Telegram Bot</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Bot de notificações de vendas e chatbot CRM. Comandos para atualizar deals sem abrir o sistema.</p>
+      <div class="ig-techs"><span>Bot API</span><span>Comandos CRM</span><span>Alertas</span></div>
+    </div>
+
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#f97c2b">SES</div>
+        <div><h4>AWS SES + Nodemailer</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>E-mails transacionais em escala com rastreamento de abertura e clique. Sequências de e-mail CRM automatizadas.</p>
+      <div class="ig-techs"><span>SMTP</span><span>Tracking</span><span>Sequências</span></div>
+    </div>
+
+  </div>
 </div>
 </section>
+
+<!-- CATEGORY: INTELIGÊNCIA ARTIFICIAL -->
+<section class="ig-section" data-r>
+<div class="w">
+  <h2 class="ig-cat-title"><span class="ig-cat-dot" style="background:#8B5CF6"></span> Inteligência Artificial & Busca</h2>
+  <p class="ig-cat-desc">IA nativa em cada módulo com Model Router multi-provider e busca vetorial.</p>
+  <div class="ig-grid">
+
+    <div class="ig-card ig-card-featured">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#8B5CF6">AI</div>
+        <div><h4>Claude + GPT + Gemini</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Multi-provider AI com Model Router. Deal Coach, sugestão contábil, previsão de churn, copilots contextuais. Cache Redis reduz 60-80% dos custos.</p>
+      <div class="ig-techs"><span>Model Router</span><span>Redis Cache</span><span>Explicabilidade</span></div>
+    </div>
+
+    <div class="ig-card ig-card-featured">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#993556">PN</div>
+        <div><h4>Pinecone + Algolia</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Busca vetorial (embeddings semânticos) + full-text search em tempo real. Sugestão de conta contábil e deduplicação de leads.</p>
+      <div class="ig-techs"><span>Vetorial</span><span>Full-text</span><span>Embeddings</span></div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- CATEGORY: FISCAL -->
+<section class="ig-section" data-r>
+<div class="w">
+  <h2 class="ig-cat-title"><span class="ig-cat-dot" style="background:#D4A017"></span> Fiscal & Notas</h2>
+  <p class="ig-cat-desc">Emissão automática de notas fiscais integrada ao módulo financeiro.</p>
+  <div class="ig-grid">
+
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#0F6E56">NF</div>
+        <div><h4>NFe.io</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Emissão de NF-e, NFS-e, cancelamento e consulta automáticos. Integração direta com o módulo Fiscal — sem digitação dupla.</p>
+      <div class="ig-techs"><span>NF-e</span><span>NFS-e</span><span>Cancelamento</span></div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- CATEGORY: PLATAFORMA -->
+<section class="ig-section" data-r>
+<div class="w">
+  <h2 class="ig-cat-title"><span class="ig-cat-dot" style="background:#8B5CF6"></span> Plataforma & Extensibilidade</h2>
+  <p class="ig-cat-desc">API REST, webhooks e extensões para conectar qualquer sistema externo.</p>
+  <div class="ig-grid">
+
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#8B5CF6">API</div>
+        <div><h4>API REST</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>70+ rotas documentadas para integrar qualquer sistema externo. Autenticação por token, rate limiting, versionamento.</p>
+      <div class="ig-techs"><span>REST</span><span>Token Auth</span><span>Rate Limit</span></div>
+    </div>
+
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#993556">WH</div>
+        <div><h4>Webhooks</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Receba eventos em tempo real: pagamento confirmado, lead criado, contrato assinado. Configure endpoints sem código.</p>
+      <div class="ig-techs"><span>Real-time</span><span>Retry</span><span>No-code</span></div>
+    </div>
+
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#333">PWA</div>
+        <div><h4>PWA Mobile</h4><span class="ig-tag ig-soon">Em dev</span></div>
+      </div>
+      <p>App mobile offline-first com push notifications, GPS para checklists e acesso rápido ao painel de indicadores.</p>
+      <div class="ig-techs"><span>Offline-first</span><span>Push</span><span>GPS</span></div>
+    </div>
+
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#333">GS</div>
+        <div><h4>Google Sheets</h4><span class="ig-tag ig-soon">Planejado</span></div>
+      </div>
+      <p>Exportação automática de relatórios para planilhas compartilhadas. Ideal para equipes que ainda usam Sheets como dashboard.</p>
+      <div class="ig-techs"><span>Export</span><span>Sync</span><span>Automação</span></div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="ig-cta" data-r>
+<div class="w">
+  <div class="ig-cta-box">
+    <div>
+      <h2>Precisa de uma integração específica?</h2>
+      <p>Nosso time técnico avalia viabilidade e prazo em até 48 horas.</p>
+    </div>
+    <div class="ig-cta-btns">
+      <button class="btn btn-t btn-lg" onclick="openModal()">Falar com a equipe técnica →</button>
+      <a href="https://wa.me/5511948680554" target="_blank" rel="noopener noreferrer" class="btn btn-ol btn-lg">WhatsApp direto</a>
+    </div>
+  </div>
+</div>
+</section>
+
 </main>
 <footer role="contentinfo">
 <div class="w">
@@ -134,6 +304,6 @@
 <div class="toast" id="toast-el">✓ <span id="toast-msg"></span></div>
 
 <a href="https://wa.me/5511948680554" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.13.556 4.13 1.53 5.87L.06 23.71l5.99-1.53C7.82 23.15 9.86 23.7 12 23.7c6.627 0 12-5.073 12-11.7S18.627 0 12 0zm0 21.6c-2.01 0-3.88-.54-5.49-1.48l-.39-.24-3.56.91.95-3.45-.26-.41C2.25 15.55 1.7 13.83 1.7 12 1.7 6.31 6.31 1.7 12 1.7S22.3 6.31 22.3 12 17.69 21.6 12 21.6z"/></svg></a>
-<script src="/scripts.js?v=1774545115"></script>
+<script src="/scripts.js?v=1774546276"></script>
 </body>
 </html>
