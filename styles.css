@@ -1734,3 +1734,33 @@ html.dark .tpl-pdf{background:rgba(232,99,74,.15)}
 .legal-nav{display:flex;gap:12px;margin-top:32px;padding-top:20px;border-top:1px solid var(--brd)}
 .legal-nav a{font-size:.82rem;color:var(--teal);text-decoration:none;font-weight:500}
 .legal-nav a:hover{text-decoration:underline}
+
+/* ═══════════════════════════════════════════════════
+   LEGAL PAGES — /privacidade, /termos
+   ═══════════════════════════════════════════════════ */
+.legal-content{padding:32px 0 72px}
+.legal-body{max-width:760px;margin:0 auto}
+.legal-body h2{font-family:var(--serif);font-size:1.2rem;font-weight:800;margin:36px 0 12px;padding-top:20px;border-top:1px solid var(--brd)}
+.legal-body h2:first-of-type{border-top:none;margin-top:0}
+.legal-body h3{font-family:var(--sans);font-size:.92rem;font-weight:700;margin:20px 0 8px;color:var(--fg)}
+.legal-body p{font-size:.88rem;color:var(--muted);line-height:1.7;margin-bottom:12px}
+.legal-body ul,.legal-body ol{padding-left:20px;margin-bottom:14px}
+.legal-body li{font-size:.86rem;color:var(--muted);line-height:1.65;margin-bottom:6px}
+.legal-body li strong{color:var(--fg)}
+.legal-body a{color:var(--teal);text-decoration:underline;text-underline-offset:2px}
+.legal-body a:hover{color:var(--td)}
+.legal-toc{padding:20px 24px;border-radius:14px;border:1px solid var(--brd);background:var(--card);margin-bottom:32px}
+.legal-toc h4{font-family:var(--serif);font-size:.9rem;font-weight:700;margin-bottom:10px}
+.legal-toc ol{padding-left:18px;margin:0;columns:2;column-gap:24px}
+.legal-toc li{font-size:.78rem;color:var(--muted);margin-bottom:4px}
+.legal-toc a{color:var(--teal);text-decoration:none}
+.legal-toc a:hover{text-decoration:underline}
+.legal-box{padding:16px 20px;border-radius:12px;border:1px solid var(--brd);background:var(--card);font-size:.85rem;line-height:1.6;margin:12px 0 16px;color:var(--fg)}
+.legal-box a{color:var(--teal)}
+.legal-table-wrap{overflow-x:auto;margin:12px 0 16px}
+.legal-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.legal-table th{text-align:left;padding:10px 14px;background:var(--tl);color:var(--fg);font-weight:600;border:1px solid var(--brd)}
+.legal-table td{padding:10px 14px;border:1px solid var(--brd);color:var(--muted);line-height:1.45}
+.legal-table tr:nth-child(even) td{background:rgba(0,0,0,.015)}
+html.dark .legal-table tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+@media(max-width:768px){.legal-toc ol{columns:1}}
