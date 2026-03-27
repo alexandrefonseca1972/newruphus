@@ -567,11 +567,11 @@ function initDiag(){
   }
 
   window.diagShareWA=function(){
-    var r=document.getElementById('diag-result');
+    let r =document.getElementById('diag-result');
     if(!r)return;
-    var score=r.querySelector('.diag-r-num');
-    var eco=r.querySelector('.diag-r-mv');
-    var msg='Fiz o diagnóstico gratuito do Ruphus ERP!\n\n';
+    let score =r.querySelector('.diag-r-num');
+    let eco =r.querySelector('.diag-r-mv');
+    let msg ='Fiz o diagnóstico gratuito do Ruphus ERP!\n\n';
     msg+='Score: '+(score?score.textContent:'--')+'/100\n';
     msg+='Economia estimada: '+(eco?eco.textContent:'--')+'/mês\n\n';
     msg+='Faça o seu em: https://newruphus.vercel.app/#diagnostico';
@@ -952,7 +952,7 @@ function subNews(){
 (function(){
   if(sessionStorage.getItem('exit-shown'))return;
   
-  var overlay=document.createElement('div');
+  let overlay =document.createElement('div');
   overlay.className='exit-overlay';
   overlay.innerHTML='<div class="exit-popup">'+
     '<button class="exit-close" onclick="this.parentElement.parentElement.classList.remove(\'show\')" aria-label="Fechar">✕</button>'+
@@ -985,14 +985,14 @@ function subNews(){
    ═══════════════════════════════════════════════════════════════ */
 function toggleSim(el){
   el.classList.toggle('active');
-  var mods=document.querySelectorAll('.sim-mod.active');
-  var count=mods.length;
-  var perms=0;var names=[];
+  let mods =document.querySelectorAll('.sim-mod.active');
+  let count =mods.length;
+  let perms =0;let names =[];
   mods.forEach(function(m){perms+=parseInt(m.dataset.p)||0;names.push(m.dataset.m);});
-  var days=count<=3?5:count<=8?10:count<=15?15:20;
-  var apis=Math.round(count*3.2);
-  var empty=document.getElementById('sim-empty');
-  var content=document.getElementById('sim-content');
+  let days =count<=3?5:count<=8?10:count<=15?15:20;
+  let apis =Math.round(count*3.2);
+  let empty =document.getElementById('sim-empty');
+  let content =document.getElementById('sim-content');
   if(count>0){
     if(empty)empty.style.display='none';
     if(content)content.style.display='block';
@@ -1000,11 +1000,11 @@ function toggleSim(el){
     document.getElementById('sim-perms').textContent=perms;
     document.getElementById('sim-time').textContent=days+'d';
     document.getElementById('sim-apis').textContent=apis+'+';
-    var bar=document.getElementById('sim-bar');
+    let bar =document.getElementById('sim-bar');
     if(bar)bar.style.width=Math.round(count/22*100)+'%';
-    var barLabel=document.getElementById('sim-bar-label');
+    let barLabel =document.getElementById('sim-bar-label');
     if(barLabel)barLabel.textContent=count+' de 22';
-    var list=document.getElementById('sim-mods-list');
+    let list =document.getElementById('sim-mods-list');
     if(list)list.innerHTML=names.map(function(n){return '<span>'+n+'</span>'}).join('');
   }else{
     if(empty)empty.style.display='flex';
@@ -1015,8 +1015,8 @@ function toggleSim(el){
   if(window.plausible&&count>0)plausible('Simulator-Config',{props:{modules:String(count)}});
 }
 function toggleGroup(btn,group){
-  var mods=document.querySelector('[data-group="'+group+'"]').querySelectorAll('.sim-mod');
-  var allActive=true;
+  let mods =document.querySelector('[data-group="'+group+'"]').querySelectorAll('.sim-mod');
+  let allActive =true;
   mods.forEach(function(m){if(!m.classList.contains('active'))allActive=false;});
   mods.forEach(function(m){
     if(allActive&&m.classList.contains('active'))m.click();
@@ -1024,9 +1024,9 @@ function toggleGroup(btn,group){
   });
 }
 function updateGroupBtn(groupEl){
-  var mods=groupEl.querySelectorAll('.sim-mod');
-  var active=groupEl.querySelectorAll('.sim-mod.active').length;
-  var btn=groupEl.previousElementSibling.querySelector('.sim-group-toggle');
+  let mods =groupEl.querySelectorAll('.sim-mod');
+  let active =groupEl.querySelectorAll('.sim-mod.active').length;
+  let btn =groupEl.previousElementSibling.querySelector('.sim-group-toggle');
   if(btn)btn.textContent=active===mods.length?'Remover':'Selecionar';
 }
 
@@ -1034,19 +1034,19 @@ function updateGroupBtn(groupEl){
    CALCULADORA CUSTO DO RETRABALHO
    ═══════════════════════════════════════════════════════════════ */
 function calcRetrabalho(){
-  var funcEl=document.getElementById('ret-func');
+  let funcEl =document.getElementById('ret-func');
   if(!funcEl)return;
-  var func=parseInt(funcEl.value)||10;
-  var sal=parseMoeda(document.getElementById('ret-sal'))||3500;
-  var tools=parseInt(document.getElementById('ret-tools').value)||3;
-  var hrs=parseInt(document.getElementById('ret-hrs').value)||10;
+  let func =parseInt(funcEl.value)||10;
+  let sal =parseMoeda(document.getElementById('ret-sal'))||3500;
+  let tools =parseInt(document.getElementById('ret-tools').value)||3;
+  let hrs =parseInt(document.getElementById('ret-hrs').value)||10;
   
-  var custoHora=sal/176;
-  var custoMes=Math.round(func*hrs*4.33*custoHora*(1+(tools-1)*0.15));
-  var custoAno=custoMes*12;
-  var eco=Math.round(custoAno*0.75);
+  let custoHora =sal/176;
+  let custoMes =Math.round(func*hrs*4.33*custoHora*(1+(tools-1)*0.15));
+  let custoAno =custoMes*12;
+  let eco =Math.round(custoAno*0.75);
   
-  var fmt=function(v){return'R$ '+v.toLocaleString('pt-BR')};
+  let fmt =function(v){return'R$ '+v.toLocaleString('pt-BR')};
   document.getElementById('ret-custo-mes').textContent=fmt(custoMes);
   document.getElementById('ret-custo-ano').textContent=fmt(custoAno);
   document.getElementById('ret-eco').textContent=fmt(eco);
@@ -1061,11 +1061,11 @@ document.addEventListener('DOMContentLoaded',calcRetrabalho);
 function voteFeature(btn){
   if(btn.classList.contains('voted')){
     btn.classList.remove('voted');
-    var c=btn.querySelector('.vote-count');
+    let c =btn.querySelector('.vote-count');
     c.textContent=parseInt(c.textContent)-1;
   }else{
     btn.classList.add('voted');
-    var c=btn.querySelector('.vote-count');
+    let c =btn.querySelector('.vote-count');
     c.textContent=parseInt(c.textContent)+1;
   }
 }
@@ -1084,7 +1084,7 @@ function filterRoadmap(btn,status){
 /* ═══════════════════════════════════════════════════════════════
    BLOG ARTICLE READER
    ═══════════════════════════════════════════════════════════════ */
-var blogArticles=[
+let blogArticles =[
 {t:"Selic a 15% e IPCA em queda: o que muda para a gestão financeira das empresas em 2026",c:"Economia",body:"<p>Com a taxa básica de juros em 15% ao ano — a mais alta desde 2023 — o custo do crédito permanece elevado para empresas brasileiras. Mas a inflação acumulada em 12 meses caiu para 3,81%, sinalizando que o ciclo de aperto monetário pode estar próximo do fim.</p><h2>O que o Boletim Focus projeta</h2><p>O consenso do mercado aponta Selic em 12,50% até dezembro de 2026 e IPCA em 4,17%. Isso significa que o custo de capital deve começar a ceder no segundo semestre, abrindo janela para renegociação de dívidas e novos investimentos.</p><h2>Impacto direto na gestão</h2><p>Para empresas que dependem de crédito para capital de giro, cada ponto percentual a menos na Selic representa economia real. Um ERP com projeção de fluxo de caixa por IA — como o Ruphus — permite simular cenários de juros e antecipar o momento ideal para investir.</p><blockquote>Empresas que automatizam o financeiro tomam decisões 3x mais rápido quando o cenário muda.</blockquote><p>O módulo financeiro do Ruphus já integra dados de mercado para alertar quando o custo de oportunidade de manter caixa parado supera o custo de investir. Isso transforma o ERP de ferramenta operacional em instrumento estratégico.</p>"},
 {t:"78% das empresas brasileiras já usam IA na gestão — e o ROI médio é de 3,7x",c:"Gestão",body:"<p>Pesquisas recentes mostram que a adoção de inteligência artificial na gestão empresarial brasileira saiu da fase de experimentação para implantações em escala. CRM inteligente, automação contábil e análise preditiva de inadimplência lideram os casos de uso.</p><h2>Onde a IA mais gera retorno</h2><p>Os três maiores ROIs estão em: previsão de inadimplência (redução de 40-60% em perdas), automação de lançamentos contábeis (economia de 70% do tempo) e qualificação automática de leads (aumento de 35% na taxa de conversão).</p><h2>O diferencial do Ruphus</h2><p>Enquanto a maioria dos ERPs oferece IA como add-on pago, o Ruphus tem IA nativa: cada módulo tem inteligência nativa. O Model Router seleciona automaticamente o modelo mais eficiente (Claude, GPT ou Gemini) para cada tarefa, gerando 30-40% de economia em custos de IA.</p><blockquote>IA não é funcionalidade extra — é a forma como o sistema pensa.</blockquote>"},
 {t:"Agentes autônomos e MCPs: como a IA vai se conectar direto ao seu ERP em 2026",c:"Tecnologia",body:"<p>Os Model Context Protocols (MCPs) representam uma mudança fundamental na forma como IA interage com sistemas empresariais. Em vez de o usuário pedir para a IA fazer algo, agentes autônomos executam ações diretamente dentro de ERPs, CRMs e ferramentas de gestão.</p><h2>Como funciona na prática</h2><p>Um agente pode receber a instrução 'verifique todas as faturas vencidas e envie cobrança por WhatsApp', acessar o módulo financeiro via MCP, identificar os devedores, gerar as mensagens personalizadas e disparar — tudo sem intervenção humana.</p><h2>O Ruphus já implementa isso</h2><p>O AI Tool Framework do Ruphus permite que agentes executem ações reais no sistema: buscar leads, criar atividades, consultar saldo, gerar relatórios. Cada ferramenta tem validação Zod, verificação de permissão e cache configurável.</p><blockquote>O futuro não é usar IA — é deixar a IA usar o ERP.</blockquote>"},
@@ -1110,8 +1110,8 @@ var blogArticles=[
 ];
 
 function openArticle(idx){
-  var a=blogArticles[idx];if(!a)return;
-  var reader=document.getElementById('article-reader');
+  let a =blogArticles[idx];if(!a)return;
+  let reader =document.getElementById('article-reader');
   if(!reader){
     reader=document.createElement('div');
     reader.id='article-reader';
@@ -1132,7 +1132,7 @@ function openArticle(idx){
   history.pushState({article:idx},'','/blog#artigo-'+idx);
 }
 function closeArticle(){
-  var r=document.getElementById('article-reader');
+  let r =document.getElementById('article-reader');
   if(r)r.classList.remove('open');
   document.body.style.overflow='';
   history.pushState({},'','/blog');
@@ -1154,7 +1154,7 @@ document.addEventListener('DOMContentLoaded',function(){
    ═══════════════════════════════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.ec,.ef-card').forEach(function(card){
-    var link=card.querySelector('.ec-arr[href],.ef-arrow[href]');
+    let link =card.querySelector('.ec-arr[href],.ef-arrow[href]');
     if(link){
       card.style.cursor='pointer';
       card.addEventListener('click',function(e){
@@ -1169,16 +1169,16 @@ document.addEventListener('DOMContentLoaded',function(){
    UX: Reading progress bar
    ═══════════════════════════════════════════════════════════════ */
 (function(){
-  var bar=document.createElement('div');
+  let bar =document.createElement('div');
   bar.className='progress-bar';
   document.body.prepend(bar);
-  var ticking=false;
+  let ticking =false;
   window.addEventListener('scroll',function(){
     if(!ticking){
       requestAnimationFrame(function(){
-        var scrollTop=window.scrollY;
-        var docHeight=document.documentElement.scrollHeight-window.innerHeight;
-        var progress=docHeight>0?(scrollTop/docHeight)*100:0;
+        let scrollTop =window.scrollY;
+        let docHeight =document.documentElement.scrollHeight-window.innerHeight;
+        let progress =docHeight>0?(scrollTop/docHeight)*100:0;
         bar.style.width=progress+'%';
         bar.classList.toggle('visible',scrollTop>200);
         ticking=false;
@@ -1195,25 +1195,25 @@ document.addEventListener('DOMContentLoaded',function(){
   function animateCounter(el){
     if(el.dataset.counted)return;
     el.dataset.counted='1';
-    var text=el.textContent.trim();
+    let text =el.textContent.trim();
     // Extract number and suffix
-    var match=text.match(/^([R$\s]*)([0-9.,]+)(.*)$/);
+    let match =text.match(/^([R$\s]*)([0-9.,]+)(.*)$/);
     if(!match)return;
-    var prefix=match[1];
-    var numStr=match[2].replace(/\./g,'').replace(',','.');
-    var suffix=match[3];
-    var target=parseFloat(numStr);
+    let prefix =match[1];
+    let numStr =match[2].replace(/\./g,'').replace(',','.');
+    let suffix =match[3];
+    let target =parseFloat(numStr);
     if(isNaN(target)||target===0)return;
-    var isDecimal=numStr.indexOf('.')!==-1&&!match[2].includes('.');
-    var duration=800;
-    var start=performance.now();
+    let isDecimal =numStr.indexOf('.')!==-1&&!match[2].includes('.');
+    let duration =800;
+    let start =performance.now();
     el.textContent=prefix+'0'+suffix;
     function step(now){
-      var elapsed=now-start;
-      var progress=Math.min(elapsed/duration,1);
+      let elapsed =now-start;
+      let progress =Math.min(elapsed/duration,1);
       // Ease out cubic
-      var eased=1-Math.pow(1-progress,3);
-      var current=target*eased;
+      let eased =1-Math.pow(1-progress,3);
+      let current =target*eased;
       if(target>=1000){
         el.textContent=prefix+Math.round(current).toLocaleString('pt-BR')+suffix;
       }else if(isDecimal||target<10){
@@ -1228,7 +1228,7 @@ document.addEventListener('DOMContentLoaded',function(){
   }
   // Observe elements with count-up class
   if('IntersectionObserver' in window){
-    var obs=new IntersectionObserver(function(entries){
+    let obs =new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if(e.isIntersecting)animateCounter(e.target);
       });
@@ -1243,10 +1243,10 @@ document.addEventListener('DOMContentLoaded',function(){
    UX: Smooth scroll for anchor links
    ═══════════════════════════════════════════════════════════════ */
 document.addEventListener('click',function(e){
-  var a=e.target.closest('a[href^="#"]');
+  let a =e.target.closest('a[href^="#"]');
   if(!a)return;
-  var id=a.getAttribute('href').slice(1);
-  var target=document.getElementById(id);
+  let id =a.getAttribute('href').slice(1);
+  let target =document.getElementById(id);
   if(target){
     e.preventDefault();
     target.scrollIntoView({behavior:'smooth',block:'start'});
@@ -1258,7 +1258,7 @@ document.addEventListener('click',function(e){
    ═══════════════════════════════════════════════════════════════ */
 (function(){
   if(!('IntersectionObserver' in window))return;
-  var obs=new IntersectionObserver(function(entries){
+  let obs =new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
         e.target.classList.add('v');
