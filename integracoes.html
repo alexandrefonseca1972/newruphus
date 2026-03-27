@@ -9,12 +9,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774620211"/>
+<link rel="stylesheet" href="/styles.css?v=1774621049"/>
 <title>Integrações — Ruphus ERP</title>
-<meta name="description" content="Open Banking, Pix, WhatsApp Z-API, Telegram, Claude+GPT+Gemini, Pinecone, Algolia, NFe.io, AWS SES e 15+ integrações. Ecossistema completo."/>
+<meta name="description" content="Open Banking, Pix, WhatsApp, Telegram, Focus NFe, Google Drive, Superlógica, ASAAS, Claude+GPT+Gemini e 20+ integrações. Ecossistema completo."/>
 <link rel="canonical" href="https://www.ruphus.app/integracoes"/>
 <meta property="og:title" content="Integrações — Ruphus ERP"/>
-<meta property="og:description" content="Open Banking, Pix, WhatsApp Z-API, Telegram, Claude+GPT+Gemini, Pinecone, Algolia, NFe.io, AWS SES e 15+ integrações. Ecossistema completo."/>
+<meta property="og:description" content="Open Banking, Pix, WhatsApp, Telegram, Focus NFe, Google Drive, Superlógica, ASAAS, Claude+GPT+Gemini e 20+ integrações. Ecossistema completo."/>
 <meta property="og:url" content="https://www.ruphus.app/integracoes"/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://www.ruphus.app/og-image.png"/>
@@ -41,7 +41,7 @@
 <div class="w">
   <div class="s-ey" data-r>Integrações</div>
   <h1 data-r="1" style="max-width:700px">Conectado com o ecossistema<br/>que sua empresa já usa</h1>
-  <p class="hero-desc" data-r="2" style="max-width:580px">15+ integrações nativas — de Open Banking e Pix a IA multi-provider e busca semântica. Sem configuração complexa.</p>
+  <p class="hero-desc" data-r="2" style="max-width:580px">20+ integrações nativas — de Open Banking e Pix a IA multi-provider e busca semântica. Sem configuração complexa.</p>
 </div>
 </section>
 
@@ -49,9 +49,9 @@
 <section class="ab-metrics-section" data-r>
 <div class="w">
   <div class="ab-metrics-bar">
-    <div class="ab-m"><span class="ab-mv count-up">15+</span><span class="ab-ml">integrações nativas</span></div>
+    <div class="ab-m"><span class="ab-mv count-up">20+</span><span class="ab-ml">integrações nativas</span></div>
     <div class="ab-m-div"></div>
-    <div class="ab-m"><span class="ab-mv count-up">70+</span><span class="ab-ml">rotas de API</span></div>
+    <div class="ab-m"><span class="ab-mv count-up">800+</span><span class="ab-ml">rotas de API</span></div>
     <div class="ab-m-div"></div>
     <div class="ab-m"><span class="ab-mv count-up">97%</span><span class="ab-ml">match conciliação</span></div>
     <div class="ab-m-div"></div>
@@ -72,8 +72,8 @@
         <div class="ig-ico" style="background:#0F6E56">OB</div>
         <div><h4>Open Banking</h4><span class="ig-tag ig-active">Ativa</span></div>
       </div>
-      <p>Sincronização automática de extratos via API oficial do Banco Central. BB, Bradesco, Caixa, Itaú, Santander. Saldo em tempo real.</p>
-      <div class="ig-techs"><span>API Banco Central</span><span>Webhooks</span><span>OAuth 2.0</span></div>
+      <p>Sincronização de extratos via agregadores (Pluggy, Belvo, Plaid, TrueLayer). Suporte aos principais bancos brasileiros. Saldo em tempo real.</p>
+      <div class="ig-techs"><span>Pluggy</span><span>Belvo</span><span>OAuth 2.0</span><span>Webhooks</span></div>
     </div>
 
     <div class="ig-card">
@@ -88,10 +88,10 @@
     <div class="ig-card">
       <div class="ig-card-head">
         <div class="ig-ico" style="background:#3B82F6">MP</div>
-        <div><h4>Mercado Pago</h4><span class="ig-tag ig-active">Ativa</span></div>
+        <div><h4>ASAAS + Banco Inter</h4><span class="ig-tag ig-active">Ativa</span></div>
       </div>
-      <p>Boletos, Pix e links de pagamento. Webhooks atualizam o financeiro em tempo real quando o cliente paga.</p>
-      <div class="ig-techs"><span>Checkout Pro</span><span>Webhooks</span><span>Split de pagamento</span></div>
+      <p>Geração de boletos, cobranças Pix e reconciliação automática via ASAAS e Banco Inter. Webhooks com notificação de pagamento em tempo real.</p>
+      <div class="ig-techs"><span>ASAAS</span><span>Banco Inter</span><span>Webhooks</span><span>Boleto</span></div>
     </div>
 
     <div class="ig-card">
@@ -184,10 +184,39 @@
     <div class="ig-card">
       <div class="ig-card-head">
         <div class="ig-ico" style="background:#0F6E56">NF</div>
-        <div><h4>NFe.io</h4><span class="ig-tag ig-active">Ativa</span></div>
+        <div><h4>Focus NFe</h4><span class="ig-tag ig-active">Ativa</span></div>
       </div>
-      <p>Emissão de NF-e, NFS-e, cancelamento e consulta automáticos. Integração direta com o módulo Fiscal — sem digitação dupla.</p>
-      <div class="ig-techs"><span>NF-e</span><span>NFS-e</span><span>Cancelamento</span></div>
+      <p>Emissão de NF-e, NFS-e e NFC-e com webhook HMAC-SHA256. Ambientes de homologação e produção. Integração direta com o módulo Fiscal.</p>
+      <div class="ig-techs"><span>NF-e</span><span>NFS-e</span><span>NFC-e</span><span>Webhook</span></div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- CATEGORY: ARMAZENAMENTO & IMPORTAÇÃO -->
+<section class="ig-section" data-r>
+<div class="w">
+  <h2 class="ig-cat-title"><span class="ig-cat-dot" style="background:#3B82F6"></span> Armazenamento & Importação</h2>
+  <p class="ig-cat-desc">Armazenamento de documentos na nuvem e importação de dados de outros sistemas.</p>
+  <div class="ig-grid">
+
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#4285F4">GD</div>
+        <div><h4>Google Drive</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Armazenamento de documentos com OAuth 2.0 por empresa. Upload de 1-100 MB, até 100 GB de cota. Estrutura automática de pastas (CRM, Financeiro, Compartilhados).</p>
+      <div class="ig-techs"><span>OAuth 2.0</span><span>Shared Drives</span><span>Auto-folders</span></div>
+    </div>
+
+    <div class="ig-card">
+      <div class="ig-card-head">
+        <div class="ig-ico" style="background:#2F855A">SL</div>
+        <div><h4>Superlógica</h4><span class="ig-tag ig-active">Ativa</span></div>
+      </div>
+      <p>Importação de dados do Superlógica: clientes, fornecedores, cobranças e contas a pagar. Preview antes de importar, progresso em tempo real e dry-run.</p>
+      <div class="ig-techs"><span>API Token</span><span>Preview</span><span>Dry-run</span></div>
     </div>
 
   </div>
@@ -206,7 +235,7 @@
         <div class="ig-ico" style="background:#8B5CF6">API</div>
         <div><h4>API REST</h4><span class="ig-tag ig-active">Ativa</span></div>
       </div>
-      <p>70+ rotas documentadas para integrar qualquer sistema externo. Autenticação por token, rate limiting, versionamento.</p>
+      <p>800+ rotas documentadas para integrar qualquer sistema externo. Autenticação por token, rate limiting, versionamento.</p>
       <div class="ig-techs"><span>REST</span><span>Token Auth</span><span>Rate Limit</span></div>
     </div>
 
@@ -307,6 +336,6 @@
 <div class="toast" id="toast-el">✓ <span id="toast-msg"></span></div>
 
 <a href="https://wa.me/5511948680554" target="_blank" rel="noopener noreferrer" class="wa-fab" aria-label="WhatsApp"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.13.556 4.13 1.53 5.87L.06 23.71l5.99-1.53C7.82 23.15 9.86 23.7 12 23.7c6.627 0 12-5.073 12-11.7S18.627 0 12 0zm0 21.6c-2.01 0-3.88-.54-5.49-1.48l-.39-.24-3.56.91.95-3.45-.26-.41C2.25 15.55 1.7 13.83 1.7 12 1.7 6.31 6.31 1.7 12 1.7S22.3 6.31 22.3 12 17.69 21.6 12 21.6z"/></svg></a>
-<script src="/scripts.js?v=1774620211"></script>
+<script src="/scripts.js?v=1774621049"></script>
 </body>
 </html>
