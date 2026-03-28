@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /login
+Disallow: /logout
+Disallow: /forgot-password
 
 Sitemap: https://www.ruphus.app/sitemap.xml
