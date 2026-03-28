@@ -1270,3 +1270,25 @@ document.addEventListener('click',function(e){
     document.querySelectorAll('.seg-scroll .sc').forEach(function(el){obs.observe(el)});
   });
 })();
+
+// ═══════════════════════════════════════════════
+// PRELOADER
+// ═══════════════════════════════════════════════
+(function(){
+  const pl = document.getElementById('preloader');
+  if (!pl) return;
+  
+  const dismiss = function() {
+    pl.classList.add('done');
+    setTimeout(function() { pl.remove(); }, 600);
+  };
+  
+  // Dismiss on window load (all assets ready)
+  window.addEventListener('load', function() {
+    // Small delay so the progress bar animation completes
+    setTimeout(dismiss, 800);
+  });
+  
+  // Safety: dismiss after 3s max even if load doesn't fire
+  setTimeout(dismiss, 3000);
+})();
