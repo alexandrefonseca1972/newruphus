@@ -69,6 +69,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--fg);min-height:100
 .brand-metrics{display:flex;gap:1px;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.06)}
 .bm{flex:1;text-align:center;padding:14px 12px;background:rgba(255,255,255,.04);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-right:1px solid rgba(255,255,255,.06)}
 .bm:last-child{border-right:none}
+.bm-ico{width:20px;height:20px;margin:0 auto 6px;color:var(--teal);display:block}
 .bm-val{font-family:var(--mono);font-size:1.15rem;font-weight:700;color:#fff}
 .bm-lab{font-size:.58rem;color:rgba(255,255,255,.4);margin-top:3px;letter-spacing:.03em;text-transform:uppercase}
 
@@ -195,10 +196,10 @@ html.dark .field input:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(
       <h2 class="brand-headline">Sua empresa.<br/>Seus dados.<br/>Sob <em>controle.</em></h2>
       <p class="brand-desc">22 módulos integrados com IA nativa para PMEs brasileiras. Do CRM ao BI preditivo, tudo em uma plataforma que evolui toda semana.</p>
       <div class="brand-metrics">
-        <div class="bm"><div class="bm-val">22</div><div class="bm-lab">Módulos</div></div>
-        <div class="bm"><div class="bm-val">5.470+</div><div class="bm-lab">Testes</div></div>
-        <div class="bm"><div class="bm-val">5</div><div class="bm-lab">IAs nativas</div></div>
-        <div class="bm"><div class="bm-val">99.5%</div><div class="bm-lab">Uptime</div></div>
+        <div class="bm"><svg class="bm-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><div class="bm-val">22</div><div class="bm-lab">Módulos</div></div>
+        <div class="bm"><svg class="bm-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><div class="bm-val">5.470+</div><div class="bm-lab">Testes</div></div>
+        <div class="bm"><svg class="bm-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2a4 4 0 014 4c0 1.95-2 4-4 6-2-2-4-4.05-4-6a4 4 0 014-4z"/><path d="M4.93 11.64A9 9 0 1019.07 11.64"/><path d="M12 18v4"/></svg><div class="bm-val">5</div><div class="bm-lab">IAs nativas</div></div>
+        <div class="bm"><svg class="bm-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><div class="bm-val">99.5%</div><div class="bm-lab">Uptime</div></div>
       </div>
     </div>
   </div>
