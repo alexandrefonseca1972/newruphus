@@ -520,18 +520,29 @@ function initDiag(){
       renderAIResult(ai);
     })
     .catch(()=>{
-      // Fallback to local scoring
+      // Fallback to local scoring (works without API key)
       const modSet=new Set([...(diagModuleMap[gargalo]||[]),...(diagModuleMap[area]||[])]);
-      const score=Math.min(95,50+modSet.size*4+tools*2);
+      const unidades=answers[0];const fatur=answers[4];
+      let baseScore=55;
+      baseScore+=modSet.size*3;
+      if(unidades==='6 a 20')baseScore+=5;
+      if(unidades==='21 a 50')baseScore+=10;
+      if(unidades==='Mais de 50')baseScore+=15;
+      if(tools>5)baseScore+=8;
+      const score=Math.min(96,baseScore);
+      const econMap={'Até R$ 50k':['R$ 3.200','R$ 38.400','16'],'R$ 50k a R$ 200k':['R$ 8.500','R$ 102.000','28'],'R$ 200k a R$ 1M':['R$ 18.700','R$ 224.400','42'],'Acima de R$ 1M':['R$ 35.000','R$ 420.000','56']};
+      const econ=econMap[fatur]||['R$ 7.900','R$ 95.000','24'];
+      const winsMap={'Financeiro/Cobrança':['Conciliação bancária automatizada (97% match)','Cobrança recorrente via Pix + WhatsApp','Dashboard financeiro com projeção de caixa por IA'],'Comunicação interna':['Chat integrado com menções e canais por equipe','Tickets internos com SLA e rastreamento','Workflows automáticos para aprovações'],'Relatórios e dados':['BI preditivo com 5 provedores de IA','DRE e balanço gerados automaticamente','Relatórios customizados por centro de custo'],'Gestão de equipe':['Gestão de funcionários com férias e documentos','Checklists operacionais com prazos e responsáveis','Projetos com Kanban e controle de horas'],'Múltiplos sistemas':['Integração nativa com 20+ plataformas','Workflows automatizados entre módulos','API unificada substituindo múltiplas ferramentas']};
+      const wins=winsMap[gargalo]||['Centralizar dados em uma só plataforma','Dashboard com indicadores em tempo real','Automação de processos repetitivos'];
       renderAIResult({
         score:score,
-        analise:'Com base nas suas respostas, identificamos oportunidades significativas de otimização. Seu gargalo principal ('+gargalo+') e a área que mais consome tempo ('+area+') podem ser resolvidos com os módulos certos.',
+        analise:'Gerenciando '+unidades+' unidades com gargalo em '+gargalo.toLowerCase()+' e '+area.toLowerCase()+' consumindo mais tempo, sua operação tem potencial de otimização de '+score+'%. Os '+modSet.size+' módulos recomendados resolvem diretamente esses pontos.',
         modulos:Array.from(modSet),
-        economia_mensal:tools>5?'R$ 15.000':'R$ 7.900',
-        economia_anual:tools>5?'R$ 180.000':'R$ 95.000',
-        horas_recuperadas:tools>5?'48':'24',
-        quick_wins:['Automatizar cobrança via WhatsApp Z-API','Centralizar dados em uma só plataforma','Dashboard de indicadores com BI em tempo real'],
-        risco:'Cada mês sem otimização é receita perdida e retrabalho acumulado.'
+        economia_mensal:econ[0],
+        economia_anual:econ[1],
+        horas_recuperadas:econ[2],
+        quick_wins:wins,
+        risco:'Com faturamento de '+fatur+', cada mês sem otimização representa perda acumulada de '+econ[0]+' em ineficiências operacionais.'
       });
     });
   }
@@ -596,8 +607,18 @@ function initDiag(){
     }
   };
 
-  // Start
-  setTimeout(()=>addMsg('Olá! Sou o assistente de diagnóstico do Ruphus. Vou fazer 5 perguntas rápidas para entender sua operação e recomendar os módulos ideais. Vamos lá?',true,['Sim, vamos!']),500);
+  // Start only when section becomes visible
+  const diagSection = document.getElementById('diagnostico');
+  if (!diagSection) return;
+  const diagObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && chat.children.length === 0) {
+        addMsg('Olá! Sou o assistente de diagnóstico do Ruphus. Vou fazer 5 perguntas rápidas para entender sua operação e recomendar os módulos ideais. Vamos lá?',true,['Sim, vamos!']);
+        diagObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  diagObs.observe(diagSection);
   window.diagStart=function(){
     step=0;answers.length=0;
     chat.innerHTML='';

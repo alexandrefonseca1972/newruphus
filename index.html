@@ -38,7 +38,7 @@ gtag('config', 'AW-18050150955');
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="/styles.css?v=1774740818"/>
+<link rel="stylesheet" href="/styles.css?v=1774821126"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Ruphus ERP — Gestão empresarial com 22 módulos", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".hero h1", ".hero-desc"]}, "url": "https://www.ruphus.app"}</script>
 </head>
 <body>
@@ -115,7 +115,7 @@ gtag('config', 'AW-18050150955');
     <p class="hero-desc" data-r="2">22 módulos integrados com IA nativa — Deal Coach, Open Banking, projeção de fluxo de caixa, sugestão contábil por embeddings e mais — em um ERP que evolui toda semana.</p>
     <div class="hero-right" data-r="3">
       <button class="btn btn-t btn-lg" onclick="openModal()">Quero ver os 22 módulos ao vivo →</button>
-      <button type="button" class="btn btn-ol btn-lg" onclick="window.location.href='/comparativo#calculadora'">Descubra quanto sua operação perde por mês →</button>
+      <button type="button" class="btn btn-ol btn-lg" onclick="document.getElementById('diagnostico').scrollIntoView({behavior:'smooth'})">Descubra quanto sua operação perde por mês →</button>
       <div class="sp">
         <div class="avatars"><div class="av" style="background:#f97c2b">A</div><div class="av" style="background:#D4A017">M</div><div class="av" style="background:#E8634A">R</div><div class="av" style="background:#6C5CE7">S</div></div>
         <div class="sp-t"><strong>30 min que podem mudar sua operação.</strong><br/>Sem compromisso. Sem cartão.</div>
@@ -688,15 +688,8 @@ gtag('config', 'AW-18050150955');
 </section>
 
 <!-- DIAGNÓSTICO COM IA -->
-<section class="diag" id="diagnostico" aria-label="Diagnóstico inteligente" style="display:none">
-<!-- 
-  ⚠️ SEÇÃO DESABILITADA — requer ANTHROPIC_API_KEY configurada no Vercel.
-  Para habilitar:
-  1. Acesse https://vercel.com/ruphus-projects/newruphus/settings/environment-variables
-  2. Adicione: ANTHROPIC_API_KEY = sk-ant-...
-  3. Redeploy o projeto
-  4. Remova style="display:none" desta section
--->
+<section class="diag" id="diagnostico" aria-label="Diagnóstico inteligente" data-r>
+
 <div class="w">
   <h2>Diagnóstico Gratuito da Sua Operação</h2>
   <p class="diag-sub">Responda 5 perguntas rápidas e receba uma análise personalizada com módulos recomendados e economia estimada.</p>
@@ -914,6 +907,6 @@ gtag('config', 'AW-18050150955');
 
 
 
-<script src="/scripts.js?v=1774740818"></script>
+<script src="/scripts.js?v=1774821126"></script>
 </body>
 </html>
