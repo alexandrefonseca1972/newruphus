@@ -168,11 +168,44 @@ function openModal(){
 }
 function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow=''}
 
+function sendLead(nome, email, telefone, interesse, origem) {
+  // 1. WhatsApp — immediate
+  const lines = [
+    '🟠 *Novo Lead — Ruphus ERP*',
+    '',
+    '👤 *Nome:* ' + nome,
+    '📧 *Email:* ' + email,
+    '📱 *Telefone:* ' + (telefone || 'Não informado'),
+    '🎯 *Interesse:* ' + (interesse || 'Demonstração geral'),
+    '📍 *Origem:* ' + origem,
+    '',
+    '⏰ ' + new Date().toLocaleString('pt-BR')
+  ];
+  window.open('https://wa.me/5511948680554?text=' + encodeURIComponent(lines.join('\n')), '_blank');
+
+  // 2. Email via API — async (non-blocking)
+  fetch('/api/lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ nome, email, telefone, interesse, origem })
+  }).catch(function() {});
+
+  // 3. Plausible event
+  if (window.plausible) plausible('Lead-Captured', { props: { origem: origem, interesse: interesse || 'demo' } });
+}
+
 function submitModal(){
   const nOk=vNome(document.getElementById('m-nome'));
   const eOk=vEmail(document.getElementById('m-email'));
   const fOk=vFone(document.getElementById('m-fone'));
   if(!nOk||!eOk||!fOk)return;
+
+  const nome = document.getElementById('m-nome').value.trim();
+  const email = document.getElementById('m-email').value.trim();
+  const telefone = document.getElementById('m-fone').value.trim();
+  const interesse = document.getElementById('m-interesse') ? document.getElementById('m-interesse').value : '';
+
+  sendLead(nome, email, telefone, interesse, 'Modal Demonstração');
   closeModal();
   toast('Demonstração solicitada! Retornamos em até 2h.');
 }
@@ -182,6 +215,12 @@ function submitInline(){
   const eOk=vEmail(document.getElementById('di-email'));
   const fOk=vFone(document.getElementById('di-fone'));
   if(!nOk||!eOk||!fOk)return;
+
+  const nome = document.getElementById('di-nome').value.trim();
+  const email = document.getElementById('di-email').value.trim();
+  const telefone = document.getElementById('di-fone').value.trim();
+
+  sendLead(nome, email, telefone, '', 'Formulário Contato');
   toast('Demonstração solicitada! Retornamos em até 2h.');
 }
 
@@ -586,7 +625,7 @@ function initDiag(){
     msg+='Score: '+(score?score.textContent:'--')+'/100\n';
     msg+='Economia estimada: '+(eco?eco.textContent:'--')+'/mês\n\n';
     msg+='Faça o seu em: https://newruphus.vercel.app/#diagnostico';
-    window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
+    window.open('https://wa.me/5511948680554?text='+encodeURIComponent(msg),'_blank');
   };
 
   window.diagAnswer=function(answer){
