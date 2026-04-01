@@ -16,18 +16,26 @@ export default async function handler(req) {
 
     const timestamp = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' });
 
-    // Log lead (visible in Vercel Runtime Logs)
-    console.log(JSON.stringify({
-      event: 'LEAD',
-      nome,
-      email,
-      telefone: telefone || '',
-      interesse: interesse || '',
-      origem: origem || 'Site',
-      timestamp
-    }));
+    // Send via Web3Forms → alexandre.fonseca@live.com
+    const w3res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'ee8dbe5c-6f15-4e6b-9353-d9379bdaf988',
+        subject: '🟠 Novo Lead — ' + nome + ' (' + (interesse || 'Demonstração') + ')',
+        from_name: 'Ruphus ERP',
+        nome: nome,
+        email: email,
+        telefone: telefone || 'Não informado',
+        interesse: interesse || 'Demonstração geral',
+        origem: origem || 'Site',
+        horario: timestamp
+      })
+    });
 
-    return new Response(JSON.stringify({ ok: true, timestamp }), {
+    const w3data = await w3res.json();
+
+    return new Response(JSON.stringify({ ok: true, email: w3data.success || false, timestamp }), {
       status: 200,
       headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' }
     });
