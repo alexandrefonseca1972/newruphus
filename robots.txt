@@ -3,5 +3,21 @@ Allow: /
 Disallow: /login
 Disallow: /logout
 Disallow: /forgot-password
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Disallow: /login
+Disallow: /logout
+Disallow: /forgot-password
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /login
+Disallow: /logout
+Disallow: /forgot-password
+Disallow: /api/
 
 Sitemap: https://www.ruphus.app/sitemap.xml
+Sitemap: https://ruphus.app/sitemap.xml
