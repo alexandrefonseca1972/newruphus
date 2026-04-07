@@ -603,7 +603,7 @@ html.dark .fq-cat.on{background:var(--teal);border-color:var(--teal);color:#fff}
 
 /* ── FOOTER ── */
 footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
-.ft-top{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:28px;margin-bottom:36px}
 .ft-brand p{font-size:.8rem;color:var(--tx2);margin-top:8px;line-height:1.6;max-width:280px}
 .ft-col h5{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--tx3);margin-bottom:10px}
 .ft-col a{display:block;font-size:.8rem;color:var(--tx2);padding:2px 0;transition:color .2s}.ft-col a:hover{color:var(--tx)}
@@ -657,7 +657,7 @@ footer{padding:48px 0 22px;border-top:1px solid var(--brd)}
   .calc-grid{grid-template-columns:1fr}.calc-left{border-right:none;border-bottom:1px solid var(--brd)}
   .edu-g{grid-template-columns:1fr 1fr}.edu-featured{grid-template-columns:1fr}
   .demo-box{grid-template-columns:1fr}
-  .ft-top{grid-template-columns:1fr 1fr}
+  .ft-top{grid-template-columns:1fr 1fr 1fr 1fr}.ft-brand{grid-column:1/-1}
 }
 @media(max-width:768px){
   .nlinks,.ncta{display:none}.hambg{display:block}
