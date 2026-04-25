@@ -105,6 +105,26 @@
     {
       "source": "/comparativo-erp",
       "destination": "/lp/comparativo-erp"
+    },
+    {
+      "source": "/contabilidade-bpo",
+      "destination": "/lp/contabilidade-bpo"
+    },
+    {
+      "source": "/crm-financeiro",
+      "destination": "/lp/crm-financeiro"
+    },
+    {
+      "source": "/bi-ia",
+      "destination": "/lp/bi-ia"
+    },
+    {
+      "source": "/monitor360",
+      "destination": "/lp/monitor360"
+    },
+    {
+      "source": "/software-sob-medida",
+      "destination": "/lp/software-sob-medida"
     }
   ]
 }
