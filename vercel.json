@@ -84,5 +84,47 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/erp-modular",
+      "destination": "/lp/erp-modular.html"
+    },
+    {
+      "source": "/sair-das-planilhas",
+      "destination": "/lp/sair-das-planilhas.html"
+    },
+    {
+      "source": "/financeiro",
+      "destination": "/lp/financeiro.html"
+    },
+    {
+      "source": "/facilities",
+      "destination": "/lp/facilities.html"
+    },
+    {
+      "source": "/comparativo-erp",
+      "destination": "/lp/comparativo-erp.html"
+    },
+    {
+      "source": "/lp/erp-modular",
+      "destination": "/lp/erp-modular.html"
+    },
+    {
+      "source": "/lp/sair-das-planilhas",
+      "destination": "/lp/sair-das-planilhas.html"
+    },
+    {
+      "source": "/lp/financeiro",
+      "destination": "/lp/financeiro.html"
+    },
+    {
+      "source": "/lp/facilities",
+      "destination": "/lp/facilities.html"
+    },
+    {
+      "source": "/lp/comparativo-erp",
+      "destination": "/lp/comparativo-erp.html"
+    }
   ]
 }
