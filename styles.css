@@ -1857,3 +1857,7 @@ img,video,svg,canvas{max-width:100%}
   .pl-hex,.pl-dots,.pl-r{animation:none}
   .pl-bar-fill{animation:plProgress 1s linear .1s forwards}
 }
+
+/* Pain journey cards - doc 6.1 */
+.pain-card:hover{border-color:var(--coral);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,99,74,.08)}
+.pain-card{transition:all .2s ease}

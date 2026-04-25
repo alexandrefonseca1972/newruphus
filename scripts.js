@@ -21,7 +21,7 @@ function toggleTheme(){
 })();
 
 // ── TYPING ──
-(function(){const w=['inteligente.','eficiente.','integrada.','automatizada.','estratégica.'];const el=document.getElementById('typed');if(!el)return;let wi=0,ci=0,del=false;
+(function(){const w=['planilhas.','controles dispersos.','sistemas desconectados.','retrabalho manual.','fechamentos lentos.'];const el=document.getElementById('typed');if(!el)return;let wi=0,ci=0,del=false;
 function t(){if(!el)return;const word=w[wi];if(!del){ci++;el.textContent=word.slice(0,ci);if(ci===word.length){del=true;setTimeout(t,2200);return}setTimeout(t,90)}else{ci--;el.textContent=word.slice(0,ci);if(ci===0){del=false;wi=(wi+1)%w.length;setTimeout(t,400);return}setTimeout(t,50)}}setTimeout(t,2500)})();
 
 // ── BENTO TABS ──
@@ -609,7 +609,7 @@ function initDiag(){
       '</ul></div>'+
       '<div class="diag-r-risk">⚠️ '+ai.risco+'</div>'+
       '<div class="diag-r-actions">'+
-        '<button class="btn btn-t" onclick="openModal()">Agendar demonstração personalizada →</button>'+
+        '<button class="btn btn-t" onclick="openModal()">Agendar diagnóstico personalizada →</button>'+
         '<button class="btn btn-ol" onclick="diagShareWA()">Enviar resultado via WhatsApp</button>'+
       '</div>';
     
@@ -1195,7 +1195,7 @@ function openArticle(idx){
     '<h1>'+a.t+'</h1>'+
     '<div class="ar-meta"><span>Mar 2026</span><span>·</span><span>8 min de leitura</span></div>'+
     a.body+
-    '<div class="ar-cta"><p>Quer ver como isso funciona na prática?</p><button class="btn btn-t btn-lg" onclick="closeArticle();openModal()">Agendar demonstração gratuita →</button></div>'+
+    '<div class="ar-cta"><p>Quer ver como isso funciona na prática?</p><button class="btn btn-t btn-lg" onclick="closeArticle();openModal()">Agendar diagnóstico gratuita →</button></div>'+
     '</div>';
   reader.classList.add('open');
   document.body.style.overflow='hidden';
